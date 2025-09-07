@@ -3,6 +3,8 @@ using UnityEngine;
 public class MouseWorld : MonoBehaviour
 {
     public static MouseWorld Intance;
+    [SerializeField] LayerMask mousePlaneLayerMask;
+  
     
 
     private void Awake() {
@@ -12,7 +14,6 @@ public class MouseWorld : MonoBehaviour
         }
     }
 
-    [SerializeField] LayerMask mousePlaneLayerMask;
    
 
     public static Vector3 Getposition()
@@ -21,4 +22,5 @@ public class MouseWorld : MonoBehaviour
         Physics.Raycast(ray, out RaycastHit hitInfo, float.MaxValue, Intance.mousePlaneLayerMask);
         return hitInfo.point;
     }
+    
 }
