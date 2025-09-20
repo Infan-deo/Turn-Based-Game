@@ -1,18 +1,25 @@
 using DG.Tweening;
 using UnityEngine;
 
-public class PlayerUnitMovement : MonoBehaviour
+public class Unit : MonoBehaviour
 {
     [SerializeField] private Vector3 targetPosition;
     [SerializeField] private float moveSpeed;
     [SerializeField] private float rotateSpeed;
     [SerializeField] private Animator unitAnimator;
     [SerializeField] private float stopanimationOffset;
+    GridPosition gridPosition;
 
 
     private void Awake()
     {
         targetPosition = transform.position;
+    }
+
+    private void Start()
+    {
+        gridPosition = LevelGrid.Instance.GetGridPosition(transform.position);
+        LevelGrid.Instance.AddUnitAtGridPosition(gridPosition, this);
     }
     public void MovePlayer(Vector3 targetPosition)
     {
@@ -34,6 +41,13 @@ public class PlayerUnitMovement : MonoBehaviour
         else
         {
             unitAnimator.SetBool("IsWalking", false);
+        }
+
+        GridPosition newGridPosition = LevelGrid.Instance.GetGridPosition(transform.position);
+        if (newGridPosition != gridPosition)
+        {
+            LevelGrid.Instance.UnitMovedGridPOsition(this, gridPosition, newGridPosition);
+            gridPosition = newGridPosition;
         }
 
 

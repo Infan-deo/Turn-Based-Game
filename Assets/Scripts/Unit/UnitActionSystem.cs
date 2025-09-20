@@ -7,7 +7,7 @@ public class UnitActionSystem : MonoBehaviour
 
     public static UnitActionSystem Instance { get; private set; }
 
-    [SerializeField] private PlayerUnitMovement _selectedUnit;
+    [SerializeField] private Unit _selectedUnit;
     [SerializeField] LayerMask UnitsLayerMask;
 
     private void Awake() {
@@ -35,7 +35,7 @@ public class UnitActionSystem : MonoBehaviour
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(ray, out RaycastHit hitInfo, float.MaxValue, UnitsLayerMask))
         {
-            if (hitInfo.transform.TryGetComponent<PlayerUnitMovement>(out PlayerUnitMovement Unit))
+            if (hitInfo.transform.TryGetComponent<Unit>(out Unit Unit))
             {
                 SetSelectedUnit(Unit);
                 return true;
@@ -44,13 +44,13 @@ public class UnitActionSystem : MonoBehaviour
         return false;
     }
 
-    private void SetSelectedUnit(PlayerUnitMovement unit)
+    private void SetSelectedUnit(Unit unit)
     {
         _selectedUnit = unit;
         OnSelectedUnitChanged?.Invoke(this, EventArgs.Empty);
     }
 
-    public PlayerUnitMovement GetSelectedUnit()
+    public Unit GetSelectedUnit()
     {
         return _selectedUnit;
     }
