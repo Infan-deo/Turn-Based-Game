@@ -3,17 +3,19 @@ using UnityEngine;
 
 public class Unit : MonoBehaviour
 {
-    [SerializeField] private Vector3 targetPosition;
-    [SerializeField] private float moveSpeed;
-    [SerializeField] private float rotateSpeed;
-    [SerializeField] private Animator unitAnimator;
-    [SerializeField] private float stopanimationOffset;
-    GridPosition gridPosition;
 
+    GridPosition gridPosition;
+    MoveAction moveAction;
+    SpinAction spinAction;
 
     private void Awake()
     {
-        targetPosition = transform.position;
+        moveAction = GetComponent<MoveAction>();
+        spinAction = GetComponent<SpinAction>();
+        if (moveAction == null)
+        {
+            Debug.LogError("No MoveAction component found on " + gameObject.name);
+        }
     }
 
     private void Start()
@@ -21,27 +23,10 @@ public class Unit : MonoBehaviour
         gridPosition = LevelGrid.Instance.GetGridPosition(transform.position);
         LevelGrid.Instance.AddUnitAtGridPosition(gridPosition, this);
     }
-    public void MovePlayer(Vector3 targetPosition)
-    {
-        this.targetPosition = targetPosition;
-    }
+
 
     private void Update()
     {
-
-        float stoppingDistance = .1f;
-        if (Vector3.Distance(transform.position, targetPosition) > stoppingDistance)
-        {
-            Vector3 moveDirection = (targetPosition - transform.position).normalized;
-            transform.position += moveDirection * moveSpeed * Time.deltaTime;
-            transform.forward = Vector3.Lerp(transform.forward, moveDirection, Time.deltaTime * rotateSpeed);
-            unitAnimator.SetBool("IsWalking", true);
-
-        }
-        else
-        {
-            unitAnimator.SetBool("IsWalking", false);
-        }
 
         GridPosition newGridPosition = LevelGrid.Instance.GetGridPosition(transform.position);
         if (newGridPosition != gridPosition)
@@ -51,5 +36,21 @@ public class Unit : MonoBehaviour
         }
 
 
+    }
+
+    public MoveAction GetMoveAction()
+    {
+        return moveAction;
+    }
+
+    public SpinAction GetSpinAction()
+    {
+        return spinAction;
+    }
+
+    
+    public GridPosition GetGridPosition()
+    {
+        return gridPosition;
     }
 }

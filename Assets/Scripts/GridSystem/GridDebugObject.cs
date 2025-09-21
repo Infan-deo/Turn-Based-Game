@@ -4,6 +4,7 @@ using TMPro;
 public class GridDebugObject : MonoBehaviour
 {
     private GridObject _gridObject;
+    
 
     [SerializeField] private TextMeshPro _textMeshPro;
 

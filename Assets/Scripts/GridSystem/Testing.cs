@@ -2,16 +2,17 @@ using UnityEngine;
 
 public class Testing : MonoBehaviour
 {
-
-  
-    void Start()
-    {
-      
-    }
+    [SerializeField] Unit unit;
+   
 
     private void Update()
     {
-       
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            
+            
+
+        }
     }
 
 
