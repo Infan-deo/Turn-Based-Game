@@ -8,10 +8,13 @@ public class Unit : MonoBehaviour
     MoveAction moveAction;
     SpinAction spinAction;
 
+    BaseAction[] baseActionArray;
+
     private void Awake()
     {
         moveAction = GetComponent<MoveAction>();
         spinAction = GetComponent<SpinAction>();
+        baseActionArray = GetComponents<BaseAction>();
         if (moveAction == null)
         {
             Debug.LogError("No MoveAction component found on " + gameObject.name);
@@ -48,9 +51,14 @@ public class Unit : MonoBehaviour
         return spinAction;
     }
 
-    
+
     public GridPosition GetGridPosition()
     {
         return gridPosition;
+    }
+
+    public BaseAction[] GetBaseAction()
+    {
+        return baseActionArray;
     }
 }
