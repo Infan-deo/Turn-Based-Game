@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.Video;
+using System.Collections.Generic;
 
 public class SpinAction : BaseAction
 {
@@ -29,10 +30,21 @@ public class SpinAction : BaseAction
 
 
     }
-    public void Spin(Action<bool> OnSpinComplete)
+    public override void TakeAction(GridPosition gridPosition,Action<bool> OnSpinComplete)
     {
         isActive = true;
         onActionComplete = OnSpinComplete;
+    }
+    public override List<GridPosition> GetvalidGridPositionList()
+    {
+        List<GridPosition> validGridPositionList = new List<GridPosition>();
+        GridPosition unitGridPOsition = Unit.GetGridPosition();
+
+        return new List<GridPosition>
+        {
+            unitGridPOsition
+        };
+
     }
 
     public override string GetActionName()

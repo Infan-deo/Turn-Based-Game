@@ -1,20 +1,50 @@
 using UnityEngine;
 using System;
+using System.Collections.Generic;
+using TMPro;
+
 
 public class UnitActionSystemUI : MonoBehaviour
 {
     [SerializeField] private Transform actionButtonPrefab;
     [SerializeField] private Transform actionButtonContainerTransform;
+    [SerializeField] private TextMeshProUGUI actionPointsText;
+
+
+    private List<ActionButtonUI> actionButtonUIs;
+
+    private void Awake()
+    {
+        actionButtonUIs = new();
+    }
+
+
 
     void Start()
     {
         UnitActionSystem.Instance.OnSelectedUnitChanged += UnitActionSystem_OnSelectedUnitChanged;
+        UnitActionSystem.Instance.OnSelectedActionChanged += UnitActionSystem_OnSelectedActionChanged;
+        UnitActionSystem.Instance.OnActionStarted += UnitActionSystem_OnActionStarted;
+        UpdateActionPoints();
         CreateUnitActionButtons();
+        UpdateSelectedVisual();
+    }
+
+    private void UnitActionSystem_OnActionStarted(object sender, EventArgs e)
+    {
+         UpdateActionPoints();
+    }
+
+    private void UnitActionSystem_OnSelectedActionChanged(object sender, EventArgs e)
+    {
+        UpdateSelectedVisual();
     }
 
     private void UnitActionSystem_OnSelectedUnitChanged(object sender, EventArgs e)
     {
         CreateUnitActionButtons();
+        UpdateSelectedVisual();
+        UpdateActionPoints();
     }
 
     private void CreateUnitActionButtons()
@@ -23,14 +53,31 @@ public class UnitActionSystemUI : MonoBehaviour
         {
             Destroy(ButtonTransform.gameObject);
         }
-
+        actionButtonUIs.Clear();
         Unit selectedUnit = UnitActionSystem.Instance.GetSelectedUnit();
 
         foreach (var baseAction in selectedUnit.GetBaseAction())
         {
             Transform actionButtonTransform = Instantiate(actionButtonPrefab, actionButtonContainerTransform);
             ActionButtonUI actionButtonUI = actionButtonTransform.GetComponent<ActionButtonUI>();
+            actionButtonUIs.Add(actionButtonUI);
             actionButtonUI.SetBaseAction(baseAction);
         }
     }
+
+    public void UpdateSelectedVisual()
+    {
+        foreach (ActionButtonUI actionButtonUI in actionButtonUIs)
+        {
+            actionButtonUI.UpdateSelectedVisual();
+        }
+    }
+
+    private void UpdateActionPoints()
+    {
+        Unit selectedUnit = UnitActionSystem.Instance.GetSelectedUnit();
+       actionPointsText.text =$"Action Points : {selectedUnit.GetActionPoints()}";
+
+    }
+
 }
