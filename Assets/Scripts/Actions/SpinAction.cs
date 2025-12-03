@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 public class SpinAction : BaseAction
 {
-   
+
     private float spinAddAmount;
     private float totalSpinAmount = 0;
 
@@ -20,20 +20,15 @@ public class SpinAction : BaseAction
         totalSpinAmount += spinAddAmount;
         if (totalSpinAmount >= 360)
         {
-            isActive = false;
             totalSpinAmount = 0;
-            if (onActionComplete != null)
-            {
-                onActionComplete.Invoke(false); // or true, depending on your logic
-            }
+            ActionComplete();
         }
 
 
     }
-    public override void TakeAction(GridPosition gridPosition,Action<bool> OnSpinComplete)
+    public override void TakeAction(GridPosition gridPosition, Action<bool> OnSpinComplete)
     {
-        isActive = true;
-        onActionComplete = OnSpinComplete;
+        ActionStart(OnSpinComplete);
     }
     public override List<GridPosition> GetvalidGridPositionList()
     {
@@ -50,5 +45,20 @@ public class SpinAction : BaseAction
     public override string GetActionName()
     {
         return "Spin";
+    }
+
+    public override int GetActionPointsCost()
+    {
+        return 1;
+    }
+
+    public override EnemyAIAction GetEnemyAiAction(GridPosition gridPosition)
+    {
+        return new EnemyAIAction
+        {
+            gridPosition = gridPosition,
+            actionValue = 0,
+
+        };
     }
 }

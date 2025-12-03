@@ -3,25 +3,25 @@ using TMPro;
 
 public class GridDebugObject : MonoBehaviour
 {
-    private GridObject _gridObject;
     
 
     [SerializeField] private TextMeshPro _textMeshPro;
+    private object _gridObject;
 
-    public void SetGridObject(GridObject gridObject)
+    public virtual void SetGridObject(object gridObject)
     {
         _gridObject = gridObject;
 
 
     }
 
-    private void Update()
+    protected virtual void Update()
     {
         UpdatePositionText();
     }
 
     public void UpdatePositionText()
     {
-        _textMeshPro.text = _gridObject.ToString();
+       _textMeshPro.text = _gridObject.ToString();
     }
 }

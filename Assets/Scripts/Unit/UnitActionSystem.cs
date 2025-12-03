@@ -43,10 +43,14 @@ public class UnitActionSystem : MonoBehaviour
         {
             return;
         }
-        if (EventSystem.current.IsPointerOverGameObject())
+        if (!TurnSystem.Instance.IsPlayerTurn())
         {
             return;
         }
+        if (EventSystem.current.IsPointerOverGameObject())
+            {
+                return;
+            }
         if (TryHandleUnitSelection()) return;
 
 
@@ -61,13 +65,17 @@ public class UnitActionSystem : MonoBehaviour
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray, out RaycastHit hitInfo, float.MaxValue, UnitsLayerMask))
             {
-                if (hitInfo.transform.TryGetComponent<Unit>(out Unit Unit))
+                if (hitInfo.transform.TryGetComponent<Unit>(out Unit unit))
                 {
-                    if (Unit == _selectedUnit)
+                    if (unit == _selectedUnit)
                     {
                         return false;
                     }
-                    SetSelectedUnit(Unit);
+                    if (unit.IsEnemy())
+                    {
+                        return false;
+                    }
+                    SetSelectedUnit(unit);
                     return true;
                 }
             }
@@ -89,16 +97,16 @@ public class UnitActionSystem : MonoBehaviour
             {
                 return;
             }
-            OnActionStarted?.Invoke(this, EventArgs.Empty);
             SetBusy(true);
             selectedBaseAction.TakeAction(mouseGridPosition, SetBusy);
+            OnActionStarted?.Invoke(this, EventArgs.Empty);
         }
     }
 
     private void SetSelectedUnit(Unit unit)
     {
         _selectedUnit = unit;
-        selectedBaseAction = unit.GetMoveAction();
+        selectedBaseAction = unit.GetAction<MoveAction>();
         OnSelectedUnitChanged?.Invoke(this, EventArgs.Empty);
     }
 

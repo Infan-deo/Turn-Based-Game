@@ -3,12 +3,12 @@ using UnityEngine;
 
 public class GridObject
 {
-    private GridSystem _gridSystem;
+    private GridSystem<GridObject> _gridSystem;
     private GridPosition _gridPosition;
 
     [SerializeField] private List<Unit> unitList;
 
-    public GridObject(GridSystem gridSystem, GridPosition gridPosition)
+    public GridObject(GridSystem<GridObject> gridSystem, GridPosition gridPosition)
     {
         _gridSystem = gridSystem;
         _gridPosition = gridPosition;
@@ -35,13 +35,25 @@ public class GridObject
         unitList.Remove(unit);
     }
 
-    public List<Unit> GetUnit()
+    public List<Unit> GetUnitList()
     {
         return unitList;
     }
 
-    public bool hasAnyUnit()
+    public bool HasAnyUnit()
     {
         return unitList.Count > 0;
+    }
+
+    public Unit GetUnit()
+    {
+        if (HasAnyUnit())
+        {
+            return unitList[0];
+        }
+        else
+        {
+            return null;
+        }
     }
 }

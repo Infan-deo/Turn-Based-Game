@@ -1,28 +1,29 @@
+using System;
 using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.Diagnostics;
 
-public class GridSystem
+public class GridSystem<TGridObject> 
 {
     int _width;
     int _height;
-    int _cellsize;
+    float _cellsize;
 
-    GridObject[,] gridObjectArray;
+    TGridObject[,] gridObjectArray;
 
 
-    public GridSystem(int width, int height, int cellsize)
+    public GridSystem(int width, int height, float cellsize,Func<GridSystem<TGridObject>,GridPosition,TGridObject> createGridObject)
     {
         _width = width;
         _height = height;
         _cellsize = cellsize;
-        gridObjectArray = new GridObject[width, height];
+        gridObjectArray = new TGridObject[width, height];
         for (int x = 0; x < _width; x++)
         {
             for (int z = 0; z < _height; z++)
             {
                 GridPosition gridPosition = new GridPosition(x, z);
-                gridObjectArray[x, z] = new GridObject(this, gridPosition);
+                gridObjectArray[x, z] = createGridObject(this, gridPosition);
 
             }
         }
@@ -58,7 +59,7 @@ public class GridSystem
 
     }
 
-    public GridObject GetGridObject(GridPosition gridPosition)
+    public TGridObject GetGridObject(GridPosition gridPosition)
     {
         return gridObjectArray[gridPosition.x, gridPosition.z];
     }
