@@ -8,6 +8,8 @@ public class Pathfinding : MonoBehaviour
     private const int MOVE_DIAGONAL_COST = 14;
     public static Pathfinding Instance { get; private set; }
     [SerializeField] private Transform gridDebugObjectPrefab;
+
+    [SerializeField] private LayerMask obstacleLayerMask;
     private int width;
     private int height;
     private float cellSize;
@@ -32,8 +34,28 @@ public class Pathfinding : MonoBehaviour
         this.width = width;
         this.height = height;
         this.cellSize = cellSize;
-        gridSystem = new GridSystem<PathNode>(10, 10, 2f, (GridSystem<PathNode> g, GridPosition gridPosition) => new PathNode(gridPosition));
+        gridSystem = new GridSystem<PathNode>(width, height, cellSize, (GridSystem<PathNode> g, GridPosition gridPosition) => new PathNode(gridPosition));
         gridSystem.CreateDebugObjects(gridDebugObjectPrefab);
+
+        float raycatoffsetdistance = 5;
+        for (int x = 0; x < gridSystem.Getwidth(); x++)
+        {
+            for (int z = 0; z < gridSystem.GetHeight(); z++)
+            {
+                GridPosition gridPosition = new(x, z);
+                Vector3 worldposition = LevelGrid.Instance.GetWorldPosition(gridPosition);
+
+                if (Physics.Raycast(
+                    worldposition + Vector3.down * raycatoffsetdistance,
+                    Vector3.up,
+                    raycatoffsetdistance * 2,
+                    obstacleLayerMask
+                    ))
+                {
+                    GetNode(x, z).SetIsWalkable(false);
+                }
+            }
+        }
     }
 
     public List<GridPosition> FindPath(GridPosition startGridPosition, GridPosition endGridPosition)
@@ -79,6 +101,12 @@ public class Pathfinding : MonoBehaviour
             {
                 if (closedList.Contains(neighbourNode))
                 {
+                    continue;
+                }
+
+                if (!neighbourNode.IsWalkable())
+                {
+                    closedList.Add(neighbourNode);
                     continue;
                 }
 

@@ -63,4 +63,14 @@ public class PathNode
     {
         return gridPosition;
     }
+
+    public bool IsWalkable()
+    {
+        return isWalkable;
+    }
+
+    public void SetIsWalkable(bool state)
+    {
+        isWalkable = state;
+    }
 }
