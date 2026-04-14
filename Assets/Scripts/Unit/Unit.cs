@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Unit : MonoBehaviour
 {
-    private const int ACTION_POINTS_MAX = 2;
+    private const int ACTION_POINTS_MAX = 6;
     public static event EventHandler OnAnyActionPointsChanged;
     public static event EventHandler OnAnyUnitSpawned;
     public static event EventHandler OnAnyUnitDead;
@@ -15,16 +15,16 @@ public class Unit : MonoBehaviour
     GridPosition gridPosition;
 
     HealthSystem healthSystem;
-    
+
     BaseAction[] baseActionArray;
 
     int actionpoints = 2;
 
     private void Awake()
     {
-        healthSystem = GetComponent<HealthSystem>();        
+        healthSystem = GetComponent<HealthSystem>();
         baseActionArray = GetComponents<BaseAction>();
-        
+
     }
 
     private void Start()
@@ -36,6 +36,7 @@ public class Unit : MonoBehaviour
 
         healthSystem.OnDead += HealthSystem_OnDead;
         OnAnyUnitSpawned?.Invoke(this, EventArgs.Empty);
+        actionpoints = ACTION_POINTS_MAX;
     }
 
     private void HealthSystem_OnDead(object sender, Unit e)
@@ -71,7 +72,7 @@ public class Unit : MonoBehaviour
         return null;
     }
 
-   
+
 
     public Vector3 GetWorldPosition()
     {

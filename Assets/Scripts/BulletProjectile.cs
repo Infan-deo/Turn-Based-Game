@@ -1,5 +1,6 @@
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityUtils;
 
 public class BulletProjectile : MonoBehaviour
 {
@@ -8,7 +9,7 @@ public class BulletProjectile : MonoBehaviour
     [SerializeField] private TrailRenderer trailRenderer;
     [SerializeField] private Transform bulletSparksPrefab;
 
-    
+
 
     public void Setup(Vector3 targetPosition)
     {
@@ -32,6 +33,7 @@ public class BulletProjectile : MonoBehaviour
             trailRenderer.transform.parent = null;
             Destroy(gameObject);
             Instantiate(bulletSparksPrefab, targetPostion, Quaternion.identity);
+
         }
 
     }
