@@ -11,7 +11,7 @@ public class UnitRagdoll : MonoBehaviour
         float offSet = 0.5f;
         Vector3 explosionPosition = (((enemyPos - this.transform.position).normalized) * offSet) + this.transform.position;
 
-        ApplyExplosionToRagdoll(ragdollRootBone, 600f, explosionPosition, 10f);
+        ApplyExplosionToRagdoll(ragdollRootBone, 500f, explosionPosition, 10f);
     }
 
 

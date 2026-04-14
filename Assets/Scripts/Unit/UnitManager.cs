@@ -10,14 +10,18 @@ public class UnitManager : MonoBehaviour
 
     public static UnitManager Instance { get; private set; }
 
-   
+    private Vector3 _unitRagDollFallDir;
+
+
+
+
 
     /// <summary>
     /// Awake is called when the script instance is being loaded.
     /// </summary>
     void Awake()
     {
-         if (Instance != null)
+        if (Instance != null)
         {
             Destroy(gameObject);
         }
@@ -42,7 +46,7 @@ public class UnitManager : MonoBehaviour
     private void Unit_OnAnyUnitSpawned(object sender, EventArgs e)
     {
         Unit unit = sender as Unit;
-      
+
         unitList.Add(unit);
         if (unit.IsEnemy())
         {
@@ -56,7 +60,7 @@ public class UnitManager : MonoBehaviour
     private void Unit_OnAnyUnitDead(object sender, EventArgs e)
     {
         Unit unit = sender as Unit;
-       
+
         unitList.Remove(unit);
         if (unit.IsEnemy())
         {
@@ -79,5 +83,15 @@ public class UnitManager : MonoBehaviour
     public List<Unit> GetEnemyList()
     {
         return enemyUnitList;
+    }
+
+    public void SetUnitRagdollFallDir(Vector3 dir)
+    {
+        _unitRagDollFallDir = dir;
+    }
+
+    public Vector3 GetUnitRagDollFallDir()
+    {
+        return _unitRagDollFallDir;
     }
 }

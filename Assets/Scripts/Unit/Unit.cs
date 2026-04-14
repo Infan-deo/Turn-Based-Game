@@ -39,7 +39,7 @@ public class Unit : MonoBehaviour
         actionpoints = ACTION_POINTS_MAX;
     }
 
-    private void HealthSystem_OnDead(object sender, Unit e)
+    private void HealthSystem_OnDead(object sender, EventArgs e)
     {
         LevelGrid.Instance.RemoveUnitAtGridPosition(gridPosition, this);
         Destroy(gameObject);
@@ -132,8 +132,9 @@ public class Unit : MonoBehaviour
         return healthSystem.GetHealthNormalized();
     }
 
-    public void Damage(int damageAmount, Unit shooterUnit)
+    public void Damage(int damageAmount)
     {
-        healthSystem.Damage(damageAmount, shooterUnit);
+        healthSystem.Damage(damageAmount);
+        UnitManager.Instance.SetUnitRagdollFallDir(UnitActionSystem.Instance.GetSelectedUnit().GetWorldPosition());
     }
 }

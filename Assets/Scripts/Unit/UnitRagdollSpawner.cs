@@ -4,21 +4,21 @@ using UnityEngine;
 public class UnitRagdollSpawner : MonoBehaviour
 {
     [SerializeField] private Transform ragdollPrefab;
-    [SerializeField] private Transform originalRootBone; 
+    [SerializeField] private Transform originalRootBone;
 
-    private HealthSystem healthSystem;   
-    
+    private HealthSystem healthSystem;
+
 
     private void Awake()
     {
-        healthSystem = GetComponent<HealthSystem>();       
+        healthSystem = GetComponent<HealthSystem>();
         healthSystem.OnDead += HealthSystem_OnDead;
-    }   
+    }
 
-    private void HealthSystem_OnDead(object sender, Unit e)
+    private void HealthSystem_OnDead(object sender, EventArgs e)
     {
         Transform ragdollTransform = Instantiate(ragdollPrefab, transform.position, Quaternion.identity);
         UnitRagdoll unitRagdoll = ragdollTransform.GetComponent<UnitRagdoll>();
-        unitRagdoll.Setup(originalRootBone,e.GetWorldPosition());
+        unitRagdoll.Setup(originalRootBone, UnitManager.Instance.GetUnitRagDollFallDir());
     }
 }
