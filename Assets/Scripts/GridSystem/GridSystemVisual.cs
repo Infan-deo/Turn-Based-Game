@@ -96,6 +96,16 @@ public class GridSystemVisual : MonoBehaviour
                 glow = 2.5f;
                 ShowGridPositionRange(selectedUnit.GetGridPosition(), shootAction.GetMaxShootDistance(), new Color32(255, 0, 0, 100));
                 break;
+            case GrenadeAction grenadeAction:
+                color = Color.yellow;
+                glow = 2.5f;
+                // ShowGridPositionRange(selectedUnit.GetGridPosition(), grenadeAction.GetMaxThrowDistance(), new Color32(255, 0, 0, 100));
+                break;
+            case SwordAction swordAction:
+                color = Color.red;
+                glow = 2.5f;
+                ShowGridPositionRangeSquare(selectedUnit.GetGridPosition(), swordAction.GetMaxSwordDistance(), new Color32(255, 0, 0, 100));
+                break;
         }
 
         ShowGridPositionList
@@ -113,7 +123,7 @@ public class GridSystemVisual : MonoBehaviour
                 Show(color, glow);
         }
     }
-    public void ShowGridPositionRange(GridPosition gridPosition, int range, Color32 color,float glow=0f)
+    public void ShowGridPositionRange(GridPosition gridPosition, int range, Color32 color, float glow = 0f)
     {
         List<GridPosition> gridPositionList = new();
         for (int x = -range; x <= range; x++)
@@ -131,6 +141,26 @@ public class GridSystemVisual : MonoBehaviour
                 {
                     continue;
                 }
+
+                gridPositionList.Add(testGridPosition);
+            }
+        }
+        ShowGridPositionList(gridPositionList, color, glow);
+    }
+    public void ShowGridPositionRangeSquare(GridPosition gridPosition, int range, Color32 color, float glow = 0f)
+    {
+        List<GridPosition> gridPositionList = new();
+        for (int x = -range; x <= range; x++)
+        {
+            for (int z = -range; z <= range; z++)
+            {
+                GridPosition testGridPosition = gridPosition + new GridPosition(x, z);
+                if (!LevelGrid.Instance.IsValidGridPosition(testGridPosition))
+                {
+                    // Not valid
+                    continue;
+                }
+
 
                 gridPositionList.Add(testGridPosition);
             }

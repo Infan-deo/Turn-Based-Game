@@ -11,7 +11,7 @@ public class UnitRagdoll : MonoBehaviour
         float offSet = 0.5f;
         Vector3 explosionPosition = (((enemyPos - this.transform.position).normalized) * offSet) + this.transform.position;
 
-        ApplyExplosionToRagdoll(ragdollRootBone, 500f, explosionPosition, 10f);
+        ApplyExplosionToChildren(ragdollRootBone, 500f, explosionPosition, 10f);
     }
 
 
@@ -30,7 +30,7 @@ public class UnitRagdoll : MonoBehaviour
         }
     }
 
-    public void ApplyExplosionToRagdoll(Transform root, float explosionForce, Vector3 explosionPosition, float explosionRange)
+    public void ApplyExplosionToChildren(Transform root, float explosionForce, Vector3 explosionPosition, float explosionRange)
     {
         foreach (Transform child in root)
         {
@@ -38,7 +38,7 @@ public class UnitRagdoll : MonoBehaviour
             {
                 rigidbody.AddExplosionForce(explosionForce, explosionPosition, explosionRange);
             }
-            ApplyExplosionToRagdoll(child, explosionForce, explosionPosition, explosionRange);
+            ApplyExplosionToChildren(child, explosionForce, explosionPosition, explosionRange);
         }
 
     }

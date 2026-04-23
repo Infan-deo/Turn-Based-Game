@@ -40,6 +40,10 @@ public class GrenadeProjectile : MonoBehaviour
                     UnitManager.Instance.SetUnitRagdollFallDir(transform.position);
                     targetUnit.Damage(30);
                 }
+                if (collider.TryGetComponent(out DestructableCrate destructableCrate))
+                {
+                    destructableCrate.DestroyCrate();
+                }
             }
             Destroy(gameObject);
             OnAnyGrenadeExploded?.Invoke(this, EventArgs.Empty);

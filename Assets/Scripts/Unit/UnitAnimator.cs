@@ -7,21 +7,43 @@ public class UnitAnimator : MonoBehaviour
     public Animator animator;
     public Transform bulletProjectilePrefab;
     public Transform ShootPointTranform;
+    public Transform rifleTransform;
+    public Transform swordTransform;
 
-    public Action<Vector3> OnTargetPositionObserved;
+
 
     private void Awake()
     {
-        if (TryGetComponent<MoveAction>(out MoveAction moveAction))
+        if (TryGetComponent(out MoveAction moveAction))
         {
             moveAction.OnStartMoving += MoveAction_OnStartMoving;
             moveAction.OnStopMoving += MoveAction_OnStopMoving;
         }
-        if (TryGetComponent<ShootAction>(out ShootAction shootAction))
+        if (TryGetComponent(out ShootAction shootAction))
         {
             shootAction.OnShoot += ShootAction_OnShoot;
 
         }
+        if (TryGetComponent(out SwordAction swordAction))
+        {
+            swordAction.OnSwordActionStarted += SwordAction_OnSwordActionStarted;
+            swordAction.OnSwordActionCompleted += SwordAction_OnSwordActionCompleted;
+
+        }
+    }
+    private void Start()
+    {
+        EquipRifle();
+    }
+
+    private void SwordAction_OnSwordActionStarted(object sender, EventArgs e)
+    {
+        EquipSword();
+        animator.SetTrigger("Slash");
+    }
+    private void SwordAction_OnSwordActionCompleted(object sender, EventArgs e)
+    {
+        EquipRifle();
     }
 
 
@@ -40,7 +62,18 @@ public class UnitAnimator : MonoBehaviour
         Transform bulletProjectileTransform = Instantiate(bulletProjectilePrefab, ShootPointTranform.position, Quaternion.identity);
         BulletProjectile bulletProjectile = bulletProjectileTransform.GetComponent<BulletProjectile>();
         Vector3 targetPostionShootAtPosition = e.targetedUnit.GetWorldPosition();
-        targetPostionShootAtPosition.y = ShootPointTranform.position.y;       
+        targetPostionShootAtPosition.y = ShootPointTranform.position.y;
         bulletProjectile.Setup(targetPostionShootAtPosition);
+    }
+
+    public void EquipSword()
+    {
+        rifleTransform.gameObject.SetActive(false);
+        swordTransform.gameObject.SetActive(true);
+    }
+    public void EquipRifle()
+    {
+        rifleTransform.gameObject.SetActive(true);
+        swordTransform.gameObject.SetActive(false);
     }
 }

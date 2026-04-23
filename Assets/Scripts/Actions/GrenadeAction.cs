@@ -19,6 +19,10 @@ public class GrenadeAction : BaseAction
     {
         return "Grenade";
     }
+    public int GetMaxThrowDistance()
+    {
+        return maxThrowDistance;
+    }
 
     public override EnemyAIAction GetEnemyAiAction(GridPosition gridPosition)
     {
