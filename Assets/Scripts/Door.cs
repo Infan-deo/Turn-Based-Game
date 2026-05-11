@@ -1,4 +1,5 @@
 using System;
+using Ami.BroAudio;
 using UnityEngine;
 
 public class Door : MonoBehaviour, IInteractable
@@ -69,6 +70,7 @@ public class Door : MonoBehaviour, IInteractable
     {
         isOpen = true;
         animator.SetBool("IsOpen", isOpen);
+        BroAudio.Play(SFXGameManager.Instance.DoorOpenSound);
         Pathfinding.Instance.SetisWalkableGridPostion(gridPosition, isOpen);
     }
 
@@ -76,6 +78,7 @@ public class Door : MonoBehaviour, IInteractable
     {
         isOpen = false;
         animator.SetBool("IsOpen", isOpen);
+        BroAudio.Play(SFXGameManager.Instance.DoorCloseSound);
         Pathfinding.Instance.SetisWalkableGridPostion(gridPosition, isOpen);
     }
 }

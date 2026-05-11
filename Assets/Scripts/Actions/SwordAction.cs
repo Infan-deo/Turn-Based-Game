@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Ami.BroAudio;
 using UnityEngine;
 
 public class SwordAction : BaseAction
@@ -50,6 +51,7 @@ public class SwordAction : BaseAction
                 float afterHitStateTime = 0.5f;
                 stateTimer = afterHitStateTime;
                 targetUnit.Damage(100);
+                BroAudio.Play(SFXGameManager.Instance.KnifeSlayingSound);
                 OnAnySwordHit?.Invoke();
                 break;
             case State.SwingingSwordAfterHit:

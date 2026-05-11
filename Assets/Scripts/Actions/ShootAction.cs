@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Ami.BroAudio;
 using UnityEngine;
 
 public class ShootAction : BaseAction
@@ -75,6 +76,7 @@ public class ShootAction : BaseAction
             shootingUnit = Unit
         });
         targetUnit.Damage(40);
+        BroAudio.Play(SFXGameManager.Instance.ShootingSound);
     }
     private void Aim()
     {

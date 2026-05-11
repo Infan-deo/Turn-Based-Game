@@ -761,7 +761,6 @@ GameObject:
   - component: {fileID: 384174539905759806}
   - component: {fileID: 3723923834201066221}
   - component: {fileID: 390126103504936501}
-  - component: {fileID: 7788717447712421894}
   - component: {fileID: 4019633760508200164}
   - component: {fileID: 7101249776962378604}
   - component: {fileID: 9162458732989713614}
@@ -912,18 +911,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ragdollPrefab: {fileID: 6336166251700119683, guid: e596652493abd3941b4cb044ec092174, type: 3}
   originalRootBone: {fileID: 1348289379147964242}
---- !u!114 &7788717447712421894
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8110135243052994769}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bcfd3b865f1b32c43b83e6e3a8e25714, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &4019633760508200164
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1288,8 +1275,32 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4170833147357194, guid: 2f3e27eecb190e44a9af50723c394274, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7547595858138046684}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1316981293597076, guid: 2f3e27eecb190e44a9af50723c394274, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4032888162533010800}
   m_SourcePrefab: {fileID: 100100000, guid: 2f3e27eecb190e44a9af50723c394274, type: 3}
+--- !u!1 &1342951327631689116 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1316981293597076, guid: 2f3e27eecb190e44a9af50723c394274, type: 3}
+  m_PrefabInstance: {fileID: 1344239652832150536}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4032888162533010800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1342951327631689116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a6969d5e6e6b7b4789875ba4311a777, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundIDs:
+  - _entity: {fileID: 11400000, guid: 10f027fdbe66ab441b8ea62c75827013, type: 2}
+    ID: 0
+    <DebugObject>k__BackingField: {fileID: 1342951327631689116}
 --- !u!4 &1344715426829200386 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4170833147357194, guid: 2f3e27eecb190e44a9af50723c394274, type: 3}

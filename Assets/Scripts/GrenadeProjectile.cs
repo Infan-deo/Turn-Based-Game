@@ -1,5 +1,6 @@
 
 using System;
+using Ami.BroAudio;
 using UnityEngine;
 
 public class GrenadeProjectile : MonoBehaviour
@@ -49,6 +50,7 @@ public class GrenadeProjectile : MonoBehaviour
             OnAnyGrenadeExploded?.Invoke(this, EventArgs.Empty);
             trailRenderer.transform.parent = null;
             Instantiate(GrenadeExplosionVfxPrefab, targetPosition + Vector3.up * 1f, Quaternion.identity);
+            BroAudio.Play(SFXGameManager.Instance.ExplosionSound).AsDominator();
             onGrenadeBehaviourComplete();
         }
     }
