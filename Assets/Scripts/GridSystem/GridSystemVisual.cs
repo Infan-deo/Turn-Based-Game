@@ -106,6 +106,11 @@ public class GridSystemVisual : MonoBehaviour
                 glow = 2.5f;
                 ShowGridPositionRangeSquare(selectedUnit.GetGridPosition(), swordAction.GetMaxSwordDistance(), new Color32(255, 0, 0, 100));
                 break;
+            case InteractAction InteractAction:
+                color = Color.blue;
+                glow = 2.5f;
+                // ShowGridPositionRange(selectedUnit.GetGridPosition(), grenadeAction.GetMaxThrowDistance(), new Color32(255, 0, 0, 100));
+                break;
         }
 
         ShowGridPositionList

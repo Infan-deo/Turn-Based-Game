@@ -48,9 +48,9 @@ public class UnitActionSystem : MonoBehaviour
             return;
         }
         if (EventSystem.current.IsPointerOverGameObject())
-            {
-                return;
-            }
+        {
+            return;
+        }
         if (TryHandleUnitSelection()) return;
 
 
@@ -60,9 +60,9 @@ public class UnitActionSystem : MonoBehaviour
 
     public bool TryHandleUnitSelection()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (InputManagerTBG.Instance.GetMouseButtonDownThisFrame())
         {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            Ray ray = Camera.main.ScreenPointToRay(InputManagerTBG.Instance.GetMousePosition());
             if (Physics.Raycast(ray, out RaycastHit hitInfo, float.MaxValue, UnitsLayerMask))
             {
                 if (hitInfo.transform.TryGetComponent<Unit>(out Unit unit))
@@ -85,7 +85,7 @@ public class UnitActionSystem : MonoBehaviour
 
     private void HandleSelectedAction()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (InputManagerTBG.Instance.GetMouseButtonDownThisFrame())
         {
             GridPosition mouseGridPosition = LevelGrid.Instance.GetGridPosition(MouseWorld.Getposition());
             if (!selectedBaseAction.IsValidActionGridPosition(mouseGridPosition))

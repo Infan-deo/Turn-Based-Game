@@ -22,44 +22,19 @@ public class CameraController : MonoBehaviour
 
     private void HandleMovement()
     {
-        Vector3 inputMoveDir = new Vector3(0, 0, 0);
-        if (Input.GetKey(KeyCode.W))
-        {
-            inputMoveDir.z = +1;
-        }
 
-        if (Input.GetKey(KeyCode.S))
-        {
-            inputMoveDir.z = -1;
-        }
+        Vector2 inputMoveDir = InputManagerTBG.Instance.GetInputMoveDir();
 
-        if (Input.GetKey(KeyCode.A))
-        {
-            inputMoveDir.x = -1;
-        }
-
-        if (Input.GetKey(KeyCode.D))
-        {
-            inputMoveDir.x = +1;
-        }
 
         float moveSpeed = 10f;
-        Vector3 moveVector = transform.forward * inputMoveDir.z + transform.right * inputMoveDir.x;
+        Vector3 moveVector = transform.forward * inputMoveDir.y + transform.right * inputMoveDir.x;
         transform.position += moveVector * moveSpeed * Time.deltaTime;
     }
     private void HandleRotation()
     {
         Vector3 rotateDir = new Vector3(0, 0, 0);
 
-        if (Input.GetKey(KeyCode.Q))
-        {
-            rotateDir.y = -1;
-        }
-
-        if (Input.GetKey(KeyCode.E))
-        {
-            rotateDir.y = +1;
-        }
+        rotateDir.y = InputManagerTBG.Instance.GetCameraRotationAmount();
 
         float rotateSpeed = 100f;
         transform.eulerAngles += rotateDir * rotateSpeed * Time.deltaTime;
@@ -67,15 +42,9 @@ public class CameraController : MonoBehaviour
     private void HandleZoom()
     {
 
-        float zoomAmount = 1f;
-        if (Input.mouseScrollDelta.y > 0)
-        {
-            targetFollowOffset.y -= zoomAmount;
-        }
-        else if (Input.mouseScrollDelta.y < 0)
-        {
-            targetFollowOffset.y += zoomAmount;
-        }
+        float zoomIncreaseAmount = 1f;
+
+        targetFollowOffset.y += InputManagerTBG.Instance.GetCameraZoomAmount() * zoomIncreaseAmount;
 
         targetFollowOffset.y = Mathf.Clamp(targetFollowOffset.y, 2, 12);
         cinemachineFollow.FollowOffset = Vector3.Lerp(cinemachineFollow.FollowOffset, targetFollowOffset, Time.deltaTime * 5f);

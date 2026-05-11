@@ -1,0 +1,686 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0876a39f507e45142a645a4fe9dd37df, type: 3}
+  m_Name: '[Audio Manager] Audio Library Asset'
+  m_EditorClassIdentifier: 
+  library:
+    list:
+    - key: 353194__inspectorj__wind-chimes-a-6a7f9e39-ce6a-498e-ab47-ae69d3257627
+      value:
+        key: 353194__inspectorj__wind-chimes-a
+        id: 353194__inspectorj__wind-chimes-a-6a7f9e39-ce6a-498e-ab47-ae69d3257627
+        defaultKey: 353194__inspectorj__wind-chimes-a-6a7f9e39-ce6a-498e-ab47-ae69d3257627
+        value: {fileID: 8300000, guid: 865ea11df1cc5b0409ab851ccdce14ee, type: 3}
+        path: Assets/BroAudio/Samples/Demo/AudioClip/353194__inspectorj__wind-chimes-a.wav
+        dynamicStartTime:
+          time: 0
+          threshold: 0
+          option: 1
+          tabPos: 1
+        defaultSettings:
+          volume: 1
+          pitch: 1
+        showDynamicTime: 0
+        metaData:
+          category: 
+          tags: []
+    - key: 490253__anomaex__sci-fi_explosion-da9ee2df-5937-45a1-9c36-d76505f2a76b
+      value:
+        key: 490253__anomaex__sci-fi_explosion
+        id: 490253__anomaex__sci-fi_explosion-da9ee2df-5937-45a1-9c36-d76505f2a76b
+        defaultKey: 490253__anomaex__sci-fi_explosion-da9ee2df-5937-45a1-9c36-d76505f2a76b
+        value: {fileID: 8300000, guid: f2c643d9991326f44b1224002f9c61fd, type: 3}
+        path: Assets/BroAudio/Samples/Demo/AudioClip/490253__anomaex__sci-fi_explosion.wav
+        dynamicStartTime:
+          time: 0
+          threshold: 0
+          option: 1
+          tabPos: 1
+        defaultSettings:
+          volume: 1
+          pitch: 1
+        showDynamicTime: 0
+        metaData:
+          category: 
+          tags: []
+    - key: 688130__sami_hiltunen__spaceship-ambience-85e62ea5-f89d-4996-ac2d-644b50b387ba
+      value:
+        key: 688130__sami_hiltunen__spaceship-ambience
+        id: 688130__sami_hiltunen__spaceship-ambience-85e62ea5-f89d-4996-ac2d-644b50b387ba
+        defaultKey: 688130__sami_hiltunen__spaceship-ambience-85e62ea5-f89d-4996-ac2d-644b50b387ba
+        value: {fileID: 8300000, guid: 53a94199c0be37f47ac8a3be45e84c7d, type: 3}
+        path: Assets/BroAudio/Samples/Demo/AudioClip/688130__sami_hiltunen__spaceship-ambience.wav
+        dynamicStartTime:
+          time: 0
+          threshold: 0
+          option: 1
+          tabPos: 1
+        defaultSettings:
+          volume: 1
+          pitch: 1
+        showDynamicTime: 0
+        metaData:
+          category: 
+          tags: []
+    - key: AMBIENCE Desert Soft Day-a0b359d2-6f87-4bb4-b712-225768c855bf
+      value:
+        key: AMBIENCE Desert Soft Day
+        id: AMBIENCE Desert Soft Day-a0b359d2-6f87-4bb4-b712-225768c855bf
+        defaultKey: AMBIENCE Desert Soft Day-a0b359d2-6f87-4bb4-b712-225768c855bf
+        value: {fileID: 8300000, guid: b4281e86518cede498465899fed49af8, type: 3}
+        path: Assets/BroAudio/Samples/Demo/AudioClip/AMBIENCE Desert Soft Day.wav
+        dynamicStartTime:
+          time: 0
+          threshold: 0
+          option: 1
+          tabPos: 1
+        defaultSettings:
+          volume: 1
+          pitch: 1
+        showDynamicTime: 0
+        metaData:
+          category: 
+          tags: []
+    - key: DroneMusic-5813fb9d-46a2-480a-ab20-d2df04018dc6
+      value:
+        key: DroneMusic
+        id: DroneMusic-5813fb9d-46a2-480a-ab20-d2df04018dc6
+        defaultKey: DroneMusic-5813fb9d-46a2-480a-ab20-d2df04018dc6
+        value: {fileID: 8300000, guid: 6b1c392805e9c0c49ba9182ce0dbdaf8, type: 3}
+        path: Assets/BroAudio/Samples/Demo/AudioClip/DroneMusic.wav
+        dynamicStartTime:
+          time: 0
+          threshold: 0
+          option: 1
+          tabPos: 1
+        defaultSettings:
+          volume: 1
+          pitch: 1
+        showDynamicTime: 0
+        metaData:
+          category: 
+          tags: []
+    - key: EnterWater-5a199ea9-b30a-4a4c-8000-771fa08e09d6
+      value:
+        key: EnterWater
+        id: EnterWater-5a199ea9-b30a-4a4c-8000-771fa08e09d6
+        defaultKey: EnterWater-5a199ea9-b30a-4a4c-8000-771fa08e09d6
+        value: {fileID: 8300000, guid: 5504b651486f0624db15463931a24cf3, type: 3}
+        path: Assets/BroAudio/Samples/Demo/AudioClip/EnterWater.wav
+        dynamicStartTime:
+          time: 0
+          threshold: 0
+          option: 1
+          tabPos: 1
+        defaultSettings:
+          volume: 1
+          pitch: 1
+        showDynamicTime: 0
+        metaData:
+          category: 
+          tags: []
+    - key: fALLING-1d85f7a0-4e0e-4317-bbbd-5edf318b925a
+      value:
+        key: fALLING
+        id: fALLING-1d85f7a0-4e0e-4317-bbbd-5edf318b925a
+        defaultKey: fALLING-1d85f7a0-4e0e-4317-bbbd-5edf318b925a
+        value: {fileID: 8300000, guid: 80f984309ecd65a4ea1235c4d4c7ac99, type: 3}
+        path: Assets/BroAudio/Samples/Demo/AudioClip/fALLING.wav
+        dynamicStartTime:
+          time: 0
+          threshold: 0
+          option: 1
+          tabPos: 1
+        defaultSettings:
+          volume: 1
+          pitch: 1
+        showDynamicTime: 0
+        metaData:
+          category: 
+          tags: []
+    - key: Footstep1-bd99713e-65f0-4a8f-ab65-4e99697692b2
+      value:
+        key: Footstep1
+        id: Footstep1-bd99713e-65f0-4a8f-ab65-4e99697692b2
+        defaultKey: Footstep1-bd99713e-65f0-4a8f-ab65-4e99697692b2
+        value: {fileID: 8300000, guid: 98e92f012ca7aac4cb5a10875b88f2b2, type: 3}
+        path: Assets/BroAudio/Samples/Demo/AudioClip/Footsteps/Footstep1.wav
+        dynamicStartTime:
+          time: 0
+          threshold: 0
+          option: 1
+          tabPos: 1
+        defaultSettings:
+          volume: 1
+          pitch: 1
+        showDynamicTime: 0
+        metaData:
+          category: 
+          tags: []
+    - key: Footstep2-576ad413-99ef-452e-af18-9d6eca4c7ef3
+      value:
+        key: Footstep2
+        id: Footstep2-576ad413-99ef-452e-af18-9d6eca4c7ef3
+        defaultKey: Footstep2-576ad413-99ef-452e-af18-9d6eca4c7ef3
+        value: {fileID: 8300000, guid: 81d6cc9391967574c8d850e15adec10c, type: 3}
+        path: Assets/BroAudio/Samples/Demo/AudioClip/Footsteps/Footstep2.wav
+        dynamicStartTime:
+          time: 0
+          threshold: 0
+          option: 1
+          tabPos: 1
+        defaultSettings:
+          volume: 1
+          pitch: 1
+        showDynamicTime: 0
+        metaData:
+          category: 
+          tags: []
+    - key: Footstep3-e3009b84-5b1e-4e79-b96a-cd9a3e63bce6
+      value:
+        key: Footstep3
+        id: Footstep3-e3009b84-5b1e-4e79-b96a-cd9a3e63bce6
+        defaultKey: Footstep3-e3009b84-5b1e-4e79-b96a-cd9a3e63bce6
+        value: {fileID: 8300000, guid: 552ce8157933395458d559fdee898974, type: 3}
+        path: Assets/BroAudio/Samples/Demo/AudioClip/Footsteps/Footstep3.wav
+        dynamicStartTime:
+          time: 0
+          threshold: 0
+          option: 1
+          tabPos: 1
+        defaultSettings:
+          volume: 1
+          pitch: 1
+        showDynamicTime: 0
+        metaData:
+          category: 
+          tags: []
+    - key: Footstep4-efe393c2-120a-4102-9f27-44fdf7e578d9
+      value:
+        key: Footstep4
+        id: Footstep4-efe393c2-120a-4102-9f27-44fdf7e578d9
+        defaultKey: Footstep4-efe393c2-120a-4102-9f27-44fdf7e578d9
+        value: {fileID: 8300000, guid: 7d82cae6003b3164db683bd79ee012f4, type: 3}
+        path: Assets/BroAudio/Samples/Demo/AudioClip/Footsteps/Footstep4.wav
+        dynamicStartTime:
+          time: 0
+          threshold: 0
+          option: 1
+          tabPos: 1
+        defaultSettings:
+          volume: 1
+          pitch: 1
+        showDynamicTime: 0
+        metaData:
+          category: 
+          tags: []
+    - key: Footstep5-34f9f5da-7b6b-4a0d-aac4-e9e3c0a2d456
+      value:
+        key: Footstep5
+        id: Footstep5-34f9f5da-7b6b-4a0d-aac4-e9e3c0a2d456
+        defaultKey: Footstep5-34f9f5da-7b6b-4a0d-aac4-e9e3c0a2d456
+        value: {fileID: 8300000, guid: 79ed6fc8aeb95724cbde5d19288704dd, type: 3}
+        path: Assets/BroAudio/Samples/Demo/AudioClip/Footsteps/Footstep5.wav
+        dynamicStartTime:
+          time: 0
+          threshold: 0
+          option: 1
+          tabPos: 1
+        defaultSettings:
+          volume: 1
+          pitch: 1
+        showDynamicTime: 0
+        metaData:
+          category: 
+          tags: []
+    - key: Footstep6-4c4d89ef-57dc-4546-a5aa-8d8d3f3f37b4
+      value:
+        key: Footstep6
+        id: Footstep6-4c4d89ef-57dc-4546-a5aa-8d8d3f3f37b4
+        defaultKey: Footstep6-4c4d89ef-57dc-4546-a5aa-8d8d3f3f37b4
+        value: {fileID: 8300000, guid: 6cc7c64d8a280e448b8fbc2ff79283ad, type: 3}
+        path: Assets/BroAudio/Samples/Demo/AudioClip/Footsteps/Footstep6.wav
+        dynamicStartTime:
+          time: 0
+          threshold: 0
+          option: 1
+          tabPos: 1
+        defaultSettings:
+          volume: 1
+          pitch: 1
+        showDynamicTime: 0
+        metaData:
+          category: 
+          tags: []
+    - key: Footstep_Sand1-137c6fbd-8c9e-43f5-8a06-bf2ec47835ed
+      value:
+        key: Footstep_Sand1
+        id: Footstep_Sand1-137c6fbd-8c9e-43f5-8a06-bf2ec47835ed
+        defaultKey: Footstep_Sand1-137c6fbd-8c9e-43f5-8a06-bf2ec47835ed
+        value: {fileID: 8300000, guid: 82fcc4bd69f6d454b8e6d40f442df5df, type: 3}
+        path: Assets/BroAudio/Samples/Demo/AudioClip/Footsteps/Footstep_Sand1.wav
+        dynamicStartTime:
+          time: 0
+          threshold: 0
+          option: 1
+          tabPos: 1
+        defaultSettings:
+          volume: 1
+          pitch: 1
+        showDynamicTime: 0
+        metaData:
+          category: 
+          tags: []
+    - key: Footstep_Sand2-0a1515aa-5d4a-4452-a0e7-20017524ac62
+      value:
+        key: Footstep_Sand2
+        id: Footstep_Sand2-0a1515aa-5d4a-4452-a0e7-20017524ac62
+        defaultKey: Footstep_Sand2-0a1515aa-5d4a-4452-a0e7-20017524ac62
+        value: {fileID: 8300000, guid: 9b2d989f54557a648987639019145542, type: 3}
+        path: Assets/BroAudio/Samples/Demo/AudioClip/Footsteps/Footstep_Sand2.wav
+        dynamicStartTime:
+          time: 0
+          threshold: 0
+          option: 1
+          tabPos: 1
+        defaultSettings:
+          volume: 1
+          pitch: 1
+        showDynamicTime: 0
+        metaData:
+          category: 
+          tags: []
+    - key: Footstep_Sand3-eb44043a-a2c3-4d5c-a42c-7817d10c06af
+      value:
+        key: Footstep_Sand3
+        id: Footstep_Sand3-eb44043a-a2c3-4d5c-a42c-7817d10c06af
+        defaultKey: Footstep_Sand3-eb44043a-a2c3-4d5c-a42c-7817d10c06af
+        value: {fileID: 8300000, guid: 2b16c7ed38399d940aef4157531cb6fa, type: 3}
+        path: Assets/BroAudio/Samples/Demo/AudioClip/Footsteps/Footstep_Sand3.wav
+        dynamicStartTime:
+          time: 0
+          threshold: 0
+          option: 1
+          tabPos: 1
+        defaultSettings:
+          volume: 1
+          pitch: 1
+        showDynamicTime: 0
+        metaData:
+          category: 
+          tags: []
+    - key: Footstep_Sand4-5c35750a-a7e1-47d5-a81d-87cd62b2809a
+      value:
+        key: Footstep_Sand4
+        id: Footstep_Sand4-5c35750a-a7e1-47d5-a81d-87cd62b2809a
+        defaultKey: Footstep_Sand4-5c35750a-a7e1-47d5-a81d-87cd62b2809a
+        value: {fileID: 8300000, guid: 096478cc397152944878b3c5c14ad1bb, type: 3}
+        path: Assets/BroAudio/Samples/Demo/AudioClip/Footsteps/Footstep_Sand4.wav
+        dynamicStartTime:
+          time: 0
+          threshold: 0
+          option: 1
+          tabPos: 1
+        defaultSettings:
+          volume: 1
+          pitch: 1
+        showDynamicTime: 0
+        metaData:
+          category: 
+          tags: []
+    - key: FUI Hologram Ping Tone Echoed-2-fcab0ae9-351b-4c56-a493-d6d1c765f8b5
+      value:
+        key: FUI Hologram Ping Tone Echoed-2
+        id: FUI Hologram Ping Tone Echoed-2-fcab0ae9-351b-4c56-a493-d6d1c765f8b5
+        defaultKey: FUI Hologram Ping Tone Echoed-2-fcab0ae9-351b-4c56-a493-d6d1c765f8b5
+        value: {fileID: 8300000, guid: 90d15b059ff868e48bc2d4bd157792cc, type: 3}
+        path: Assets/BroAudio/Samples/Demo/AudioClip/FUI Hologram Ping Tone Echoed-2.wav
+        dynamicStartTime:
+          time: 0
+          threshold: 0
+          option: 1
+          tabPos: 1
+        defaultSettings:
+          volume: 1
+          pitch: 1
+        showDynamicTime: 0
+        metaData:
+          category: 
+          tags: []
+    - key: Reverse_Production Element_Sigh-Piano-Guitar-Bells-003-5275e0ea-05d4-4314-85c5-7820eb1a8bfd
+      value:
+        key: Reverse_Production Element_Sigh-Piano-Guitar-Bells-003
+        id: Reverse_Production Element_Sigh-Piano-Guitar-Bells-003-5275e0ea-05d4-4314-85c5-7820eb1a8bfd
+        defaultKey: Reverse_Production Element_Sigh-Piano-Guitar-Bells-003-5275e0ea-05d4-4314-85c5-7820eb1a8bfd
+        value: {fileID: 8300000, guid: 8609bb316e5211241a1b6f184275bc78, type: 3}
+        path: Assets/BroAudio/Samples/Demo/AudioClip/Reverse_Production Element_Sigh-Piano-Guitar-Bells-003.wav
+        dynamicStartTime:
+          time: 0
+          threshold: 0
+          option: 1
+          tabPos: 1
+        defaultSettings:
+          volume: 1
+          pitch: 1
+        showDynamicTime: 0
+        metaData:
+          category: 
+          tags: []
+    - key: Sparkle1-05e01e32-b838-4a42-b40c-7b112d14a44b
+      value:
+        key: Sparkle1
+        id: Sparkle1-05e01e32-b838-4a42-b40c-7b112d14a44b
+        defaultKey: Sparkle1-05e01e32-b838-4a42-b40c-7b112d14a44b
+        value: {fileID: 8300000, guid: aa55ad851a936e04fb634b21d5430fce, type: 3}
+        path: Assets/BroAudio/Samples/Demo/AudioClip/Sparkle1.wav
+        dynamicStartTime:
+          time: 0
+          threshold: 0
+          option: 1
+          tabPos: 1
+        defaultSettings:
+          volume: 1
+          pitch: 1
+        showDynamicTime: 0
+        metaData:
+          category: 
+          tags: []
+    - key: Sparkle2-1034f57d-1f40-47e9-9f1f-2ae7ab813678
+      value:
+        key: Sparkle2
+        id: Sparkle2-1034f57d-1f40-47e9-9f1f-2ae7ab813678
+        defaultKey: Sparkle2-1034f57d-1f40-47e9-9f1f-2ae7ab813678
+        value: {fileID: 8300000, guid: ae01c0b540590bb45861f97e92bbbfc9, type: 3}
+        path: Assets/BroAudio/Samples/Demo/AudioClip/Sparkle2.wav
+        dynamicStartTime:
+          time: 0
+          threshold: 0
+          option: 1
+          tabPos: 1
+        defaultSettings:
+          volume: 1
+          pitch: 1
+        showDynamicTime: 0
+        metaData:
+          category: 
+          tags: []
+    - key: Sparkle3-ad869346-41a7-4bff-b22c-afdde8c95190
+      value:
+        key: Sparkle3
+        id: Sparkle3-ad869346-41a7-4bff-b22c-afdde8c95190
+        defaultKey: Sparkle3-ad869346-41a7-4bff-b22c-afdde8c95190
+        value: {fileID: 8300000, guid: 594637f21c415284f9765319f902eaae, type: 3}
+        path: Assets/BroAudio/Samples/Demo/AudioClip/Sparkle3.wav
+        dynamicStartTime:
+          time: 0
+          threshold: 0
+          option: 1
+          tabPos: 1
+        defaultSettings:
+          volume: 1
+          pitch: 1
+        showDynamicTime: 0
+        metaData:
+          category: 
+          tags: []
+    - key: Sparkle4-26a92562-6be8-4097-b3c1-f42ff5ff4c31
+      value:
+        key: Sparkle4
+        id: Sparkle4-26a92562-6be8-4097-b3c1-f42ff5ff4c31
+        defaultKey: Sparkle4-26a92562-6be8-4097-b3c1-f42ff5ff4c31
+        value: {fileID: 8300000, guid: 1a7e0f8a3f2439345a90622c6e48f570, type: 3}
+        path: Assets/BroAudio/Samples/Demo/AudioClip/Sparkle4.wav
+        dynamicStartTime:
+          time: 0
+          threshold: 0
+          option: 1
+          tabPos: 1
+        defaultSettings:
+          volume: 1
+          pitch: 1
+        showDynamicTime: 0
+        metaData:
+          category: 
+          tags: []
+    - key: Sparkle5-f0f0e9a2-7892-4e3b-950d-1ba919100cda
+      value:
+        key: Sparkle5
+        id: Sparkle5-f0f0e9a2-7892-4e3b-950d-1ba919100cda
+        defaultKey: Sparkle5-f0f0e9a2-7892-4e3b-950d-1ba919100cda
+        value: {fileID: 8300000, guid: 8cec2e26376299548a1c67b41409274d, type: 3}
+        path: Assets/BroAudio/Samples/Demo/AudioClip/Sparkle5.wav
+        dynamicStartTime:
+          time: 0
+          threshold: 0
+          option: 1
+          tabPos: 1
+        defaultSettings:
+          volume: 1
+          pitch: 1
+        showDynamicTime: 0
+        metaData:
+          category: 
+          tags: []
+    - key: Torch-ee66786d-de08-459b-bdf6-e955b7fc2714
+      value:
+        key: Torch
+        id: Torch-ee66786d-de08-459b-bdf6-e955b7fc2714
+        defaultKey: Torch-ee66786d-de08-459b-bdf6-e955b7fc2714
+        value: {fileID: 8300000, guid: e00d65c1cb3ddee4384059e085ccba25, type: 3}
+        path: Assets/BroAudio/Samples/Demo/AudioClip/Torch.wav
+        dynamicStartTime:
+          time: 0
+          threshold: 0
+          option: 1
+          tabPos: 1
+        defaultSettings:
+          volume: 1
+          pitch: 1
+        showDynamicTime: 0
+        metaData:
+          category: 
+          tags: []
+    - key: Transition_Mystery-08-53a070bc-7a33-4b3f-a0fe-e91fe0d6d1e1
+      value:
+        key: Transition_Mystery-08
+        id: Transition_Mystery-08-53a070bc-7a33-4b3f-a0fe-e91fe0d6d1e1
+        defaultKey: Transition_Mystery-08-53a070bc-7a33-4b3f-a0fe-e91fe0d6d1e1
+        value: {fileID: 8300000, guid: 31f987a22b50cfb4388695cfa0ce70a3, type: 3}
+        path: Assets/BroAudio/Samples/Demo/AudioClip/Transition_Mystery-08.wav
+        dynamicStartTime:
+          time: 0
+          threshold: 0
+          option: 1
+          tabPos: 1
+        defaultSettings:
+          volume: 1
+          pitch: 1
+        showDynamicTime: 0
+        metaData:
+          category: 
+          tags: []
+    - key: water_lapping_sea_waves_sandy_beach_5_meters_01-49716a1b-743d-4110-99b0-26e982958aec
+      value:
+        key: water_lapping_sea_waves_sandy_beach_5_meters_01
+        id: water_lapping_sea_waves_sandy_beach_5_meters_01-49716a1b-743d-4110-99b0-26e982958aec
+        defaultKey: water_lapping_sea_waves_sandy_beach_5_meters_01-49716a1b-743d-4110-99b0-26e982958aec
+        value: {fileID: 8300000, guid: 5fa5b0707fe528747a365bfa62913341, type: 3}
+        path: Assets/BroAudio/Samples/Demo/AudioClip/water_lapping_sea_waves_sandy_beach_5_meters_01.wav
+        dynamicStartTime:
+          time: 0
+          threshold: 0
+          option: 1
+          tabPos: 1
+        defaultSettings:
+          volume: 1
+          pitch: 1
+        showDynamicTime: 0
+        metaData:
+          category: 
+          tags: []
+    - key: Charging-b4c0c4c4-a154-4ef5-9133-4e8359fa4225
+      value:
+        key: Charging
+        id: Charging-b4c0c4c4-a154-4ef5-9133-4e8359fa4225
+        defaultKey: Charging-b4c0c4c4-a154-4ef5-9133-4e8359fa4225
+        value: {fileID: 8300000, guid: 2cd1432e8b64c5f47a8ef0c6c1aa49c6, type: 3}
+        path: Assets/BroAudio/Samples/Demo/AudioClip/Weapon/Charging.wav
+        dynamicStartTime:
+          time: 0
+          threshold: 0
+          option: 1
+          tabPos: 1
+        defaultSettings:
+          volume: 1
+          pitch: 1
+        showDynamicTime: 0
+        metaData:
+          category: 
+          tags: []
+    - key: Robotic Lifeforms 2 - Power - Autobot Disengage 08-04cf9f0a-fa68-4545-aa6d-c03aac020af1
+      value:
+        key: Robotic Lifeforms 2 - Power - Autobot Disengage 08
+        id: Robotic Lifeforms 2 - Power - Autobot Disengage 08-04cf9f0a-fa68-4545-aa6d-c03aac020af1
+        defaultKey: Robotic Lifeforms 2 - Power - Autobot Disengage 08-04cf9f0a-fa68-4545-aa6d-c03aac020af1
+        value: {fileID: 8300000, guid: 28ef8377ab702ce40b6f59340bfd7699, type: 3}
+        path: Assets/BroAudio/Samples/Demo/AudioClip/Weapon/Robotic Lifeforms 2 -
+          Power - Autobot Disengage 08.wav
+        dynamicStartTime:
+          time: 0
+          threshold: 0
+          option: 1
+          tabPos: 1
+        defaultSettings:
+          volume: 1
+          pitch: 1
+        showDynamicTime: 0
+        metaData:
+          category: 
+          tags: []
+    - key: Shoot1-948fa45d-c419-46cf-a708-c3eeefa0cc0d
+      value:
+        key: Shoot1
+        id: Shoot1-948fa45d-c419-46cf-a708-c3eeefa0cc0d
+        defaultKey: Shoot1-948fa45d-c419-46cf-a708-c3eeefa0cc0d
+        value: {fileID: 8300000, guid: 283db2de8512111488e1d3aa233ab98d, type: 3}
+        path: Assets/BroAudio/Samples/Demo/AudioClip/Weapon/Shoot1.wav
+        dynamicStartTime:
+          time: 0
+          threshold: 0
+          option: 1
+          tabPos: 1
+        defaultSettings:
+          volume: 1
+          pitch: 1
+        showDynamicTime: 0
+        metaData:
+          category: 
+          tags: []
+    - key: Shoot2-536af3ed-1050-4bf1-a2e4-edee7a11bf9f
+      value:
+        key: Shoot2
+        id: Shoot2-536af3ed-1050-4bf1-a2e4-edee7a11bf9f
+        defaultKey: Shoot2-536af3ed-1050-4bf1-a2e4-edee7a11bf9f
+        value: {fileID: 8300000, guid: 28355d60fb44bb54ca435b5badcd1c16, type: 3}
+        path: Assets/BroAudio/Samples/Demo/AudioClip/Weapon/Shoot2.wav
+        dynamicStartTime:
+          time: 0
+          threshold: 0
+          option: 1
+          tabPos: 1
+        defaultSettings:
+          volume: 1
+          pitch: 1
+        showDynamicTime: 0
+        metaData:
+          category: 
+          tags: []
+    - key: Shoot3-1938647d-aa62-401d-8d15-e48bd0d6d42d
+      value:
+        key: Shoot3
+        id: Shoot3-1938647d-aa62-401d-8d15-e48bd0d6d42d
+        defaultKey: Shoot3-1938647d-aa62-401d-8d15-e48bd0d6d42d
+        value: {fileID: 8300000, guid: 1bbbe2206455ec9419e24a9a6aa08854, type: 3}
+        path: Assets/BroAudio/Samples/Demo/AudioClip/Weapon/Shoot3.wav
+        dynamicStartTime:
+          time: 0
+          threshold: 0
+          option: 1
+          tabPos: 1
+        defaultSettings:
+          volume: 1
+          pitch: 1
+        showDynamicTime: 0
+        metaData:
+          category: 
+          tags: []
+    - key: viacheslavstarostin-game-gaming-video-game-music-471936-169cbd57-3840-42be-9169-137a43b1d74f
+      value:
+        key: viacheslavstarostin-game-gaming-video-game-music-471936
+        id: viacheslavstarostin-game-gaming-video-game-music-471936-169cbd57-3840-42be-9169-137a43b1d74f
+        defaultKey: viacheslavstarostin-game-gaming-video-game-music-471936-169cbd57-3840-42be-9169-137a43b1d74f
+        value: {fileID: 8300000, guid: 53c5b314e2752244ab8f71f5d627be2f, type: 3}
+        path: Assets/Audio/viacheslavstarostin-game-gaming-video-game-music-471936.mp3
+        dynamicStartTime:
+          time: 0
+          threshold: 0
+          option: 1
+          tabPos: 1
+        defaultSettings:
+          volume: 0.737
+          pitch: 0.25
+        showDynamicTime: 0
+        metaData:
+          category: 
+          tags: []
+    - key: mondamusic-retro-arcade-game-music-512837-5df88116-c098-412e-bbb6-84c22ae48149
+      value:
+        key: mondamusic-retro-arcade-game-music-512837
+        id: mondamusic-retro-arcade-game-music-512837-5df88116-c098-412e-bbb6-84c22ae48149
+        defaultKey: mondamusic-retro-arcade-game-music-512837-5df88116-c098-412e-bbb6-84c22ae48149
+        value: {fileID: 8300000, guid: ceb1e6319232b42488816152b0c54c08, type: 3}
+        path: Assets/Audio/mondamusic-retro-arcade-game-music-512837.mp3
+        dynamicStartTime:
+          time: 0
+          threshold: 0
+          option: 1
+          tabPos: 1
+        defaultSettings:
+          volume: 1
+          pitch: 1
+        showDynamicTime: 0
+        metaData:
+          category: 
+          tags: []
+  groups:
+    list:
+    - key: c2f7f075-f36c-44cb-9118-055d33bf0a27
+      value:
+        groupName: New Group c2f7f075
+        groupPlayMode: 0
+        clipNames: []
+  mixers:
+    list:
+    - key: bed74820-a3e6-4744-9bdd-25d5b2b9f6e8
+      value:
+        uuid: bed74820-a3e6-4744-9bdd-25d5b2b9f6e8
+        key: Masterbed74820
+        path: Assets/BroAudio/Editor/Resources/EditorBroAudioMixer.mixer
+        mixerGroup: {fileID: 24300002, guid: f32bdb29b59017d40930875c21ff19ca, type: 2}
+    - key: 7e5439b9-9800-4a1b-921b-f10657d67bba
+      value:
+        uuid: 7e5439b9-9800-4a1b-921b-f10657d67bba
+        key: Dominator17e5439b9
+        path: Assets/BroAudio/Resources/BroAudioMixer.mixer
+        mixerGroup: {fileID: -491145530567154491, guid: 861ab5778322a8f42ada9413dc6c9f01, type: 2}
+  categories: []
+  tags: []

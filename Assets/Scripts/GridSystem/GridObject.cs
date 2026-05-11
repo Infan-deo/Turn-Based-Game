@@ -8,6 +8,8 @@ public class GridObject
 
     [SerializeField] private List<Unit> unitList;
 
+    private IInteractable interactable;
+
     public GridObject(GridSystem<GridObject> gridSystem, GridPosition gridPosition)
     {
         _gridSystem = gridSystem;
@@ -55,5 +57,14 @@ public class GridObject
         {
             return null;
         }
+    }
+
+    public IInteractable GetInteratable()
+    {
+        return interactable;
+    }
+    public void SetInteratable(IInteractable interactable)
+    {
+        this.interactable = interactable;
     }
 }
