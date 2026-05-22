@@ -1,0 +1,69 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f688e717926c8844bc95673777a0fa5, type: 3}
+  m_Name: LocalizationDatabase
+  m_EditorClassIdentifier: 
+  entries:
+  - key: MainMenu.PlayButton
+    values:
+    - language: English(en)
+      text: Start
+    - language: Tamil(ta)
+      text: "\xA6\xBE\xA1\xBC\xED\xCC"
+    - language: Chinese (Simplified)(zh-Hans)
+      text: "\u5F00\u59CB"
+    - language: Spanish(es)
+      text: Comenzar
+    - language: Telugu(te)
+      text: "\u0C2A\u0C4D\u0C30\u0C3E\u0C30\u0C02\u0C2D\u0C3F\u0C02\u0C1A\u0C02\u0C21\u0C3F"
+  - key: MainMenu.Setting_btn
+    values:
+    - language: English(en)
+      text: Settings
+    - language: Tamil(ta)
+      text: "\xAB\xA8\xC1\xF4\xD2\xB8\xFB"
+    - language: Chinese (Simplified)(zh-Hans)
+      text: "\u8BBE\u7F6E"
+    - language: Spanish(es)
+      text: Ajustes
+    - language: Telugu(te)
+      text: "\u0C38\u0C46\u0C1F\u0C4D\u0C1F\u0C3F\u0C02\u0C17\u0C4D\u200C\u0C32\u0C41"
+  - key: MainMenu.Exit_btn
+    values:
+    - language: English(en)
+      text: Exit
+    - language: Tamil(ta)
+      text: "\xA6\xC5\xC7\xA2\xA7\xC2\xDA"
+    - language: Chinese (Simplified)(zh-Hans)
+      text: "\u51FA\u53E3"
+    - language: Spanish(es)
+      text: Salida
+    - language: Telugu(te)
+      text: "\u0C28\u0C3F\u0C37\u0C4D\u0C15\u0C4D\u0C30\u0C2E\u0C23"
+  - key: MainMenu.Title
+    values:
+    - language: English(en)
+      text: Grid Tactics
+    - language: Tamil(ta)
+      text: "\xB8\xF0\xBC \xAF\xF2\xBE\xA2\xB8\xFB"
+    - language: Chinese (Simplified)(zh-Hans)
+      text: "\u7F51\u683C\u6218\u672F"
+    - language: Spanish(es)
+      text: "T\xE1cticas de cuadr\xEDcula"
+    - language: Telugu(te)
+      text: "\u0C17\u0C4D\u0C30\u0C3F\u0C21\u0C4D \u0C35\u0C4D\u0C2F\u0C42\u0C39\u0C3E\u0C32\u0C41"
+  languages:
+  - English(en)
+  - Tamil(ta)
+  - Chinese (Simplified)(zh-Hans)
+  - Spanish(es)
+  - Telugu(te)

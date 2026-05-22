@@ -76,7 +76,7 @@ public class ShootAction : BaseAction
             shootingUnit = Unit
         });
         targetUnit.Damage(40);
-        BroAudio.Play(SFXGameManager.Instance.ShootingSound);
+       SFXGameManager.Instance.PlayShootingSound();
     }
     private void Aim()
     {

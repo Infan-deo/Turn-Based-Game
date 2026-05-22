@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: Mainmenu table Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: Mainmenu table
+  m_TableCollectionNameGuidString: 250441070009ff048b4f2f1f5337953d
+  m_Entries:
+  - m_Id: 47974070566912
+    m_Key: MainMenu.PlayButton
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47974091538432
+    m_Key: MainMenu.Setting_btn
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47974091538433
+    m_Key: MainMenu.Exit_btn
+    m_Metadata:
+      m_Items: []
+  - m_Id: 129478385680384
+    m_Key: MainMenu.Title
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 6946369721534251093
+  references:
+    version: 2
+    RefIds:
+    - rid: 6946369721534251093
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1779429986580

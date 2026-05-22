@@ -5,6 +5,9 @@ public class GameSceneManager : MonoBehaviour
 {
     public void ToggleSettingsPage()
     {
-        CommonGameManager.Instance.ToggleSettingsPage();
+        if (CommonGameManager.Instance != null)
+        {
+            CommonGameManager.Instance.ToggleSettingsPage();
+        }
     }
 }

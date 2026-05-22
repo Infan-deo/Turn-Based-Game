@@ -85,6 +85,14 @@ public class UnitManager : MonoBehaviour
         return enemyUnitList;
     }
 
+    public void RemoveAnUnitFormFriendlyList(Unit unit)
+    {
+        if (friendlyUnitList.Contains(unit))
+        {
+            friendlyUnitList.Remove(unit);
+        }
+    }
+
     public void SetUnitRagdollFallDir(Vector3 dir)
     {
         _unitRagDollFallDir = dir;

@@ -151,6 +151,7 @@ GameObject:
   - component: {fileID: 2748106534679876547}
   - component: {fileID: 1945020374604676974}
   - component: {fileID: 2909497665299571847}
+  - component: {fileID: 6877363265201434791}
   m_Layer: 0
   m_Name: ActionButtonUI
   m_TagString: Untagged
@@ -304,3 +305,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textMeshProUGUI: {fileID: 8991268570589397026}
   button: {fileID: 8215855752529842449}
+  outline: {fileID: 0}
+--- !u!114 &6877363265201434791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 576673049033468236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee3305897c0d8c04283cc6633400566b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

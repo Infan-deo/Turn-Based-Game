@@ -99,22 +99,49 @@ namespace MansionEscape3D.Editor
             EditorApplication.playModeStateChanged += OnPlayModeEntered;
         }
 
+        // private static void OnPlayModeEntered(PlayModeStateChange state)
+        // {
+        //     if (state == PlayModeStateChange.ExitingEditMode)
+        //     {
+        //         if (_isCustomPlayMode)
+        //         {
+        //             EditorSceneManager.playModeStartScene = AssetDatabase.LoadAssetAtPath<SceneAsset>(EditorBuildSettings.scenes[0].path);
+        //         }
+        //     }
+        //     else if (state == PlayModeStateChange.EnteredEditMode)
+        //     {
+        //         if (_isCustomPlayMode)
+        //         {
+        //             _isCustomPlayMode = false;
+        //             EditorSceneManager.playModeStartScene = null;
+        //         }
+        //     }
+        // }
         private static void OnPlayModeEntered(PlayModeStateChange state)
         {
-            if (state == PlayModeStateChange.ExitingEditMode)
+            switch (state)
             {
-                if (_isCustomPlayMode)
-                {
-                    EditorSceneManager.playModeStartScene = AssetDatabase.LoadAssetAtPath<SceneAsset>(EditorBuildSettings.scenes[0].path);
-                }
-            }
-            else if (state == PlayModeStateChange.EnteredEditMode)
-            {
-                if (_isCustomPlayMode)
-                {
+                case PlayModeStateChange.ExitingEditMode:
+
+                    if (_isCustomPlayMode)
+                    {
+                        EditorSceneManager.playModeStartScene =
+                            AssetDatabase.LoadAssetAtPath<SceneAsset>(
+                                EditorBuildSettings.scenes[0].path);
+                    }
+                    else
+                    {
+                        EditorSceneManager.playModeStartScene = null;
+                    }
+
+                    break;
+
+                case PlayModeStateChange.EnteredEditMode:
+
                     _isCustomPlayMode = false;
                     EditorSceneManager.playModeStartScene = null;
-                }
+
+                    break;
             }
         }
     }

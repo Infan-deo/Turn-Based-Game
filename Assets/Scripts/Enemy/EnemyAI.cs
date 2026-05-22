@@ -48,7 +48,11 @@ public class EnemyAI : MonoBehaviour
                 timer -= Time.deltaTime;
                 if (timer <= 0f)
                 {
-                    if (TryTakingEnemyAiAction(SetStateTakingTurn))
+                    if (UnitManager.Instance.GetFriendlyList().Count < 0)
+                    {
+                        TurnSystem.Instance.NextTurn();
+                    }
+                    else if (TryTakingEnemyAiAction(SetStateTakingTurn))
                     {
                         state = State.Busy;
                     }
@@ -75,7 +79,7 @@ public class EnemyAI : MonoBehaviour
 
     public bool TryTakingEnemyAiAction(Action<bool> onEnemyAIActionComplete)
     {
-       
+
         foreach (Unit enemyUnit in UnitManager.Instance.GetEnemyList())
         {
             if (TryTakingEnemyAiAction(enemyUnit, onEnemyAIActionComplete))
@@ -102,6 +106,10 @@ public class EnemyAI : MonoBehaviour
                 bestEnemyAIAction = baseAction.GetBestEnemyAIAction();
                 bestBaseAction = baseAction;
             }
+            if (UnitManager.Instance.GetFriendlyList().Count < 0)
+            {
+                continue;
+            }
             else
             {
                 EnemyAIAction testEnemyAiAction = baseAction.GetBestEnemyAIAction();
@@ -124,6 +132,6 @@ public class EnemyAI : MonoBehaviour
         {
             return false;
         }
-        
+
     }
 }

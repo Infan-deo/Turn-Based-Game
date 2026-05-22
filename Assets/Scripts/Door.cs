@@ -70,7 +70,7 @@ public class Door : MonoBehaviour, IInteractable
     {
         isOpen = true;
         animator.SetBool("IsOpen", isOpen);
-        BroAudio.Play(SFXGameManager.Instance.DoorOpenSound);
+        SFXGameManager.Instance.PlayDoorOpenSound();
         Pathfinding.Instance.SetisWalkableGridPostion(gridPosition, isOpen);
     }
 
@@ -78,7 +78,7 @@ public class Door : MonoBehaviour, IInteractable
     {
         isOpen = false;
         animator.SetBool("IsOpen", isOpen);
-        BroAudio.Play(SFXGameManager.Instance.DoorCloseSound);
+        SFXGameManager.Instance.PlayDoorCloseSound();
         Pathfinding.Instance.SetisWalkableGridPostion(gridPosition, isOpen);
     }
 }

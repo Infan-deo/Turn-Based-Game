@@ -26,7 +26,16 @@ public class TurnSystem : MonoBehaviour
     {
         turnNumber++;
         isPlayerTurn = !isPlayerTurn;
-        OnTurnChanged.Invoke(this, EventArgs.Empty);
+        if (UnitManager.Instance.GetFriendlyList().Count <= 0)
+        {
+            print("Won");
+        }
+        else if (UnitManager.Instance.GetEnemyList().Count <= 0)
+        {
+            print("Lost");
+        }
+        else
+            OnTurnChanged.Invoke(this, EventArgs.Empty);
     }
 
     public int GetTurnNumber()

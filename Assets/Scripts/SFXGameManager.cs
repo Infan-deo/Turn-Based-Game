@@ -11,4 +11,26 @@ public class SFXGameManager : Singleton<SFXGameManager>
     public SoundID KnifeSlayingSound = default;
 
 
+    public void PlayExplosionSound()
+    {
+        BroAudio.Play(ExplosionSound).AsDominator();
+    }
+    public void PlayShootingSound()
+    {
+        BroAudio.Play(ShootingSound);
+    }
+    public void PlayDoorOpenSound()
+    {
+        BroAudio.Play(DoorOpenSound);
+    }
+    public void PlayDoorCloseSound()
+    {
+        BroAudio.Play(DoorCloseSound);
+    }
+    public void PlayKnifeSlayingSound()
+    {
+        BroAudio.Play(KnifeSlayingSound);
+    }
+
+
 }
