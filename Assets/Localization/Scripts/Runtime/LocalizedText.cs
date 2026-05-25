@@ -49,9 +49,9 @@ public class LocalizedText : MonoBehaviour
         if (LocalizationManagerCustom.Instance == null)
             return;
 
-        string localizedValue = LocalizationManagerCustom.Instance.GetText(localizationKey);
+        // string localizedValue = LocalizationManagerCustom.Instance.GetText(localizationKey);
 
-        SetText(localizedValue);
+        // SetText(localizedValue);
     }
 
     private void SetText(string value)

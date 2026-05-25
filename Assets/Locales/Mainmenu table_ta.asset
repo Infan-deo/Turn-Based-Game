@@ -34,6 +34,10 @@ MonoBehaviour:
     m_Localized: "\xA6\xC5\xC7\xA2\xA7\xC2\xDA"
     m_Metadata:
       m_Items: []
+  - m_Id: 409342049206272
+    m_Localized: "\xA6\xC1\xA1\xC6\xA2\xB8\xFB"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

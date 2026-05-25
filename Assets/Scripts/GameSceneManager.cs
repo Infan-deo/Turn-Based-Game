@@ -1,13 +1,15 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 
 public class GameSceneManager : MonoBehaviour
 {
-    public void ToggleSettingsPage()
+    public Button settingsBtn;
+    private void Start() {
+        settingsBtn.onClick.AddListener(OpenSettingsPage);
+    }
+    public void OpenSettingsPage()
     {
-        if (CommonGameManager.Instance != null)
-        {
-            CommonGameManager.Instance.ToggleSettingsPage();
-        }
+        CommonGameManager.Instance.OpenSettings();
     }
 }

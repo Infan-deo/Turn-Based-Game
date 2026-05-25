@@ -13,54 +13,138 @@ MonoBehaviour:
   m_Name: LocalizationDatabase
   m_EditorClassIdentifier: 
   entries:
-  - key: MainMenu.PlayButton
+  - key: GameScene.Busy
     values:
     - language: English(en)
-      text: Start
+      text: Busy
     - language: Tamil(ta)
-      text: "\xA6\xBE\xA1\xBC\xED\xCC"
+      text: "\xC0\xBD\xA2\xC2\xA2\xF8 \xAF\xFB\xC7\xC9"
     - language: Chinese (Simplified)(zh-Hans)
-      text: "\u5F00\u59CB"
+      text: "\u5FD9\u788C\u7684"
     - language: Spanish(es)
-      text: Comenzar
+      text: Ocupado
     - language: Telugu(te)
-      text: "\u0C2A\u0C4D\u0C30\u0C3E\u0C30\u0C02\u0C2D\u0C3F\u0C02\u0C1A\u0C02\u0C21\u0C3F"
-  - key: MainMenu.Setting_btn
+      text: "\u0C2C\u0C3F\u0C1C\u0C40\u0C17\u0C3E"
+  - key: GameScene.Enemy_turn
     values:
     - language: English(en)
-      text: Settings
+      text: Enemy turn
     - language: Tamil(ta)
-      text: "\xAB\xA8\xC1\xF4\xD2\xB8\xFB"
+      text: "\xB1\xBE\xA2\xA1\xA2 \xD3\xA8\xC8"
     - language: Chinese (Simplified)(zh-Hans)
-      text: "\u8BBE\u7F6E"
+      text: "\u654C\u65B9\u56DE\u5408"
     - language: Spanish(es)
-      text: Ajustes
+      text: Turno enemigo
     - language: Telugu(te)
-      text: "\u0C38\u0C46\u0C1F\u0C4D\u0C1F\u0C3F\u0C02\u0C17\u0C4D\u200C\u0C32\u0C41"
-  - key: MainMenu.Exit_btn
+      text: "\u0C36\u0C24\u0C4D\u0C30\u0C41\u0C35\u0C41 \u0C35\u0C02\u0C24\u0C41"
+  - key: GameScene.End_turn
     values:
     - language: English(en)
-      text: Exit
+      text: End turn
     - language: Tamil(ta)
-      text: "\xA6\xC5\xC7\xA2\xA7\xC2\xDA"
+      text: "\xCD\xFC\xA8\xC8 \xD3\xCA"
     - language: Chinese (Simplified)(zh-Hans)
-      text: "\u51FA\u53E3"
+      text: "\u56DE\u5408\u7ED3\u675F"
     - language: Spanish(es)
-      text: Salida
+      text: Fin del giro
     - language: Telugu(te)
-      text: "\u0C28\u0C3F\u0C37\u0C4D\u0C15\u0C4D\u0C30\u0C2E\u0C23"
-  - key: MainMenu.Title
+      text: "\u0C2E\u0C32\u0C41\u0C2A\u0C41 \u0C2E\u0C41\u0C17\u0C3F\u0C02\u0C2A\u0C41"
+  - key: GameScene.Turn
     values:
     - language: English(en)
-      text: Grid Tactics
+      text: Turn
     - language: Tamil(ta)
-      text: "\xB8\xF0\xBC \xAF\xF2\xBE\xA2\xB8\xFB"
+      text: "\xCD\xFC\xDA"
     - language: Chinese (Simplified)(zh-Hans)
-      text: "\u7F51\u683C\u6218\u672F"
+      text: "\u8F6C\u52A8"
     - language: Spanish(es)
-      text: "T\xE1cticas de cuadr\xEDcula"
+      text: Doblar
     - language: Telugu(te)
-      text: "\u0C17\u0C4D\u0C30\u0C3F\u0C21\u0C4D \u0C35\u0C4D\u0C2F\u0C42\u0C39\u0C3E\u0C32\u0C41"
+      text: "\u0C24\u0C3F\u0C30\u0C17\u0C02\u0C21\u0C3F"
+  - key: GameScene.Move
+    values:
+    - language: English(en)
+      text: Move
+    - language: Tamil(ta)
+      text: "\xBF\xB8\xF7"
+    - language: Chinese (Simplified)(zh-Hans)
+      text: "\u79FB\u52A8"
+    - language: Spanish(es)
+      text: Mover
+    - language: Telugu(te)
+      text: "\u0C15\u0C26\u0C32\u0C02\u0C21\u0C3F"
+  - key: GameScene.Spin
+    values:
+    - language: English(en)
+      text: Spin
+    - language: Tamil(ta)
+      text: "\xCD\xC6\xFC\xDA"
+    - language: Chinese (Simplified)(zh-Hans)
+      text: "\u65CB\u8F6C"
+    - language: Spanish(es)
+      text: Girar
+    - language: Telugu(te)
+      text: "\u0C38\u0C4D\u0C2A\u0C3F\u0C28\u0C4D"
+  - key: GameScene.Shoot
+    values:
+    - language: English(en)
+      text: Shoot
+    - language: Tamil(ta)
+      text: "\xCD\xCE"
+    - language: Chinese (Simplified)(zh-Hans)
+      text: "\u5C04\u51FB"
+    - language: Spanish(es)
+      text: Disparar
+    - language: Telugu(te)
+      text: "\u0C37\u0C42\u0C1F\u0C4D"
+  - key: GameScene.Grenade
+    values:
+    - language: English(en)
+      text: Grenade
+    - language: Tamil(ta)
+      text: "\xCC\xF1\xCE"
+    - language: Chinese (Simplified)(zh-Hans)
+      text: "\u624B\u69B4\u5F39"
+    - language: Spanish(es)
+      text: Granada
+    - language: Telugu(te)
+      text: "\u0C17\u0C4D\u0C30\u0C46\u0C28\u0C47\u0C21\u0C4D"
+  - key: GameScene.Sword
+    values:
+    - language: English(en)
+      text: Sword
+    - language: Tamil(ta)
+      text: "\xC5\xA1\xFB"
+    - language: Chinese (Simplified)(zh-Hans)
+      text: "\u5251"
+    - language: Spanish(es)
+      text: Espada
+    - language: Telugu(te)
+      text: "\u0C15\u0C24\u0C4D\u0C24\u0C3F"
+  - key: GameScene.Interact
+    values:
+    - language: English(en)
+      text: Interact
+    - language: Tamil(ta)
+      text: "\xC0\xC2\xFD\xC0\xCE\xF2\xD0"
+    - language: Chinese (Simplified)(zh-Hans)
+      text: "\u76F8\u4E92\u5F71\u54CD"
+    - language: Spanish(es)
+      text: Interactuar
+    - language: Telugu(te)
+      text: "\u0C38\u0C02\u0C2D\u0C3E\u0C37\u0C3F\u0C02\u0C1A\u0C02\u0C21\u0C3F"
+  - key: GameScene.Action_points
+    values:
+    - language: English(en)
+      text: Action Points
+    - language: Tamil(ta)
+      text: "\xA6\xBA\xC2\xF8 \xD2\xFB\xC7\xA2\xB8\xFB"
+    - language: Chinese (Simplified)(zh-Hans)
+      text: "\u884C\u52A8\u8981\u70B9"
+    - language: Spanish(es)
+      text: "Puntos de acci\xF3n"
+    - language: Telugu(te)
+      text: "\u0C15\u0C3E\u0C30\u0C4D\u0C2F\u0C3E\u0C1A\u0C30\u0C23 \u0C05\u0C02\u0C36\u0C3E\u0C32\u0C41"
   languages:
   - English(en)
   - Tamil(ta)

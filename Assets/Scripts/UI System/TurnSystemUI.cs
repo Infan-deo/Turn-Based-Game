@@ -1,6 +1,7 @@
 using System;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Localization;
 using UnityEngine.UI;
 
 public class TurnSystemUI : MonoBehaviour
@@ -9,6 +10,9 @@ public class TurnSystemUI : MonoBehaviour
     [SerializeField] private Button endTurnButton;
 
     [SerializeField] private GameObject enemyTurnVisualGameobject;
+    [SerializeField] private LocalizedString TurnLocalizedString;
+
+
 
     private void Start()
     {
@@ -17,22 +21,29 @@ public class TurnSystemUI : MonoBehaviour
             TurnSystem.Instance.NextTurn();
         });
         TurnSystem.Instance.OnTurnChanged += TurnSystem_OnTurnChanged;
-        UpdateText();
+        // UpdateText();
         UpdateEnemyTurnVisual();
         UpdateEndTurnButtonVisibility();
+        TurnLocalizedString.StringChanged += UpdateTurnText;
+        UpdateTurnText(TurnLocalizedString.GetLocalizedString());
+    }
+
+
+    private void UpdateTurnText(string value)
+    {
+        TurnText.text =
+            $"{value} {TurnSystem.Instance.GetTurnNumber()}";
     }
 
     private void TurnSystem_OnTurnChanged(object sender, EventArgs e)
     {
-        UpdateText();
+        // UpdateText();
+        UpdateTurnText(TurnLocalizedString.GetLocalizedString());
         UpdateEnemyTurnVisual();
         UpdateEndTurnButtonVisibility();
     }
 
-    private void UpdateText()
-    {
-        TurnText.text = "TURN " + TurnSystem.Instance.GetTurnNumber();
-    }
+
 
     private void UpdateEnemyTurnVisual()
     {

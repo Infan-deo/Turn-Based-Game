@@ -17,7 +17,51 @@ MonoBehaviour:
   m_SharedData: {fileID: 11400000, guid: a9067468e1b08ef438a89c58c54e2aa6, type: 2}
   m_Metadata:
     m_Items: []
-  m_TableData: []
+  m_TableData:
+  - m_Id: 740416700760064
+    m_Localized: Ocupado
+    m_Metadata:
+      m_Items: []
+  - m_Id: 740416776257536
+    m_Localized: Turno enemigo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 740416776257537
+    m_Localized: Fin del giro
+    m_Metadata:
+      m_Items: []
+  - m_Id: 740416780451840
+    m_Localized: Doblar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 740416780451841
+    m_Localized: Mover
+    m_Metadata:
+      m_Items: []
+  - m_Id: 740416780451842
+    m_Localized: Girar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 740416780451843
+    m_Localized: Disparar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 740416780451844
+    m_Localized: Granada
+    m_Metadata:
+      m_Items: []
+  - m_Id: 740416780451845
+    m_Localized: Espada
+    m_Metadata:
+      m_Items: []
+  - m_Id: 741511082754048
+    m_Localized: Interactuar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 758467265511424
+    m_Localized: "Puntos de acci\xF3n"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

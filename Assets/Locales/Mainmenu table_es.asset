@@ -34,6 +34,10 @@ MonoBehaviour:
     m_Localized: Salida
     m_Metadata:
       m_Items: []
+  - m_Id: 409342049206272
+    m_Localized: Idiomas
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

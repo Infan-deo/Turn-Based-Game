@@ -1,5 +1,12 @@
 ﻿Key,English(en),Tamil(ta),Chinese (Simplified)(zh-Hans),Spanish(es),Telugu(te)
-MainMenu.PlayButton,Start,¦¾¡¼íÌ,开始,Comenzar,ప్రారంభించండి
-MainMenu.Setting_btn,Settings,«¨ÁôÒ¸û,设置,Ajustes,సెట్టింగ్‌లు
-MainMenu.Exit_btn,Exit,¦ÅÇ¢§ÂÚ,出口,Salida,నిష్క్రమణ
-MainMenu.Title,Grid Tactics,¸ð¼ ¯ò¾¢¸û,网格战术,Tácticas de cuadrícula,గ్రిడ్ వ్యూహాలు
+GameScene.Busy,Busy,À½¢Â¢ø ¯ûÇÉ,忙碌的,Ocupado,బిజీగా
+GameScene.Enemy_turn,Enemy turn,±¾¢¡¢ Ó¨È,敌方回合,Turno enemigo,శత్రువు వంతు
+GameScene.End_turn,End turn,Íü¨È ÓÊ,回合结束,Fin del giro,మలుపు ముగింపు
+GameScene.Turn,Turn,ÍüÚ,转动,Doblar,తిరగండి
+GameScene.Move,Move,¿¸÷,移动,Mover,కదలండి
+GameScene.Spin,Spin,ÍÆüÚ,旋转,Girar,స్పిన్
+GameScene.Shoot,Shoot,ÍÎ,射击,Disparar,షూట్
+GameScene.Grenade,Grenade,ÌñÎ,手榴弹,Granada,గ్రెనేడ్
+GameScene.Sword,Sword,Å¡û,剑,Espada,కత్తి
+GameScene.Interact,Interact,ÀÂýÀÎòÐ,相互影响,Interactuar,సంభాషించండి
+GameScene.Action_points,Action Points,¦ºÂø ÒûÇ¢¸û,行动要点,Puntos de acción,కార్యాచరణ అంశాలు

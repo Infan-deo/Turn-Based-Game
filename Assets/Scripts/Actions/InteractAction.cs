@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 
 using UnityEngine;
+using UnityEngine.Localization;
 
 public class InteractAction : BaseAction
 {
@@ -75,4 +76,5 @@ public class InteractAction : BaseAction
     {
         ActionComplete();
     }
+    
 }

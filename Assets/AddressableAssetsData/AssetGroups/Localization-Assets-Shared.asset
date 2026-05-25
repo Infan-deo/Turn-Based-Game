@@ -31,7 +31,6 @@ MonoBehaviour:
     m_SerializedLabels:
     - Locale-es
     - Locale-te
-    - Locale-zh-Hans
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: a9067468e1b08ef438a89c58c54e2aa6
     m_Address: Assets/Locales/Game UI Shared Data.asset

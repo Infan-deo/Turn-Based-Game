@@ -1,38 +1,42 @@
 using System;
 using UnityEngine;
+using UnityEngine.Localization.Settings;
 
 public class LocalizationManagerCustom : Singleton<LocalizationManagerCustom>
 {
-    public LocalizationDatabase database;
+
 
     public static Action OnLanguageChanged;
 
-    public string CurrentLanguage => currentLanguage;
+    public string CurrentLanguage;
 
-    [SerializeField]
-    private string currentLanguage = "English";
 
-   
 
-    public void SetLanguage(string language)
+
+
+    // currentLanguage = language;
+    public void ChangeLanguage(int index)
     {
-        currentLanguage = language;
+        LocalizationSettings.SelectedLocale =
+            LocalizationSettings.AvailableLocales.Locales[index];
 
-        PlayerPrefs.SetString("LANGUAGE", language);
+        PlayerPrefs.SetInt("LANGUAGE_INDEX", index);
 
-        OnLanguageChanged?.Invoke();
+        // OnLanguageChanged?.Invoke();
     }
 
-    public string GetText(string key)
-    {
-        return database.GetText(key, currentLanguage);
-    }
+
 
     private void Start()
     {
-        if (PlayerPrefs.HasKey("LANGUAGE"))
+        if (PlayerPrefs.HasKey("LANGUAGE_INDEX"))
         {
-            currentLanguage = PlayerPrefs.GetString("LANGUAGE");
+            // currentLanguage = PlayerPrefs.GetString("LANGUAGE");
+            int index = PlayerPrefs.GetInt("LANGUAGE_INDEX");
+             LocalizationSettings.SelectedLocale =
+            LocalizationSettings.AvailableLocales.Locales[index];
+
+
         }
     }
 }

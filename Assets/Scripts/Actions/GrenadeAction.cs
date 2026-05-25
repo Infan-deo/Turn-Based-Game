@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.Localization;
 
 public class GrenadeAction : BaseAction
 {
@@ -78,4 +79,6 @@ public class GrenadeAction : BaseAction
     {
         ActionComplete();
     }
+
+    
 }

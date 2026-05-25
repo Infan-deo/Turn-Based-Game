@@ -22,15 +22,31 @@ public class ActionButtonUI : MonoBehaviour
 
     }
 
-    public void SetBaseAction(BaseAction baseAction)
+    private void Start()
     {
-        textMeshProUGUI.text = baseAction.GetActionName().ToUpper();
+        BaseAction.OnLocalizationChanged += UpdateText;
+    }
+
+
+
+
+
+    public void SetBaseAction(BaseAction baseAction)
+    {       
         this.baseAction = baseAction;
+        UpdateText();
         button.onClick.AddListener(() =>
         {
             UnitActionSystem.Instance.SetSelectedAction(baseAction);
-           
+
         });
+    }
+
+    public void UpdateText()
+    {
+        
+        if (baseAction != null)
+            textMeshProUGUI.text = baseAction.GetLocalizedActionName();
     }
 
     public void UpdateSelectedVisual()

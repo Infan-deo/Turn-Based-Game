@@ -19,11 +19,12 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 49504272384
-    m_Localized: 8f586378b4e144a9851e7b34d9b748ee
+    m_Localized: bf237700a3d0f10499bcf1d8b5d0c072
     m_Metadata:
       m_Items: []
   - m_Id: 61115697414144
-    m_Localized: '8f586378b4e144a9851e7b34d9b748ee[LiberationSans SDF Material]'
+    m_Localized: 'bf237700a3d0f10499bcf1d8b5d0c072[NotoSansSC-VariableFont_wght Atlas
+      Material]'
     m_Metadata:
       m_Items: []
   references:

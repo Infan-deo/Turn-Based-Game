@@ -1,7 +1,9 @@
 using System;
 using System.Collections.Generic;
-using UnityEditor.IMGUI.Controls;
+// using Unity.VisualScripting;
+// using UnityEditor.IMGUI.Controls;
 using UnityEngine;
+using UnityEngine.Localization;
 
 public abstract class BaseAction : MonoBehaviour
 {
@@ -9,15 +11,52 @@ public abstract class BaseAction : MonoBehaviour
     protected Unit Unit;
     protected bool isActive;
     protected Action<bool> onActionComplete;
+    public static Action OnLocalizationChanged;
+
+    public LocalizedString localizedString;
     public static event EventHandler OnAnyActionStarted;
     public static event EventHandler OnAnyActionCompleted;
+
+    protected string localizedActionName;
+
+    private ActionButtonUI actionButtonUI;
+
 
     protected virtual void Awake()
     {
         Unit = GetComponent<Unit>();
     }
+    private void Start()
+    {
+        localizedString.StringChanged += UpdateLocalizedActionName;
+        
+        localizedString.RefreshString();
+    }
+
+    private void OnDestroy()
+    {
+        localizedString.StringChanged -= UpdateLocalizedActionName;
+       
+    }
+
+    private void UpdateLocalizedActionName(string value)
+    {
+        localizedActionName = value;
+        OnLocalizationChanged?.Invoke();
+        
+
+    }
+    public string GetLocalizedActionName()
+    {
+     
+        return localizedActionName;
+    }
+
+
+    
 
     public abstract string GetActionName();
+
 
     public abstract void TakeAction(GridPosition gridPosition, Action<bool> onActionComplete);
 
@@ -77,5 +116,6 @@ public abstract class BaseAction : MonoBehaviour
     }
 
     public abstract EnemyAIAction GetEnemyAiAction(GridPosition gridPosition);
+
 
 }

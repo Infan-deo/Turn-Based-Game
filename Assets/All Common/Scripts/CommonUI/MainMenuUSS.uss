@@ -1,0 +1,20 @@
+#blackout-circle
+{
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 3000px;
+    height: 3000px;
+
+    margin-left: -1500px;
+    margin-top: -1500px;
+
+    background-color: black;
+
+    border-top-left-radius: 9999px;
+    border-top-right-radius: 9999px;
+    border-bottom-left-radius: 9999px;
+    border-bottom-right-radius: 9999px;
+}

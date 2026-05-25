@@ -12,17 +12,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad670d1adcf8be84f891f82b894c08a5, type: 3}
   m_Name: Elevator open
   m_EditorClassIdentifier: 
+  UseAddressables: 0
   <ID>k__BackingField: 0
   MulticlipsPlayMode: 0
   _group: {fileID: 0}
   Clips:
-  - AudioClip: {fileID: 8300000, guid: ffd21ebd7a649ce4daf6097933a7c26f, type: 3}
+  - AudioClipAssetReference:
+      m_AssetGUID: 
+      m_SubObjectName: 
+      m_SubObjectGUID: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    AudioClip: {fileID: 8300000, guid: ffd21ebd7a649ce4daf6097933a7c26f, type: 3}
     Volume: 1
     Delay: 0
-    StartPosition: 0
-    EndPosition: 14.879
+    StartPosition: 1.503
+    EndPosition: 15.936
     FadeIn: 0.469
-    FadeOut: 0
+    FadeOut: 0.692
     Weight: 0
   <AudioAsset>k__BackingField: {fileID: 11400000, guid: 7f25a3edb12b19d4f9f5e60ed02f4904, type: 2}
   <AudioType>k__BackingField: 8

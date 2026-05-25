@@ -15,8 +15,48 @@ MonoBehaviour:
   m_TableCollectionName: Game UI
   m_TableCollectionNameGuidString: a9067468e1b08ef438a89c58c54e2aa6
   m_Entries:
-  - m_Id: 26699841536
-    m_Key: New Entry
+  - m_Id: 740416700760064
+    m_Key: GameScene.Busy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 740416776257536
+    m_Key: GameScene.Enemy_turn
+    m_Metadata:
+      m_Items: []
+  - m_Id: 740416776257537
+    m_Key: GameScene.End_turn
+    m_Metadata:
+      m_Items: []
+  - m_Id: 740416780451840
+    m_Key: GameScene.Turn
+    m_Metadata:
+      m_Items: []
+  - m_Id: 740416780451841
+    m_Key: GameScene.Move
+    m_Metadata:
+      m_Items: []
+  - m_Id: 740416780451842
+    m_Key: GameScene.Spin
+    m_Metadata:
+      m_Items: []
+  - m_Id: 740416780451843
+    m_Key: GameScene.Shoot
+    m_Metadata:
+      m_Items: []
+  - m_Id: 740416780451844
+    m_Key: GameScene.Grenade
+    m_Metadata:
+      m_Items: []
+  - m_Id: 740416780451845
+    m_Key: GameScene.Sword
+    m_Metadata:
+      m_Items: []
+  - m_Id: 741511082754048
+    m_Key: GameScene.Interact
+    m_Metadata:
+      m_Items: []
+  - m_Id: 758467265511424
+    m_Key: GameScene.Action_points
     m_Metadata:
       m_Items: []
   m_Metadata:

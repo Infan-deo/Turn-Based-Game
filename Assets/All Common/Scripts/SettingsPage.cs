@@ -1,4 +1,7 @@
+using System.Collections;
 using Ami.BroAudio;
+using TBGame;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,6 +10,7 @@ public class SettingsPage : MonoBehaviour
     [Header("Buttons")]
     [SerializeField] private Button musicMuteBtn;
     [SerializeField] private Button sfxMuteBtn;
+    [SerializeField] private Button MainMenu;
 
     [Header("Sliders")]
     [SerializeField] private Slider musicSlider;
@@ -48,7 +52,11 @@ public class SettingsPage : MonoBehaviour
 
         musicMuteBtn.onClick.AddListener(ToggleMusicMute);
         sfxMuteBtn.onClick.AddListener(ToggleSFXMute);
+
+        MainMenu.onClick.AddListener(GotoMainMenu);
     }
+
+
 
     public void SetBGM(float volume)
     {
@@ -97,12 +105,25 @@ public class SettingsPage : MonoBehaviour
         if (isSFXMute)
         {
             BroAudio.SetVolume(BroAudioType.SFX, 0f);
-            sfxBtnImg.sprite = sfxMutesprite;            
+            sfxBtnImg.sprite = sfxMutesprite;
         }
         else
         {
             BroAudio.SetVolume(BroAudioType.SFX, previousSFXVolume);
             sfxBtnImg.sprite = sfxUnmutesprite;
         }
+    }
+    private void GotoMainMenu()
+    {
+        if (SceneController.Instance.GetcurrentSceneIndex() == 0) return;
+        StartCoroutine(GotoMainMenuTransistion());
+    }
+
+    IEnumerator GotoMainMenuTransistion()
+    {
+        CircleFadeTransition.Instance.CircleFadeIn();
+        yield return new WaitForSeconds(1.5f);
+        CommonGameManager.Instance.CloseSettings();
+        SceneController.Instance.LoadMainMenuScene();
     }
 }

@@ -2,6 +2,7 @@ using UnityEngine;
 using System;
 using System.Collections.Generic;
 using TMPro;
+using UnityEngine.Localization;
 
 
 public class UnitActionSystemUI : MonoBehaviour
@@ -9,6 +10,7 @@ public class UnitActionSystemUI : MonoBehaviour
     [SerializeField] private Transform actionButtonPrefab;
     [SerializeField] private Transform actionButtonContainerTransform;
     [SerializeField] private TextMeshProUGUI actionPointsText;
+    [SerializeField] private LocalizedString actionPointsLocalizedString;
 
 
     private List<ActionButtonUI> actionButtonUIs;
@@ -30,7 +32,11 @@ public class UnitActionSystemUI : MonoBehaviour
         UpdateActionPoints();
         CreateUnitActionButtons();
         UpdateSelectedVisual();
+        actionPointsLocalizedString.StringChanged += UpdateText;
+
+        
     }
+
 
     private void Unit_OnAnyActionPointsChanged(object sender, EventArgs e)
     {
@@ -44,7 +50,7 @@ public class UnitActionSystemUI : MonoBehaviour
 
     private void UnitActionSystem_OnActionStarted(object sender, EventArgs e)
     {
-         UpdateActionPoints();
+        UpdateActionPoints();
     }
 
     private void UnitActionSystem_OnSelectedActionChanged(object sender, EventArgs e)
@@ -87,9 +93,15 @@ public class UnitActionSystemUI : MonoBehaviour
 
     private void UpdateActionPoints()
     {
+        UpdateText(actionPointsLocalizedString.GetLocalizedString());
+    }
+
+    private void UpdateText(string value)
+    {
         Unit selectedUnit = UnitActionSystem.Instance.GetSelectedUnit();
-       actionPointsText.text =$"Action Points : {selectedUnit.GetActionPoints()}";
+        actionPointsText.text = value + " : " + selectedUnit.GetActionPoints();
 
     }
+
 
 }

@@ -835,10 +835,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0f803696ed7f654fa59ae5a8904653d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  localizedString:
+    m_TableReference:
+      m_TableCollectionName: GUID:a9067468e1b08ef438a89c58c54e2aa6
+    m_TableEntryReference:
+      m_KeyId: 740416780451841
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   positionList: []
   moveSpeed: 5
   rotateSpeed: 10
   maxMoveDistance: 4
+  references:
+    version: 2
+    RefIds: []
 --- !u!114 &7273404086726004362
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -851,6 +863,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 481bda1047bb772428001daac584de9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  localizedString:
+    m_TableReference:
+      m_TableCollectionName: GUID:a9067468e1b08ef438a89c58c54e2aa6
+    m_TableEntryReference:
+      m_KeyId: 740416780451842
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  references:
+    version: 2
+    RefIds: []
 --- !u!114 &1913788470223398923
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -863,10 +887,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b77400fb4875b62488b274a93b4a4d62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  localizedString:
+    m_TableReference:
+      m_TableCollectionName: GUID:a9067468e1b08ef438a89c58c54e2aa6
+    m_TableEntryReference:
+      m_KeyId: 740416780451843
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   obstaclesLayerMask:
     serializedVersion: 2
     m_Bits: 256
   maxShootDistance: 7
+  references:
+    version: 2
+    RefIds: []
 --- !u!114 &384174539905759806
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -923,8 +959,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5b5b6593fe279b41b56f8e7d47721e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  localizedString:
+    m_TableReference:
+      m_TableCollectionName: GUID:a9067468e1b08ef438a89c58c54e2aa6
+    m_TableEntryReference:
+      m_KeyId: 740416780451844
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   maxThrowDistance: 7
   GrenadeProjectilePrefab: {fileID: 412905559977733937, guid: af0c12c9986d4814195d7279cf2a8305, type: 3}
+  references:
+    version: 2
+    RefIds: []
 --- !u!114 &7101249776962378604
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -937,7 +985,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f87a7b549de5486498d9979b5189ee9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  localizedString:
+    m_TableReference:
+      m_TableCollectionName: GUID:a9067468e1b08ef438a89c58c54e2aa6
+    m_TableEntryReference:
+      m_KeyId: 740416780451845
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   maxSwordDistance: 1
+  references:
+    version: 2
+    RefIds: []
 --- !u!114 &9162458732989713614
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -950,7 +1010,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eee459e3c1021e94d891b04459dd2905, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  localizedString:
+    m_TableReference:
+      m_TableCollectionName: GUID:a9067468e1b08ef438a89c58c54e2aa6
+    m_TableEntryReference:
+      m_KeyId: 741511082754048
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   maxInteractDistance: 1
+  references:
+    version: 2
+    RefIds: []
 --- !u!1 &8873776652935371909
 GameObject:
   m_ObjectHideFlags: 0

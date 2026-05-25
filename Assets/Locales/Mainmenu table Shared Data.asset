@@ -31,6 +31,10 @@ MonoBehaviour:
     m_Key: MainMenu.Title
     m_Metadata:
       m_Items: []
+  - m_Id: 409342049206272
+    m_Key: Popup.Language
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

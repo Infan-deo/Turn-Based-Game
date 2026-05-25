@@ -17,7 +17,51 @@ MonoBehaviour:
   m_SharedData: {fileID: 11400000, guid: a9067468e1b08ef438a89c58c54e2aa6, type: 2}
   m_Metadata:
     m_Items: []
-  m_TableData: []
+  m_TableData:
+  - m_Id: 740416700760064
+    m_Localized: Busy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 740416776257536
+    m_Localized: Enemy turn
+    m_Metadata:
+      m_Items: []
+  - m_Id: 740416776257537
+    m_Localized: End turn
+    m_Metadata:
+      m_Items: []
+  - m_Id: 740416780451840
+    m_Localized: Turn
+    m_Metadata:
+      m_Items: []
+  - m_Id: 740416780451841
+    m_Localized: Move
+    m_Metadata:
+      m_Items: []
+  - m_Id: 740416780451842
+    m_Localized: Spin
+    m_Metadata:
+      m_Items: []
+  - m_Id: 740416780451843
+    m_Localized: Shoot
+    m_Metadata:
+      m_Items: []
+  - m_Id: 740416780451844
+    m_Localized: Grenade
+    m_Metadata:
+      m_Items: []
+  - m_Id: 740416780451845
+    m_Localized: Sword
+    m_Metadata:
+      m_Items: []
+  - m_Id: 741511082754048
+    m_Localized: Interact
+    m_Metadata:
+      m_Items: []
+  - m_Id: 758467265511424
+    m_Localized: Action Points
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
