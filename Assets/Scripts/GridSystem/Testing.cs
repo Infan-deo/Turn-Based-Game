@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Ami.BroAudio;
+using TBGame;
 
 public class Testing : MonoBehaviour
 {
@@ -13,7 +14,11 @@ public class Testing : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.T))
         {
-            BroAudio.Play(_sfx).AsDominator();
+            EventBus<SceneEvent>.Raise(new SceneEvent
+            {
+                currentSceneIndex = SceneController.Instance.GetcurrentSceneIndex(),
+                currentSceneName = SceneController.Instance.Sceneinfo.name
+            });
 
         }
     }
