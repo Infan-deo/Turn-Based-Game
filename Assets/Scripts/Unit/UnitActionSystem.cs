@@ -18,6 +18,7 @@ public class UnitActionSystem : MonoBehaviour
     BaseAction selectedBaseAction;
 
     [SerializeField] private bool isBusy;
+    
 
     private void Awake()
     {
@@ -36,6 +37,9 @@ public class UnitActionSystem : MonoBehaviour
         SetSelectedUnit(_selectedUnit);
 
     }
+    
+
+    
 
     private void Update()
     {
@@ -96,6 +100,16 @@ public class UnitActionSystem : MonoBehaviour
             if (!_selectedUnit.TrySpendActionPointsToTakeAction(selectedBaseAction))
             {
                 return;
+            }
+            if (selectedBaseAction is SpellAction)
+            {
+                SpellAction spellaction = selectedBaseAction.GetComponent<SpellAction>();
+                if (!spellaction.IsSpellSelected)
+                {
+                    // call spell system ui
+                    spellaction.DisplaySpells();
+                    return;
+                }
             }
             SetBusy(true);
             selectedBaseAction.TakeAction(mouseGridPosition, SetBusy);

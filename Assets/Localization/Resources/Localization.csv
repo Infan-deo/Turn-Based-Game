@@ -10,3 +10,15 @@ GameScene.Grenade,Grenade,ÌñÎ,手榴弹,Granada,గ్రెనేడ్
 GameScene.Sword,Sword,Å¡û,剑,Espada,కత్తి
 GameScene.Interact,Interact,ÀÂýÀÎòÐ,相互影响,Interactuar,సంభాషించండి
 GameScene.Action_points,Action Points,¦ºÂø ÒûÇ¢¸û,行动要点,Puntos de acción,కార్యాచరణ అంశాలు
+SpellUI.Spell,Spell,Áó¾¢Ãõ,拼写,Deletrear,మంత్రం
+SpellUI.PurpleSpell,Void Nova,¦ÅüÈ¢¼ §¿¡Å¡,虚空新星,Nova del Vacío,వాయిడ్ నోవా
+SpellUI.PurpleSpellDesc,"Detonates a sphere of void energy, dealing heavy magic damage to all nearby enemies and weakening them with lingering shadow energy","¦ÅüÈ¢¼ ¬üÈø §¸¡Çõ ´ý¨È ¦ÅÊì¸î ¦ºöÐ, «Õ¸¢ÖûÇ «¨ÉòÐ ±¾¢¡¢¸ÙìÌõ ¸Î¨ÁÂ¡É Áó¾¢Ã §º¾ò¨¾ Å¢¨ÇÅ¢ôÀ§¾¡Î, ¿£Êò¾ ¿¢Æø ¬üÈÄ¡ø «Å÷¸¨Ç ÀÄÅ£ÉôÀÎòÐ¸¢ÈÐ.",引爆一个虚空能量球，对附近所有敌人造成大量魔法伤害，并使其陷入持续的暗影能量状态，从而削弱他们。,"Detona una esfera de energía del vacío, infligiendo un gran daño mágico a todos los enemigos cercanos y debilitándolos con energía de sombra persistente.","శూన్య శక్తి గోళాన్ని పేల్చి, సమీపంలోని శత్రువులందరికీ తీవ్రమైన మాయా నష్టాన్ని కలిగించి, దీర్ఘకాలిక నీడ శక్తితో వారిని బలహీనపరుస్తుంది."
+Instructions.ChooseAnEnemy,Choose an Enemy,´Õ ±¾¢¡¢¨Âò §¾÷ó¦¾Îì¸×õ,选择一个敌人,Elige un enemigo,శత్రువును ఎంచుకోండి
+Instructions.ChooseAnAction,Choose an Action,´Õ ¦ºÂ¨Äò §¾÷ó¦¾Îì¸×õ,选择操作,Elige una acción,ఒక చర్యను ఎంచుకోండి
+SpellUI.PointsNeededForSpell,Points Needed,§¾¨ÅÂ¡É ÒûÇ¢¸û,所需积分,Puntos necesarios,అవసరమైన పాయింట్లు
+SpellUI.PointsYouHaveForSpell,Remaining Points,Á£¾ÓûÇ ÒûÇ¢¸û,剩余积分,Puntos restantes,మిగిలిన పాయింట్లు
+SpellUI.Choosespelltoperform,Choose a spell to perform,ÀÂýÀÎò¾ §ÅñÊÂ Áó¾¢Ãò¨¾ò §¾÷ó¦¾Îì¸×õ,选择要施放的法术,Elige un hechizo para realizar,ప్రదర్శించడానికి ఒక మంత్రాన్ని ఎంచుకోండి
+SpellUI.NoSpellsAvail,No Spells Available,Áó¾¢Ãí¸û ¸¢¨¼ì¸Å¢ø¨Ä,暂无可用法术,No hay hechizos disponibles,మంత్రాలు అందుబాటులో లేవు
+SpellUI.redspell,Crimson Lance,¦ºí¸¾¢÷ ®ðÊ,深红长矛,Lanza carmesí,క్రిమ్సన్ లాన్స్
+SpellUI.redspelldesc,"Hurls a blazing spear of crimson energy that pierces through the air, exploding on impact and scorching its target with searing arcane fire","¸¡ü¨Èì ¸¢Æ¢òÐì¦¸¡ñÎ À¡Ôõ ¦ºó¿¢È ¬üÈø ®ðÊ ´ý¨È ±È¢¸¢È¡ý; «Ð §Á¡¾Ä¢ý§À¡Ð ¦ÅÊòÐ, Íð¦¼¡¢ìÌõ Á¡Â ¦¿ÕôÀ¡ø ¾ý þÄì¨¸î Íð¦¼¡¢ì¸¢ÈÐ.",掷出一道灼热的猩红能量长矛，长矛划破空气，撞击目标后爆炸，以灼热的奥术火焰灼烧目标。,"Lanza una lanza llameante de energía carmesí que atraviesa el aire, explotando al impactar y abrasando a su objetivo con un fuego arcano abrasador.","ఎర్రటి శక్తితో కూడిన మండుతున్న ఈటెను విసురుతుంది, అది గాలిని చీల్చుకుంటూ దూసుకెళ్తుంది, తాకిన వెంటనే పేలి, తీవ్రమైన మంత్ర అగ్నితో దాని లక్ష్యాన్ని దహించివేస్తుంది."
+SpellUI.Noteforredspell,Note: Crimson Lance cannot pass through solid obstacles and cannot target enemies positioned behind walls.,"ÌÈ¢ôÒ: ¸¢¡¢õºý Ä¡ý…¡ø ¾¢¼Á¡É ¾¨¼¸¨Ç °ÎÕÅ¢î ¦ºøÄ ÓÊÂ¡Ð, §ÁÖõ ÍÅ÷¸ÙìÌô À¢ýÉ¡ø ¯ûÇ ±¾¢¡¢¸¨Çò ¾¡ì¸ ÓÊÂ¡Ð.",注意：绯红长矛无法穿过实体障碍物，也无法攻击位于墙后的敌人。,Nota: La Lanza Carmesí no puede atravesar obstáculos sólidos ni atacar a enemigos situados detrás de muros.,గమనిక: క్రిమ్సన్ లాన్స్ గట్టి అడ్డంకుల గుండా వెళ్ళదు మరియు గోడల వెనుక ఉన్న శత్రువులను లక్ష్యంగా చేసుకోదు.

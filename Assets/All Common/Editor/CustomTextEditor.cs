@@ -21,13 +21,13 @@ public class CustomTMPEditor : Editor
             }
         }
 
-        if (!component.TryGetComponent(out LocalizedText _))
-        {
-            if (GUILayout.Button("Localize"))
-            {
-                component.gameObject.AddComponent<LocalizedText>();
-                Debug.Log("LocalizedText component added!");
-            }
-        }
+        // if (!component.TryGetComponent(out LocalizedText _))
+        // {
+        //     if (GUILayout.Button("Localize"))
+        //     {
+        //         component.gameObject.AddComponent<LocalizedText>();
+        //         Debug.Log("LocalizedText component added!");
+        //     }
+        // }
     }
 }

@@ -24,10 +24,10 @@ public static class TMPAutoSetup
             }
 
             // Add LocalizedText automatically
-            if (!go.TryGetComponent(out LocalizedText _))
-            {
-                go.AddComponent<LocalizedText>();
-            }
+            // if (!go.TryGetComponent(out LocalizedText _))
+            // {
+            //     go.AddComponent<LocalizedText>();
+            // }
 
             Debug.Log($"Auto setup completed for {go.name}");
         }

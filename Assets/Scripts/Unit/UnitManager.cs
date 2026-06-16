@@ -12,6 +12,8 @@ public class UnitManager : MonoBehaviour
 
     private Vector3 _unitRagDollFallDir;
 
+    // private BaseAction _deadByAction;
+
 
 
 
@@ -102,4 +104,14 @@ public class UnitManager : MonoBehaviour
     {
         return _unitRagDollFallDir;
     }
+
+    // public BaseAction GetDeadByAction()
+    // {
+    //     return _deadByAction;
+    // }
+
+    // public void SetDeadByAction(BaseAction baseAction)
+    // {
+    //     _deadByAction = baseAction;
+    // }
 }

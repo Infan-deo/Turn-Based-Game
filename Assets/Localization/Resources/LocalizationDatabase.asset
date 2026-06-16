@@ -145,6 +145,195 @@ MonoBehaviour:
       text: "Puntos de acci\xF3n"
     - language: Telugu(te)
       text: "\u0C15\u0C3E\u0C30\u0C4D\u0C2F\u0C3E\u0C1A\u0C30\u0C23 \u0C05\u0C02\u0C36\u0C3E\u0C32\u0C41"
+  - key: SpellUI.Spell
+    values:
+    - language: English(en)
+      text: Spell
+    - language: Tamil(ta)
+      text: "\xC1\xF3\xBE\xA2\xC3\xF5"
+    - language: Chinese (Simplified)(zh-Hans)
+      text: "\u62FC\u5199"
+    - language: Spanish(es)
+      text: Deletrear
+    - language: Telugu(te)
+      text: "\u0C2E\u0C02\u0C24\u0C4D\u0C30\u0C02"
+  - key: SpellUI.PurpleSpell
+    values:
+    - language: English(en)
+      text: Void Nova
+    - language: Tamil(ta)
+      text: "\xA6\xC5\xFC\xC8\xA2\xBC \xA7\xBF\xA1\xC5\xA1"
+    - language: Chinese (Simplified)(zh-Hans)
+      text: "\u865A\u7A7A\u65B0\u661F"
+    - language: Spanish(es)
+      text: "Nova del Vac\xEDo"
+    - language: Telugu(te)
+      text: "\u0C35\u0C3E\u0C2F\u0C3F\u0C21\u0C4D \u0C28\u0C4B\u0C35\u0C3E"
+  - key: SpellUI.PurpleSpellDesc
+    values:
+    - language: English(en)
+      text: Detonates a sphere of void energy, dealing heavy magic damage to all
+        nearby enemies and weakening them with lingering shadow energy
+    - language: Tamil(ta)
+      text: "\xA6\xC5\xFC\xC8\xA2\xBC \xAC\xFC\xC8\xF8 \xA7\xB8\xA1\xC7\xF5 \xB4\xFD\xA8\xC8
+        \xA6\xC5\xCA\xEC\xB8\xEE \xA6\xBA\xF6\xD0, \xAB\xD5\xB8\xA2\xD6\xFB\xC7 \xAB\xA8\xC9\xF2\xD0
+        \xB1\xBE\xA2\xA1\xA2\xB8\xD9\xEC\xCC\xF5 \xB8\xCE\xA8\xC1\xC2\xA1\xC9 \xC1\xF3\xBE\xA2\xC3
+        \xA7\xBA\xBE\xF2\xA8\xBE \xC5\xA2\xA8\xC7\xC5\xA2\xF4\xC0\xA7\xBE\xA1\xCE,
+        \xBF\xA3\xCA\xF2\xBE \xBF\xA2\xC6\xF8 \xAC\xFC\xC8\xC4\xA1\xF8 \xAB\xC5\xF7\xB8\xA8\xC7
+        \xC0\xC4\xC5\xA3\xC9\xF4\xC0\xCE\xF2\xD0\xB8\xA2\xC8\xD0."
+    - language: Chinese (Simplified)(zh-Hans)
+      text: "\u5F15\u7206\u4E00\u4E2A\u865A\u7A7A\u80FD\u91CF\u7403\uFF0C\u5BF9\u9644\u8FD1\u6240\u6709\u654C\u4EBA\u9020\u6210\u5927\u91CF\u9B54\u6CD5\u4F24\u5BB3\uFF0C\u5E76\u4F7F\u5176\u9677\u5165\u6301\u7EED\u7684\u6697\u5F71\u80FD\u91CF\u72B6\u6001\uFF0C\u4ECE\u800C\u524A\u5F31\u4ED6\u4EEC\u3002"
+    - language: Spanish(es)
+      text: "Detona una esfera de energ\xEDa del vac\xEDo, infligiendo un gran da\xF1o
+        m\xE1gico a todos los enemigos cercanos y debilit\xE1ndolos con energ\xEDa
+        de sombra persistente."
+    - language: Telugu(te)
+      text: "\u0C36\u0C42\u0C28\u0C4D\u0C2F \u0C36\u0C15\u0C4D\u0C24\u0C3F \u0C17\u0C4B\u0C33\u0C3E\u0C28\u0C4D\u0C28\u0C3F
+        \u0C2A\u0C47\u0C32\u0C4D\u0C1A\u0C3F, \u0C38\u0C2E\u0C40\u0C2A\u0C02\u0C32\u0C4B\u0C28\u0C3F
+        \u0C36\u0C24\u0C4D\u0C30\u0C41\u0C35\u0C41\u0C32\u0C02\u0C26\u0C30\u0C3F\u0C15\u0C40
+        \u0C24\u0C40\u0C35\u0C4D\u0C30\u0C2E\u0C48\u0C28 \u0C2E\u0C3E\u0C2F\u0C3E
+        \u0C28\u0C37\u0C4D\u0C1F\u0C3E\u0C28\u0C4D\u0C28\u0C3F \u0C15\u0C32\u0C3F\u0C17\u0C3F\u0C02\u0C1A\u0C3F,
+        \u0C26\u0C40\u0C30\u0C4D\u0C18\u0C15\u0C3E\u0C32\u0C3F\u0C15 \u0C28\u0C40\u0C21
+        \u0C36\u0C15\u0C4D\u0C24\u0C3F\u0C24\u0C4B \u0C35\u0C3E\u0C30\u0C3F\u0C28\u0C3F
+        \u0C2C\u0C32\u0C39\u0C40\u0C28\u0C2A\u0C30\u0C41\u0C38\u0C4D\u0C24\u0C41\u0C02\u0C26\u0C3F."
+  - key: Instructions.ChooseAnEnemy
+    values:
+    - language: English(en)
+      text: Choose an Enemy
+    - language: Tamil(ta)
+      text: "\xB4\xD5 \xB1\xBE\xA2\xA1\xA2\xA8\xC2\xF2 \xA7\xBE\xF7\xF3\xA6\xBE\xCE\xEC\xB8\xD7\xF5"
+    - language: Chinese (Simplified)(zh-Hans)
+      text: "\u9009\u62E9\u4E00\u4E2A\u654C\u4EBA"
+    - language: Spanish(es)
+      text: Elige un enemigo
+    - language: Telugu(te)
+      text: "\u0C36\u0C24\u0C4D\u0C30\u0C41\u0C35\u0C41\u0C28\u0C41 \u0C0E\u0C02\u0C1A\u0C41\u0C15\u0C4B\u0C02\u0C21\u0C3F"
+  - key: Instructions.ChooseAnAction
+    values:
+    - language: English(en)
+      text: Choose an Action
+    - language: Tamil(ta)
+      text: "\xB4\xD5 \xA6\xBA\xC2\xA8\xC4\xF2 \xA7\xBE\xF7\xF3\xA6\xBE\xCE\xEC\xB8\xD7\xF5"
+    - language: Chinese (Simplified)(zh-Hans)
+      text: "\u9009\u62E9\u64CD\u4F5C"
+    - language: Spanish(es)
+      text: "Elige una acci\xF3n"
+    - language: Telugu(te)
+      text: "\u0C12\u0C15 \u0C1A\u0C30\u0C4D\u0C2F\u0C28\u0C41 \u0C0E\u0C02\u0C1A\u0C41\u0C15\u0C4B\u0C02\u0C21\u0C3F"
+  - key: SpellUI.PointsNeededForSpell
+    values:
+    - language: English(en)
+      text: Points Needed
+    - language: Tamil(ta)
+      text: "\xA7\xBE\xA8\xC5\xC2\xA1\xC9 \xD2\xFB\xC7\xA2\xB8\xFB"
+    - language: Chinese (Simplified)(zh-Hans)
+      text: "\u6240\u9700\u79EF\u5206"
+    - language: Spanish(es)
+      text: Puntos necesarios
+    - language: Telugu(te)
+      text: "\u0C05\u0C35\u0C38\u0C30\u0C2E\u0C48\u0C28 \u0C2A\u0C3E\u0C2F\u0C3F\u0C02\u0C1F\u0C4D\u0C32\u0C41"
+  - key: SpellUI.PointsYouHaveForSpell
+    values:
+    - language: English(en)
+      text: Remaining Points
+    - language: Tamil(ta)
+      text: "\xC1\xA3\xBE\xD3\xFB\xC7 \xD2\xFB\xC7\xA2\xB8\xFB"
+    - language: Chinese (Simplified)(zh-Hans)
+      text: "\u5269\u4F59\u79EF\u5206"
+    - language: Spanish(es)
+      text: Puntos restantes
+    - language: Telugu(te)
+      text: "\u0C2E\u0C3F\u0C17\u0C3F\u0C32\u0C3F\u0C28 \u0C2A\u0C3E\u0C2F\u0C3F\u0C02\u0C1F\u0C4D\u0C32\u0C41"
+  - key: SpellUI.Choosespelltoperform
+    values:
+    - language: English(en)
+      text: Choose a spell to perform
+    - language: Tamil(ta)
+      text: "\xC0\xC2\xFD\xC0\xCE\xF2\xBE \xA7\xC5\xF1\xCA\xC2 \xC1\xF3\xBE\xA2\xC3\xF2\xA8\xBE\xF2
+        \xA7\xBE\xF7\xF3\xA6\xBE\xCE\xEC\xB8\xD7\xF5"
+    - language: Chinese (Simplified)(zh-Hans)
+      text: "\u9009\u62E9\u8981\u65BD\u653E\u7684\u6CD5\u672F"
+    - language: Spanish(es)
+      text: Elige un hechizo para realizar
+    - language: Telugu(te)
+      text: "\u0C2A\u0C4D\u0C30\u0C26\u0C30\u0C4D\u0C36\u0C3F\u0C02\u0C1A\u0C21\u0C3E\u0C28\u0C3F\u0C15\u0C3F
+        \u0C12\u0C15 \u0C2E\u0C02\u0C24\u0C4D\u0C30\u0C3E\u0C28\u0C4D\u0C28\u0C3F
+        \u0C0E\u0C02\u0C1A\u0C41\u0C15\u0C4B\u0C02\u0C21\u0C3F"
+  - key: SpellUI.NoSpellsAvail
+    values:
+    - language: English(en)
+      text: No Spells Available
+    - language: Tamil(ta)
+      text: "\xC1\xF3\xBE\xA2\xC3\xED\xB8\xFB \xB8\xA2\xA8\xBC\xEC\xB8\xC5\xA2\xF8\xA8\xC4"
+    - language: Chinese (Simplified)(zh-Hans)
+      text: "\u6682\u65E0\u53EF\u7528\u6CD5\u672F"
+    - language: Spanish(es)
+      text: No hay hechizos disponibles
+    - language: Telugu(te)
+      text: "\u0C2E\u0C02\u0C24\u0C4D\u0C30\u0C3E\u0C32\u0C41 \u0C05\u0C02\u0C26\u0C41\u0C2C\u0C3E\u0C1F\u0C41\u0C32\u0C4B
+        \u0C32\u0C47\u0C35\u0C41"
+  - key: SpellUI.redspell
+    values:
+    - language: English(en)
+      text: Crimson Lance
+    - language: Tamil(ta)
+      text: "\xA6\xBA\xED\xB8\xBE\xA2\xF7 \xAE\xF0\xCA"
+    - language: Chinese (Simplified)(zh-Hans)
+      text: "\u6DF1\u7EA2\u957F\u77DB"
+    - language: Spanish(es)
+      text: "Lanza carmes\xED"
+    - language: Telugu(te)
+      text: "\u0C15\u0C4D\u0C30\u0C3F\u0C2E\u0C4D\u0C38\u0C28\u0C4D \u0C32\u0C3E\u0C28\u0C4D\u0C38\u0C4D"
+  - key: SpellUI.redspelldesc
+    values:
+    - language: English(en)
+      text: Hurls a blazing spear of crimson energy that pierces through the air,
+        exploding on impact and scorching its target with searing arcane fire
+    - language: Tamil(ta)
+      text: "\xB8\xA1\xFC\xA8\xC8\xEC \xB8\xA2\xC6\xA2\xF2\xD0\xEC\xA6\xB8\xA1\xF1\xCE
+        \xC0\xA1\xD4\xF5 \xA6\xBA\xF3\xBF\xA2\xC8 \xAC\xFC\xC8\xF8 \xAE\xF0\xCA \xB4\xFD\xA8\xC8
+        \xB1\xC8\xA2\xB8\xA2\xC8\xA1\xFD; \xAB\xD0 \xA7\xC1\xA1\xBE\xC4\xA2\xFD\xA7\xC0\xA1\xD0
+        \xA6\xC5\xCA\xF2\xD0, \xCD\xF0\xA6\xBC\xA1\xA2\xEC\xCC\xF5 \xC1\xA1\xC2 \xA6\xBF\xD5\xF4\xC0\xA1\xF8
+        \xBE\xFD \xFE\xC4\xEC\xA8\xB8\xEE \xCD\xF0\xA6\xBC\xA1\xA2\xEC\xB8\xA2\xC8\xD0."
+    - language: Chinese (Simplified)(zh-Hans)
+      text: "\u63B7\u51FA\u4E00\u9053\u707C\u70ED\u7684\u7329\u7EA2\u80FD\u91CF\u957F\u77DB\uFF0C\u957F\u77DB\u5212\u7834\u7A7A\u6C14\uFF0C\u649E\u51FB\u76EE\u6807\u540E\u7206\u70B8\uFF0C\u4EE5\u707C\u70ED\u7684\u5965\u672F\u706B\u7130\u707C\u70E7\u76EE\u6807\u3002"
+    - language: Spanish(es)
+      text: "Lanza una lanza llameante de energ\xEDa carmes\xED que atraviesa el
+        aire, explotando al impactar y abrasando a su objetivo con un fuego arcano
+        abrasador."
+    - language: Telugu(te)
+      text: "\u0C0E\u0C30\u0C4D\u0C30\u0C1F\u0C3F \u0C36\u0C15\u0C4D\u0C24\u0C3F\u0C24\u0C4B
+        \u0C15\u0C42\u0C21\u0C3F\u0C28 \u0C2E\u0C02\u0C21\u0C41\u0C24\u0C41\u0C28\u0C4D\u0C28
+        \u0C08\u0C1F\u0C46\u0C28\u0C41 \u0C35\u0C3F\u0C38\u0C41\u0C30\u0C41\u0C24\u0C41\u0C02\u0C26\u0C3F,
+        \u0C05\u0C26\u0C3F \u0C17\u0C3E\u0C32\u0C3F\u0C28\u0C3F \u0C1A\u0C40\u0C32\u0C4D\u0C1A\u0C41\u0C15\u0C41\u0C02\u0C1F\u0C42
+        \u0C26\u0C42\u0C38\u0C41\u0C15\u0C46\u0C33\u0C4D\u0C24\u0C41\u0C02\u0C26\u0C3F,
+        \u0C24\u0C3E\u0C15\u0C3F\u0C28 \u0C35\u0C46\u0C02\u0C1F\u0C28\u0C47 \u0C2A\u0C47\u0C32\u0C3F,
+        \u0C24\u0C40\u0C35\u0C4D\u0C30\u0C2E\u0C48\u0C28 \u0C2E\u0C02\u0C24\u0C4D\u0C30
+        \u0C05\u0C17\u0C4D\u0C28\u0C3F\u0C24\u0C4B \u0C26\u0C3E\u0C28\u0C3F \u0C32\u0C15\u0C4D\u0C37\u0C4D\u0C2F\u0C3E\u0C28\u0C4D\u0C28\u0C3F
+        \u0C26\u0C39\u0C3F\u0C02\u0C1A\u0C3F\u0C35\u0C47\u0C38\u0C4D\u0C24\u0C41\u0C02\u0C26\u0C3F."
+  - key: SpellUI.Noteforredspell
+    values:
+    - language: English(en)
+      text: 'Note: Crimson Lance cannot pass through solid obstacles and cannot target
+        enemies positioned behind walls.'
+    - language: Tamil(ta)
+      text: "\xCC\xC8\xA2\xF4\xD2: \xB8\xA2\xA1\xA2\xF5\xBA\xFD \xC4\xA1\xFD\u2026\xA1\xF8
+        \xBE\xA2\xBC\xC1\xA1\xC9 \xBE\xA8\xBC\xB8\xA8\xC7 \xB0\xCE\xD5\xC5\xA2\xEE
+        \xA6\xBA\xF8\xC4 \xD3\xCA\xC2\xA1\xD0, \xA7\xC1\xD6\xF5 \xCD\xC5\xF7\xB8\xD9\xEC\xCC\xF4
+        \xC0\xA2\xFD\xC9\xA1\xF8 \xAF\xFB\xC7 \xB1\xBE\xA2\xA1\xA2\xB8\xA8\xC7\xF2
+        \xBE\xA1\xEC\xB8 \xD3\xCA\xC2\xA1\xD0."
+    - language: Chinese (Simplified)(zh-Hans)
+      text: "\u6CE8\u610F\uFF1A\u7EEF\u7EA2\u957F\u77DB\u65E0\u6CD5\u7A7F\u8FC7\u5B9E\u4F53\u969C\u788D\u7269\uFF0C\u4E5F\u65E0\u6CD5\u653B\u51FB\u4F4D\u4E8E\u5899\u540E\u7684\u654C\u4EBA\u3002"
+    - language: Spanish(es)
+      text: "Nota: La Lanza Carmes\xED no puede atravesar obst\xE1culos s\xF3lidos
+        ni atacar a enemigos situados detr\xE1s de muros."
+    - language: Telugu(te)
+      text: "\u0C17\u0C2E\u0C28\u0C3F\u0C15: \u0C15\u0C4D\u0C30\u0C3F\u0C2E\u0C4D\u0C38\u0C28\u0C4D
+        \u0C32\u0C3E\u0C28\u0C4D\u0C38\u0C4D \u0C17\u0C1F\u0C4D\u0C1F\u0C3F \u0C05\u0C21\u0C4D\u0C21\u0C02\u0C15\u0C41\u0C32
+        \u0C17\u0C41\u0C02\u0C21\u0C3E \u0C35\u0C46\u0C33\u0C4D\u0C33\u0C26\u0C41
+        \u0C2E\u0C30\u0C3F\u0C2F\u0C41 \u0C17\u0C4B\u0C21\u0C32 \u0C35\u0C46\u0C28\u0C41\u0C15
+        \u0C09\u0C28\u0C4D\u0C28 \u0C36\u0C24\u0C4D\u0C30\u0C41\u0C35\u0C41\u0C32\u0C28\u0C41
+        \u0C32\u0C15\u0C4D\u0C37\u0C4D\u0C2F\u0C02\u0C17\u0C3E \u0C1A\u0C47\u0C38\u0C41\u0C15\u0C4B\u0C26\u0C41."
   languages:
   - English(en)
   - Tamil(ta)

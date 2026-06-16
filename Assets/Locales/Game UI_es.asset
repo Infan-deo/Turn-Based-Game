@@ -62,6 +62,59 @@ MonoBehaviour:
     m_Localized: "Puntos de acci\xF3n"
     m_Metadata:
       m_Items: []
+  - m_Id: 7044189001826304
+    m_Localized: Deletrear
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7044189001826305
+    m_Localized: "Nova del Vac\xEDo"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7044189001826306
+    m_Localized: "Detona una esfera de energ\xEDa del vac\xEDo, infligiendo un gran
+      da\xF1o m\xE1gico a todos los enemigos cercanos y debilit\xE1ndolos con energ\xEDa
+      de sombra persistente."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7044189001826307
+    m_Localized: Elige un enemigo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7044189001826308
+    m_Localized: "Elige una acci\xF3n"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7377567177719808
+    m_Localized: Puntos necesarios
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7377567244828672
+    m_Localized: Puntos restantes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8006770067718144
+    m_Localized: Elige un hechizo para realizar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8006770130632704
+    m_Localized: No hay hechizos disponibles
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8006770130632705
+    m_Localized: "Lanza carmes\xED"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8006770130632706
+    m_Localized: "Lanza una lanza llameante de energ\xEDa carmes\xED que atraviesa
+      el aire, explotando al impactar y abrasando a su objetivo con un fuego arcano
+      abrasador."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8006770130632707
+    m_Localized: "Nota: La Lanza Carmes\xED no puede atravesar obst\xE1culos s\xF3lidos
+      ni atacar a enemigos situados detr\xE1s de muros."
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

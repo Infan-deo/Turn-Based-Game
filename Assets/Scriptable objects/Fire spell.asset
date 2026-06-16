@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6de7bf99253321f4da31891d9251cc48, type: 3}
+  m_Name: Fire spell
+  m_EditorClassIdentifier: 
+  spellName:
+    m_TableReference:
+      m_TableCollectionName: GUID:a9067468e1b08ef438a89c58c54e2aa6
+    m_TableEntryReference:
+      m_KeyId: 8006770130632705
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  spellDescription:
+    m_TableReference:
+      m_TableCollectionName: GUID:a9067468e1b08ef438a89c58c54e2aa6
+    m_TableEntryReference:
+      m_KeyId: 8006770130632706
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  Spellimage: {fileID: 21300000, guid: 07763151444bd1a478c196d984a2931c, type: 3}
+  ConsumablePoints: 2
+  spellDuration: 3
+  spellBehaviour: {fileID: 11400000, guid: f6cd05e06092b5b4fbe239c7f72c2f54, type: 2}
+  references:
+    version: 2
+    RefIds: []

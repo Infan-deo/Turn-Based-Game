@@ -8,6 +8,8 @@ public class Testing : MonoBehaviour
     [SerializeField] Unit unit;
     [SerializeField] SoundID _sfx = default;
 
+    public List<SpellInfo> spellInfos;
+
 
 
     private void Update()
@@ -18,6 +20,14 @@ public class Testing : MonoBehaviour
             {
                 currentSceneIndex = SceneController.Instance.GetcurrentSceneIndex(),
                 currentSceneName = SceneController.Instance.Sceneinfo.name
+            });
+
+        }
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            EventBus<SpellUIEvent>.Raise(new SpellUIEvent
+            {
+                spellInfos1 = spellInfos
             });
 
         }

@@ -13,7 +13,7 @@ public class ActionButtonUI : MonoBehaviour
 
     private BaseAction baseAction;
 
-    public Action<ActionButtonUI> OnButtonClicked;
+    public static Action<BaseAction> OnButtonClicked;
 
     private void Awake()
     {
@@ -38,6 +38,7 @@ public class ActionButtonUI : MonoBehaviour
         button.onClick.AddListener(() =>
         {
             UnitActionSystem.Instance.SetSelectedAction(baseAction);
+            
 
         });
     }

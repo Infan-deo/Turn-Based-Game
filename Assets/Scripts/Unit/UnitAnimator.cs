@@ -12,6 +12,7 @@ public class UnitAnimator : MonoBehaviour
 
 
 
+
     private void Awake()
     {
         if (TryGetComponent(out MoveAction moveAction))
@@ -30,7 +31,26 @@ public class UnitAnimator : MonoBehaviour
             swordAction.OnSwordActionCompleted += SwordAction_OnSwordActionCompleted;
 
         }
+        if (TryGetComponent(out SpellAction SpellAction))
+        {
+            SpellAction.OnSpellActionStarted += SpellAction_OnSpellActionStarted;
+            SpellAction.OnSpellActionCompleted += SpellAction_OnSpellActionCompleted;
+
+        }
     }
+
+    private void SpellAction_OnSpellActionCompleted()
+    {
+         EquipRifle();
+    }
+
+    private void SpellAction_OnSpellActionStarted()
+    {
+       
+        UnequipAll();
+        animator.SetTrigger("CastSpell");
+    }
+
     private void Start()
     {
         EquipRifle();
@@ -74,6 +94,11 @@ public class UnitAnimator : MonoBehaviour
     public void EquipRifle()
     {
         rifleTransform.gameObject.SetActive(true);
+        swordTransform.gameObject.SetActive(false);
+    }
+    public void UnequipAll()
+    {
+        rifleTransform.gameObject.SetActive(false);
         swordTransform.gameObject.SetActive(false);
     }
 }

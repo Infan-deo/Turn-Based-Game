@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using DG.Tweening;
+using Unity.Cinemachine;
 using UnityEngine;
 
 public class Unit : MonoBehaviour
@@ -12,11 +13,14 @@ public class Unit : MonoBehaviour
 
 
     [SerializeField] private bool isEnemy;
+    [SerializeField] private CinemachineCamera unitCinemachineCamera;
     GridPosition gridPosition;
 
     HealthSystem healthSystem;
 
     BaseAction[] baseActionArray;
+
+
 
     int actionpoints = 2;
 
@@ -137,5 +141,10 @@ public class Unit : MonoBehaviour
     {
         healthSystem.Damage(damageAmount);
         UnitManager.Instance.SetUnitRagdollFallDir(UnitActionSystem.Instance.GetSelectedUnit().GetWorldPosition());
+    }
+
+    public CinemachineCamera GetCinemachineCamera()
+    {
+        return unitCinemachineCamera;
     }
 }

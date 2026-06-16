@@ -59,6 +59,54 @@ MonoBehaviour:
     m_Key: GameScene.Action_points
     m_Metadata:
       m_Items: []
+  - m_Id: 7044189001826304
+    m_Key: SpellUI.Spell
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7044189001826305
+    m_Key: SpellUI.PurpleSpell
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7044189001826306
+    m_Key: SpellUI.PurpleSpellDesc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7044189001826307
+    m_Key: Instructions.ChooseAnEnemy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7044189001826308
+    m_Key: Instructions.ChooseAnAction
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7377567177719808
+    m_Key: SpellUI.PointsNeededForSpell
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7377567244828672
+    m_Key: SpellUI.PointsYouHaveForSpell
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8006770067718144
+    m_Key: SpellUI.Choosespelltoperform
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8006770130632704
+    m_Key: SpellUI.NoSpellsAvail
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8006770130632705
+    m_Key: SpellUI.redspell
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8006770130632706
+    m_Key: SpellUI.redspelldesc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8006770130632707
+    m_Key: SpellUI.Noteforredspell
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

@@ -62,6 +62,57 @@ MonoBehaviour:
     m_Localized: Action Points
     m_Metadata:
       m_Items: []
+  - m_Id: 7044189001826304
+    m_Localized: Spell
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7044189001826305
+    m_Localized: Void Nova
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7044189001826306
+    m_Localized: Detonates a sphere of void energy, dealing heavy magic damage to
+      all nearby enemies and weakening them with lingering shadow energy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7044189001826307
+    m_Localized: Choose an Enemy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7044189001826308
+    m_Localized: Choose an Action
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7377567177719808
+    m_Localized: Points Needed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7377567244828672
+    m_Localized: Remaining Points
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8006770067718144
+    m_Localized: Choose a spell to perform
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8006770130632704
+    m_Localized: No Spells Available
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8006770130632705
+    m_Localized: Crimson Lance
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8006770130632706
+    m_Localized: Hurls a blazing spear of crimson energy that pierces through the
+      air, exploding on impact and scorching its target with searing arcane fire
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8006770130632707
+    m_Localized: 'Note: Crimson Lance cannot pass through solid obstacles and cannot
+      target enemies positioned behind walls.'
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
