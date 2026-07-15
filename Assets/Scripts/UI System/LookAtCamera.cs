@@ -1,14 +1,15 @@
+using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 
 public class LookAtCamera : MonoBehaviour
 {
     [SerializeField] public bool invert;
-    private Transform cameraTransform;
+    public  Transform cameraTransform;
 
-    private void Awake()
-    {
-        cameraTransform = Camera.main.transform;
+    private void Start()
+    {        
+        cameraTransform = CameraManager.Instance.mainCamera;
     }
 
     private void LateUpdate()

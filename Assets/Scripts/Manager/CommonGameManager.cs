@@ -12,8 +12,8 @@ public class CommonGameManager : Singleton<CommonGameManager>
     protected override void Awake()
     {
         base.Awake();
-        DontDestroyOnLoad(this.gameObject);
-        DontDestroyOnLoad(popUpCanvas);
+        // DontDestroyOnLoad(this.gameObject);
+        // DontDestroyOnLoad(popUpCanvas);
     }
     private void Start()
     {

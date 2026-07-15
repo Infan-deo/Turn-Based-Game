@@ -15,7 +15,7 @@ public class SpellButtonUI : MonoBehaviour
 
     private void Start()
     {
-        _spellBtn.onClick.AddListener(SpellBtnPressed);
+        
     }
 
     public void SetSpellButtonInfo(SpellInfo spellInfo)
@@ -28,11 +28,14 @@ public class SpellButtonUI : MonoBehaviour
     private void OnEnable()
     {
         LocalizationSettings.SelectedLocaleChanged += OnLocaleChanged;
+        
+        _spellBtn.onClick.AddListener(SpellBtnPressed);
     }
 
     private void OnDisable()
     {
         LocalizationSettings.SelectedLocaleChanged -= OnLocaleChanged;
+        _spellBtn.onClick.RemoveListener(SpellBtnPressed);
     }
 
     private void OnLocaleChanged(UnityEngine.Localization.Locale locale)
@@ -60,6 +63,7 @@ public class SpellButtonUI : MonoBehaviour
 
     public void SpellBtnPressed()
     {
+        print("Spell Button Pressed: " + spellInfo.spellName.GetLocalizedString());
         EventBus<SelectedSpellEvent>.Raise(new SelectedSpellEvent(spellInfo));
     }
 }

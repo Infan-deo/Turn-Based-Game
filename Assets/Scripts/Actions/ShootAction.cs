@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using Ami.BroAudio;
 using UnityEngine;
 
-public class ShootAction : BaseAction
+public class ShootAction : BaseAction, IParryable
 {
     private enum State
     {
         Aiming,
+        Parrytiming,
         Shooting,
         CoolOff
     }
@@ -18,7 +19,12 @@ public class ShootAction : BaseAction
     private bool canShootBullet;
     public event EventHandler<OnShootEventArgs> OnShoot;
     public static event EventHandler<OnShootEventArgs> OnAnyShoot;
+    public event Action OnParryObjectHit;
+    public static event EventHandler OnAnyParryTimingStarted;
+
     [SerializeField] private LayerMask obstaclesLayerMask;
+    public ParryInfo ShootActionParryInfo;
+
 
     public class OnShootEventArgs : EventArgs
     {
@@ -44,6 +50,8 @@ public class ShootAction : BaseAction
             case State.Aiming:
                 Aim();
                 break;
+            case State.Parrytiming:
+                break;
             case State.Shooting:
                 if (canShootBullet)
                 {
@@ -65,6 +73,7 @@ public class ShootAction : BaseAction
 
     private void Shoot()
     {
+        OnParryObjectHit?.Invoke();
         OnAnyShoot?.Invoke(this, new OnShootEventArgs
         {
             targetedUnit = targetUnit,
@@ -75,23 +84,47 @@ public class ShootAction : BaseAction
             targetedUnit = targetUnit,
             shootingUnit = Unit
         });
-        targetUnit.Damage(40);
-       SFXGameManager.Instance.PlayShootingSound();
+        if (!isThisActionParryableNow())
+        {
+            targetUnit.Damage(40, this);
+        }
+        SFXGameManager.Instance.PlayShootingSound();
     }
     private void Aim()
     {
         Vector3 aimDir = (targetUnit.GetWorldPosition() - Unit.GetWorldPosition()).normalized;
         float rotateSpeed = 10f;
         transform.forward = Vector3.Lerp(transform.forward, aimDir, Time.deltaTime * rotateSpeed);
+        if (isThisActionParryableNow())
+        {
+            targetUnit.transform.forward = Vector3.Lerp(targetUnit.transform.forward, -aimDir, Time.deltaTime * rotateSpeed);
+        }
+        // targetUnit.transform.forward =Quaternion.RotateTowards()
     }
 
     private void NextState()
     {
+        float shootingStateTime = 0.15f;
         switch (state)
         {
             case State.Aiming:
+
+                if (isThisActionParryableNow())
+                {
+                    state = State.Parrytiming;
+                    OnAnyParryTimingStarted?.Invoke(this,EventArgs.Empty);
+                    float parryStateTime = GetParryOverallTiming() / 2;
+                    stateTimer = parryStateTime;
+                }
+                else
+                {
+                    state = State.Shooting;
+                    stateTimer = shootingStateTime;
+                }
+                break;
+            case State.Parrytiming:
+
                 state = State.Shooting;
-                float shootingStateTime = 0.1f;
                 stateTimer = shootingStateTime;
                 break;
             case State.Shooting:
@@ -183,8 +216,8 @@ public class ShootAction : BaseAction
         float aimimgStateTime = 1.5f;
         stateTimer = aimimgStateTime;
         canShootBullet = true;
-        ActionStart(onActionComplete);
 
+        ActionStart(onActionComplete);
     }
 
     public Unit GetTargetUnit()
@@ -212,6 +245,46 @@ public class ShootAction : BaseAction
     public int GetTargetCountAtPosition(GridPosition gridPosition)
     {
         return GetvalidGridPositionList(gridPosition).Count;
+    }
+
+    public float GetParryOverallTiming()
+    {
+        return ShootActionParryInfo.parryOverallTiming;
+    }
+
+    public float GetParryCoolDownTiming()
+    {
+        return ShootActionParryInfo.parryCoolDownTiming;
+    }
+
+    public bool isThisActionParryableNow()
+    {
+        return !TurnSystem.Instance.IsPlayerTurn();
+    }
+
+    public ParryController GetParryController()
+    {
+        if (TryGetComponent(out ParryController parryController))
+        {
+            return parryController;
+        }
+        return null;
+
+    }
+
+    public void OnParryFailed()
+    {
+        Unit.Damage(40, this);
+    }
+
+    public ParryInfo GetParryInfo()
+    {
+        return ShootActionParryInfo;
+    }
+
+    public void OnParrySuccess()
+    {
+        //Success
     }
 
 

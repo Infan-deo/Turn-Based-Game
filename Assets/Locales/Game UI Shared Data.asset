@@ -107,6 +107,10 @@ MonoBehaviour:
     m_Key: SpellUI.Noteforredspell
     m_Metadata:
       m_Items: []
+  - m_Id: 9922391953063936
+    m_Key: GameScene.spell
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

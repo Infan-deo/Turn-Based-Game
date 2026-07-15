@@ -7,13 +7,13 @@ using UnityEngine.UI;
 public class MainMenuManager : MonoBehaviour
 {
 
-    SceneController _sceneManager;
+    // SceneController _sceneManager;
 
-    [Inject]
-    public void Inject(SceneController _sceneManager)
-    {
-        this._sceneManager = _sceneManager;
-    }
+    // [Inject]
+    // public void Inject(SceneController _sceneManager)
+    // {
+    //     this._sceneManager = _sceneManager;
+    // }
 
     public Button PlayBtn;
     public Button Settingsbtn;
@@ -51,7 +51,7 @@ public class MainMenuManager : MonoBehaviour
     {
         CircleFadeTransition.Instance.CircleFadeIn();
         yield return new WaitForSeconds(1f);
-        _sceneManager.LoadGameScene();
+        SceneController.Instance.LoadGameScene();
     }
 
     void SettingsBtnPressed()

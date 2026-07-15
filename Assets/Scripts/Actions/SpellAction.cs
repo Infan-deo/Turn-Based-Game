@@ -4,70 +4,54 @@ using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
 
-public struct SpellUIEvent : IEvent
-{
-    public List<SpellInfo> spellInfos1;
-}
-public struct SelectedSpellEvent : IEvent
-{
-    public SpellInfo SelectedSpellInfo;
 
-    public SelectedSpellEvent(SpellInfo spellInfo)
-    {
-        SelectedSpellInfo = spellInfo;
-    }
-}
 public class SpellAction : BaseAction
 {
-    private enum State
-    {
-        Aiming,
-        Spellperform,
-        CoolOff
-    }
-    [SerializeField] private int maxShootDistance = 7;
 
-    [SerializeField] private float WaitforSpellAnimationComplete;
+    [SerializeField] private int maxShootDistance = 12;
 
     public List<SpellInfo> spellInfos;
 
     private SpellInfo selectedSpellInfo;
     EventBinding<SelectedSpellEvent> selectedSpellEvent;
     public bool IsSpellSelected;
-    public Transform spellParent;
+    private Transform spellParent;
 
-    public Action OnSpellActionStarted;
+    public Action<SpellType> OnSpellActionStarted;
     public Action OnSpellActionCompleted;
 
     public SpellType selectedspellType => selectedSpellInfo.spellBehaviour.spellType;
     Unit targetUnit;
-    float spelltimer;
-    [SerializeField] private LayerMask obstaclesLayerMask;
 
+    [SerializeField] private LayerMask obstaclesLayerMask;
+    protected override void Awake()
+    {
+        base.Awake();
+        // Shader.WarmupAllShaders();
+    }
     private void OnEnable()
     {
         selectedSpellEvent = new EventBinding<SelectedSpellEvent>(OnSpellSelected);
         EventBus<SelectedSpellEvent>.Register(selectedSpellEvent);
+        UnitActionSystem.Instance.OnSelectedActionChanged += UnitActionSystem_OnSelectedActionChanged;
+        spellParent = UnitActionSystem.Instance.SpellParent;
+        CreateProjectilePool();
     }
 
-    private void Start()
-    {
-        UnitActionSystem.Instance.OnSelectedActionChanged += UnitActionSystem_OnSelectedActionChanged;
-    }
+
 
     private void OnDisable()
     {
+        UnitActionSystem.Instance.OnSelectedActionChanged -= UnitActionSystem_OnSelectedActionChanged;
         EventBus<SelectedSpellEvent>.Deregister(selectedSpellEvent);
     }
 
     public void OnSpellSelected(SelectedSpellEvent @event)
     {
         selectedSpellInfo = @event.SelectedSpellInfo;
-        UnitActionSystem.Instance.SetSelectedAction(this);
+        // UnitActionSystem.Instance.RefreshSelectedAction();       
         IsSpellSelected = true;
     }
-
-
 
 
     public override string GetActionName()
@@ -81,11 +65,7 @@ public class SpellAction : BaseAction
         {
             return;
         }
-        spelltimer -= Time.deltaTime;
-        if (spelltimer <= 0f)
-        {
-            OnSpellActionTimeCompleted();
-        }
+
 
     }
 
@@ -197,15 +177,15 @@ public class SpellAction : BaseAction
     public override void TakeAction(GridPosition gridPosition, Action<bool> onActionComplete)
     {
         targetUnit = LevelGrid.Instance.GetUnitAtGridPosition(gridPosition);
-        spelltimer = selectedSpellInfo.spellDuration;
-        
+
+
         if (selectedSpellInfo.spellBehaviour != null)
         {
             StartCoroutine(
             selectedSpellInfo.spellBehaviour.Execute(
             Unit,
             targetUnit,
-            selectedSpellInfo, this));
+            selectedSpellInfo, this, () => ActionComplete()));
         }
 
         ActionStart(onActionComplete);
@@ -220,7 +200,7 @@ public class SpellAction : BaseAction
 
     public override int GetActionPointsCost()
     {
-        return selectedSpellInfo.ConsumablePoints;
+        return selectedSpellInfo?.ConsumablePoints ?? 5;
     }
 
     public void AddSpell(SpellInfo spellInfo)
@@ -238,5 +218,35 @@ public class SpellAction : BaseAction
     public SpellInfo GetSelectedSpellInfo()
     {
         return selectedSpellInfo;
+    }
+    public Transform GetSpellParent()
+    {
+        return spellParent;
+    }
+
+    private void CreateProjectilePool()
+    {
+        foreach (SpellInfo spellInfo in spellInfos)
+        {
+            if (spellInfo.spellBehaviour.spellType == SpellType.PROJECTILE)
+            {
+                PoolManager.Instance.CreatePool(spellInfo.spellBehaviour.projectileSpellPrefab, 5);
+            }
+        }
+    }
+
+}
+
+public struct SpellUIEvent : IEvent
+{
+    public List<SpellInfo> spellInfos1;
+}
+public struct SelectedSpellEvent : IEvent
+{
+    public SpellInfo SelectedSpellInfo;
+
+    public SelectedSpellEvent(SpellInfo spellInfo)
+    {
+        SelectedSpellInfo = spellInfo;
     }
 }

@@ -124,6 +124,10 @@ MonoBehaviour:
       \xBE\xA1\xEC\xB8 \xD3\xCA\xC2\xA1\xD0."
     m_Metadata:
       m_Items: []
+  - m_Id: 9922391953063936
+    m_Localized: "\xC1\xF3\xBE\xA2\xC3\xF5"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

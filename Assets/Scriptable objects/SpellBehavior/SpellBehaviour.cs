@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using Sirenix.OdinInspector;
 using UnityEngine;
@@ -5,6 +6,7 @@ using UnityEngine;
 public abstract class SpellBehaviour : ScriptableObject
 {
     public int SpellDamage;
+    public int SpellID;
     public SpellType spellType;
     public abstract string GetSpellTypeName();
 
@@ -22,5 +24,6 @@ public abstract class SpellBehaviour : ScriptableObject
         Unit caster,
         Unit target,
         SpellInfo spellInfo,
-        SpellAction spellAction);
+        SpellAction spellAction,
+        Action OnSpellActionComplted);
 }

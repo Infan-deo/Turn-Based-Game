@@ -11,6 +11,7 @@ public class SettingsPage : MonoBehaviour
     [SerializeField] private Button musicMuteBtn;
     [SerializeField] private Button sfxMuteBtn;
     [SerializeField] private Button MainMenu;
+    [SerializeField] private Button Exit;
 
     [Header("Sliders")]
     [SerializeField] private Slider musicSlider;
@@ -53,6 +54,7 @@ public class SettingsPage : MonoBehaviour
         musicMuteBtn.onClick.AddListener(ToggleMusicMute);
         sfxMuteBtn.onClick.AddListener(ToggleSFXMute);
 
+        MainMenu.onClick.AddListener(GotoMainMenu);
         MainMenu.onClick.AddListener(GotoMainMenu);
     }
 

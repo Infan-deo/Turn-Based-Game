@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine.Localization;
+using System.Collections;
 
 
 public class UnitActionSystemUI : MonoBehaviour
@@ -30,6 +31,7 @@ public class UnitActionSystemUI : MonoBehaviour
         TurnSystem.Instance.OnTurnChanged += TurnSystem_OnTurnChanged;
         Unit.OnAnyActionPointsChanged += Unit_OnAnyActionPointsChanged;
         UpdateActionPoints();
+        // yield return new WaitForSeconds(0.1f);
         CreateUnitActionButtons();
         UpdateSelectedVisual();
         actionPointsLocalizedString.StringChanged += UpdateText;

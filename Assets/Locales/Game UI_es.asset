@@ -115,6 +115,10 @@ MonoBehaviour:
       ni atacar a enemigos situados detr\xE1s de muros."
     m_Metadata:
       m_Items: []
+  - m_Id: 9922391953063936
+    m_Localized: Deletrear
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

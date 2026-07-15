@@ -50,7 +50,7 @@ public class SwordAction : BaseAction
                 state = State.SwingingSwordAfterHit;
                 float afterHitStateTime = 0.5f;
                 stateTimer = afterHitStateTime;
-                targetUnit.Damage(100);
+                targetUnit.Damage(100,this);
                 SFXGameManager.Instance.PlayKnifeSlayingSound();
                 OnAnySwordHit?.Invoke();
                 break;

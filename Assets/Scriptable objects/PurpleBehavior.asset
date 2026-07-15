@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9aa3bfc0b9546b418924faefa6df59a, type: 3}
   m_Name: PurpleBehavior
   m_EditorClassIdentifier: 
+  SpellDamage: 50
   spellType: 2
   Spellprefab: {fileID: 803750879078336436, guid: c753e9386359143429c1683d19ec3fae, type: 3}
   projectileSpellPrefab: {fileID: 0}

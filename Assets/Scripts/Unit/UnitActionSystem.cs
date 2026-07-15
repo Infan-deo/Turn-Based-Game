@@ -18,7 +18,11 @@ public class UnitActionSystem : MonoBehaviour
     BaseAction selectedBaseAction;
 
     [SerializeField] private bool isBusy;
-    
+
+    public Transform SpellParent;
+
+    public ActionButtonUI _selecetedActionButtonUI;
+
 
     private void Awake()
     {
@@ -37,9 +41,9 @@ public class UnitActionSystem : MonoBehaviour
         SetSelectedUnit(_selectedUnit);
 
     }
-    
 
-    
+
+
 
     private void Update()
     {
@@ -111,6 +115,7 @@ public class UnitActionSystem : MonoBehaviour
                     return;
                 }
             }
+            
             SetBusy(true);
             selectedBaseAction.TakeAction(mouseGridPosition, SetBusy);
             OnActionStarted?.Invoke(this, EventArgs.Empty);
@@ -128,6 +133,11 @@ public class UnitActionSystem : MonoBehaviour
     {
         selectedBaseAction = baseAction;
         OnSelectedActionChanged?.Invoke(this, EventArgs.Empty);
+    }
+
+    public void RefreshSelectedAction()
+    {
+        _selecetedActionButtonUI.SetSelectedAction();
     }
 
     public Unit GetSelectedUnit()

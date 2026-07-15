@@ -6,7 +6,7 @@ using TBGame;
 public class Testing : MonoBehaviour
 {
     [SerializeField] Unit unit;
-    [SerializeField] SoundID _sfx = default;
+    // [SerializeField] SoundID _sfx = default;
 
     public List<SpellInfo> spellInfos;
 

@@ -8,6 +8,7 @@ public class GridSystemVisual : MonoBehaviour
     public static GridSystemVisual Instance { get; private set; }
 
     private GridSystemVisualSingle[,] gridSystemVisualSingleArray;
+    EventBinding<SelectedSpellEvent> selectedSpellEvent;
 
     private void Awake()
     {
@@ -39,6 +40,17 @@ public class GridSystemVisual : MonoBehaviour
         LevelGrid.Instance.OnAnyUnitMovedGridPostion += LevelGrid_OnAnyUnitMovedGridPostion;
         Unit.OnAnyUnitDead += Unit_OnAnyUnitDead;
         UpdateGridVisual();
+    }
+
+    private void OnEnable()
+    {
+        selectedSpellEvent = new EventBinding<SelectedSpellEvent>(OnSpellSelected);
+        EventBus<SelectedSpellEvent>.Register(selectedSpellEvent);
+    }
+
+    private void OnDisable()
+    {
+        EventBus<SelectedSpellEvent>.Deregister(selectedSpellEvent);
     }
 
 
@@ -188,6 +200,10 @@ public class GridSystemVisual : MonoBehaviour
     }
 
     private void Unit_OnAnyUnitDead(object sender, EventArgs e)
+    {
+        UpdateGridVisual();
+    }
+    private void OnSpellSelected(SelectedSpellEvent @event)
     {
         UpdateGridVisual();
     }

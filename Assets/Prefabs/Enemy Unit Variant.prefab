@@ -16,6 +16,14 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 7d22fc6b9a431b043a917fb89a80bcfc, type: 2}
+    - target: {fileID: 1913788470223398923, guid: b8857ffcd7a844f4d84d6454970f0674, type: 3}
+      propertyPath: ParryOverallTiming
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1913788470223398923, guid: b8857ffcd7a844f4d84d6454970f0674, type: 3}
+      propertyPath: ParryCoolDownTiming
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4113093753843671377, guid: b8857ffcd7a844f4d84d6454970f0674, type: 3}
       propertyPath: isEnemy
       value: 1

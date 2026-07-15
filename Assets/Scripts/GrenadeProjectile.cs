@@ -39,7 +39,7 @@ public class GrenadeProjectile : MonoBehaviour
                 if (collider.TryGetComponent(out Unit targetUnit))
                 {
                     UnitManager.Instance.SetUnitRagdollFallDir(transform.position);
-                    targetUnit.Damage(30);
+                    targetUnit.Damage(30,new GrenadeAction());
                 }
                 if (collider.TryGetComponent(out DestructableCrate destructableCrate))
                 {

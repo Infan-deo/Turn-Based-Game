@@ -16,6 +16,8 @@ public class BulletProjectile : MonoBehaviour
         this.targetPostion = targetPosition;
     }
 
+    
+
     private void Update()
     {
         Vector3 moveDir = (targetPostion - transform.position).normalized;

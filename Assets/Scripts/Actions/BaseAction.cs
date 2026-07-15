@@ -1,7 +1,6 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
-// using Unity.VisualScripting;
-// using UnityEditor.IMGUI.Controls;
 using UnityEngine;
 using UnityEngine.Localization;
 
@@ -17,43 +16,44 @@ public abstract class BaseAction : MonoBehaviour
     public static event EventHandler OnAnyActionStarted;
     public static event EventHandler OnAnyActionCompleted;
 
-    protected string localizedActionName;
+    private string localizedActionName;
 
-    private ActionButtonUI actionButtonUI;
+
 
 
     protected virtual void Awake()
     {
         Unit = GetComponent<Unit>();
     }
-    private void Start()
+
+    protected virtual IEnumerator Start()
     {
+        yield return new WaitForSeconds(0.1f);
         localizedString.StringChanged += UpdateLocalizedActionName;
-        
+
         localizedString.RefreshString();
     }
 
     private void OnDestroy()
     {
         localizedString.StringChanged -= UpdateLocalizedActionName;
-       
+
     }
 
     private void UpdateLocalizedActionName(string value)
     {
         localizedActionName = value;
+      
         OnLocalizationChanged?.Invoke();
-        
-
     }
     public string GetLocalizedActionName()
     {
-     
+
         return localizedActionName;
     }
 
 
-    
+
 
     public abstract string GetActionName();
 

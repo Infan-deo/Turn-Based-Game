@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using UnityEngine;
 
 public class EnemyAI : MonoBehaviour
@@ -125,6 +126,27 @@ public class EnemyAI : MonoBehaviour
 
         if (bestEnemyAIAction != null && enemyUnit.TrySpendActionPointsToTakeAction(bestBaseAction))
         {
+            Unit targetUnit = LevelGrid.Instance.GetUnitAtGridPosition(bestEnemyAIAction.gridPosition);
+            BaseAction targetAction = targetUnit.GetBaseActionArray()
+            .FirstOrDefault(a => a.GetType() == bestBaseAction.GetType());
+            if (targetAction is IParryable parryable &&
+             parryable.isThisActionParryableNow())
+            {
+
+                IParryable defender = targetAction as IParryable;
+                IParryable attacker = bestBaseAction as IParryable;
+
+                ParryController parryController = defender.GetParryController();
+                
+                if (parryController != null)
+                {
+                    parryController.SwitchToParryMode(defender, attacker);
+                }
+            }
+            else
+            {
+                print("Parryable isThisActionParryableNow is false");
+            }
             bestBaseAction.TakeAction(bestEnemyAIAction.gridPosition, onEnemyAIActionComplete);
             return true;
         }

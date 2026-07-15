@@ -55,11 +55,13 @@ namespace TBGame
 
         public void LoadGameScene()
         {
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene(1,LoadSceneMode.Additive);
+            SceneManager.UnloadSceneAsync(0);
         }
         public void LoadMainMenuScene()
         {
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(0,LoadSceneMode.Additive);
+            SceneManager.UnloadSceneAsync(1);
         }
 
 

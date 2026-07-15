@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using DG.Tweening;
 using Unity.Cinemachine;
 using UnityEngine;
@@ -10,17 +11,14 @@ public class Unit : MonoBehaviour
     public static event EventHandler OnAnyActionPointsChanged;
     public static event EventHandler OnAnyUnitSpawned;
     public static event EventHandler OnAnyUnitDead;
-
-
-    [SerializeField] private bool isEnemy;
-    [SerializeField] private CinemachineCamera unitCinemachineCamera;
+    public event EventHandler OnUnitAttacked;
+    [SerializeField] private bool isEnemy;   
+    [SerializeField] private Transform[] unitCameraTransformPoint;
+    public List<Transform> SpellPoints;
     GridPosition gridPosition;
-
     HealthSystem healthSystem;
-
     BaseAction[] baseActionArray;
-
-
+    private bool _isUnitDead;
 
     int actionpoints = 2;
 
@@ -41,15 +39,17 @@ public class Unit : MonoBehaviour
         healthSystem.OnDead += HealthSystem_OnDead;
         OnAnyUnitSpawned?.Invoke(this, EventArgs.Empty);
         actionpoints = ACTION_POINTS_MAX;
+        
     }
 
     private void HealthSystem_OnDead(object sender, EventArgs e)
     {
-        LevelGrid.Instance.RemoveUnitAtGridPosition(gridPosition, this);
-        UnitManager.Instance.RemoveAnUnitFormFriendlyList(this);
-        Destroy(gameObject);
+        UnitAttackManager.Instance.OnUnitDied(this);
+        _isUnitDead =true;
         OnAnyUnitDead?.Invoke(this, EventArgs.Empty);
     }
+
+
 
     private void Update()
     {
@@ -142,9 +142,26 @@ public class Unit : MonoBehaviour
         healthSystem.Damage(damageAmount);
         UnitManager.Instance.SetUnitRagdollFallDir(UnitActionSystem.Instance.GetSelectedUnit().GetWorldPosition());
     }
-
-    public CinemachineCamera GetCinemachineCamera()
+    public void Damage(int damageAmount, BaseAction baseAction)
     {
-        return unitCinemachineCamera;
+        UnitAttackManager.Instance.UnitAttacked(this, baseAction);
+        healthSystem.Damage(damageAmount);
+        OnUnitAttacked?.Invoke(this, EventArgs.Empty);
+        UnitManager.Instance.SetUnitRagdollFallDir(UnitActionSystem.Instance.GetSelectedUnit().GetWorldPosition());
+    }
+
+
+   
+    public Transform[] GetUnitCameraTransform()
+    {
+        return unitCameraTransformPoint;
+    }
+    public bool GetIsUnitDead()
+    {
+        return _isUnitDead;
+    }
+    public void SetIsUnitDead(bool _isUnitDead)
+    {
+        this._isUnitDead = _isUnitDead;
     }
 }

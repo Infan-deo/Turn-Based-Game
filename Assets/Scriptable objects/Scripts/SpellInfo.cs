@@ -9,14 +9,15 @@ public enum SpellType
    CASTING
 }
 
-[CreateAssetMenu(fileName = "SpellInfo", menuName = "Scriptable Objects/SpellInfo")]
+[CreateAssetMenu(fileName = "SpellInfo", menuName = "Scriptable Objects/Spells/SpellInfo")]
 public class SpellInfo : ScriptableObject
 {
    public LocalizedString spellName;
    public LocalizedString spellDescription;
    public Sprite Spellimage;
    public int ConsumablePoints;
-   public float spellDuration;  
+   
    public SpellBehaviour spellBehaviour;
 
+    
 }

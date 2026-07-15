@@ -113,6 +113,10 @@ MonoBehaviour:
       target enemies positioned behind walls.'
     m_Metadata:
       m_Items: []
+  - m_Id: 9922391953063936
+    m_Localized: Spell
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

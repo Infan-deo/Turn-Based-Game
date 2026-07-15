@@ -12,6 +12,14 @@ public class InputManagerTBG : Singleton<InputManagerTBG>
         inputActions = new PlayerInputAction();
         inputActions.Player.Enable();
     }
+    public bool GetParryInputDownThisFrame()
+    {
+         #if USE_NEW_INPUT_SYSTEM
+        return inputActions.Player.ParryButton.WasPressedThisFrame();//R key
+#else
+        return Input.GetKeyDown(KeyCode.R);
+        #endif
+    } 
     public Vector3 GetMousePosition()
     {
 #if USE_NEW_INPUT_SYSTEM
