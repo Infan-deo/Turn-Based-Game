@@ -111,8 +111,8 @@ public class ShootAction : BaseAction, IParryable
 
                 if (isThisActionParryableNow())
                 {
-                    state = State.Parrytiming;
                     OnAnyParryTimingStarted?.Invoke(this,EventArgs.Empty);
+                    state = State.Parrytiming;
                     float parryStateTime = GetParryOverallTiming() / 2;
                     stateTimer = parryStateTime;
                 }

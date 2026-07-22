@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class ParryManager : Singleton<ParryManager>
 {
-
     public bool canParry;
     public bool isParryStarted;
     public float parryCoolDownTime;
@@ -17,10 +16,8 @@ public class ParryManager : Singleton<ParryManager>
     {
         if (!isParryStarted)
         {
-            
             return;
         }
-
 
         parryOverallTime -= Time.deltaTime;
 
@@ -49,15 +46,15 @@ public class ParryManager : Singleton<ParryManager>
         OnPerformParry?.Invoke();
     }
 
-    
 
- public void StartParry(float overalltime, float cooldowntime)
-{
-    isParryStarted = true;
 
-    parryCoolDownTimestatic = cooldowntime;
-    parryCoolDownTime = cooldowntime;
+    public void StartParry(float overalltime, float cooldowntime)
+    {
+        isParryStarted = true;
 
-    parryOverallTime = overalltime;
-}
+        parryCoolDownTimestatic = cooldowntime;
+        parryCoolDownTime = cooldowntime;
+
+        parryOverallTime = overalltime;
+    }
 }

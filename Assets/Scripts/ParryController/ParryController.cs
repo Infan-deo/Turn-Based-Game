@@ -4,15 +4,10 @@ using UnityEngine;
 public class ParryController : MonoBehaviour
 {
     public Action OnParryExcuted;
-    public Action OnParryCompleted;
-    public Transform camerapoint;
+    public Action OnParryCompleted;    
     public IParryable parryable;          // defender
     private IParryable incomingAttack;    // attacker
-    public bool isSwitchedToParryMode;
-    public bool isUnsuccessfullParry;
-
     public bool isParrying;
-
     public bool CanParry = true;
 
     private void OnEnable()
@@ -46,8 +41,6 @@ public class ParryController : MonoBehaviour
 
     private void CheckIsParryed()
     {
-        print("hi");
-
         if (isParrying)
         {
             OnSuccessfullParry();
@@ -71,18 +64,11 @@ public class ParryController : MonoBehaviour
         this.parryable.OnParrySuccess();
     }
 
-
-
     public void OnUnsuccessfullParry()
     {
-        isUnsuccessfullParry = true;
+        
         CanParry = false;
-        Invoke(nameof(setCanParry), .5f);
-        if (this.parryable == null)
-        {
-            print("fuck it");
-            return;
-        }
+        Invoke(nameof(setCanParry), .5f);        
         this.parryable.OnParryFailed();
     }
 
@@ -91,16 +77,13 @@ public class ParryController : MonoBehaviour
         CanParry = true;
     }
 
-
-   public void SwitchToNormalMode()
-{
-    isSwitchedToParryMode = false;
-    OnParryCompleted?.Invoke();
-
-    incomingAttack.OnParryObjectHit -= CheckIsParryed;
-    ParryManager.Instance.OnPerformParry -= ExcuteParry;
-    ParryManager.Instance.OnParryTimingEnd -= SwitchToNormalMode;
-}
+    public void SwitchToNormalMode()
+    {
+        OnParryCompleted?.Invoke();
+        incomingAttack.OnParryObjectHit -= CheckIsParryed;
+        ParryManager.Instance.OnPerformParry -= ExcuteParry;
+        ParryManager.Instance.OnParryTimingEnd -= SwitchToNormalMode;
+    }
 
 
 }
