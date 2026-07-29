@@ -11,24 +11,23 @@ namespace ZakhanSpellsPack
         public float DestroyExplosion = 4.0f;
         public float DestroyChildren = 2.0f;
         public Vector2 Velocity;
-
         private Transform spellProjectilePrefab;
-
-
         public Action<Unit> OnProjectileDestroyed;
-
         Rigidbody rb;
-        void Start()
+        
+        void Awake()
         {
             rb = gameObject.GetComponent<Rigidbody>();
             // rb.linearVelocity = Velocity;
 
         }
 
-        public void SetVelocity(Vector2 velocity, float moveDuration)
+        public void SetVelocity(Vector3 velocity,float destroychild)
         {
-            Vector3 targetPos = transform.position + (Vector3)velocity * moveDuration;
-            transform.DOMove(targetPos, moveDuration).SetSpeedBased(false);
+            // Vector3 targetPos = transform.position + (Vector3)velocity * moveDuration;
+            // transform.DOMove(targetPos, moveDuration).SetSpeedBased(false);
+            rb.linearVelocity = velocity;
+            DestroyChildren = destroychild;
         }
 
         void OnCollisionEnter(Collision collider)
@@ -39,16 +38,17 @@ namespace ZakhanSpellsPack
             }
             print("Projectile collided with " + collider.gameObject.name);
             PoolManager.Instance.Return(spellProjectilePrefab, transform);
-            var exp = Instantiate(ExplosionPrefab, transform.position, ExplosionPrefab.transform.rotation);
+            var exp = Instantiate(ExplosionPrefab, transform.position
+                , ExplosionPrefab.transform.rotation);
             Destroy(exp, DestroyExplosion);
             Transform child;
             child = transform.GetChild(0);
             // transform.DetachChildren();
             // Destroy(child.gameObject, DestroyChildren);
-            StartCoroutine(Setfalseafterdelay(DestroyChildren, child.gameObject));
+            // StartCoroutine(Setfalseafterdelay(DestroyChildren, child.gameObject));
             if (collider.transform.TryGetComponent(out Unit targetUnit))
             {
-print("Projectile collided with adsfadf" + collider.gameObject.name);
+print("Projectile collided with " + collider.gameObject.name);
                 OnProjectileDestroyed?.Invoke(targetUnit);
 
             }

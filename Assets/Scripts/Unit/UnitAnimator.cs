@@ -2,55 +2,57 @@ using System;
 using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class UnitAnimator : MonoBehaviour
 {
     public Animator animator;
     public Transform bulletProjectilePrefab;
-    public Transform ShootPointTranform;
+    public Transform shootPointTranform;
     public Transform rifleTransform;
     public Transform swordTransform;
     public Transform shieldTransform;
+    public Transform shieldParticleTransform;
+
     public AnimationEventController animationEventController;
-
-
-
 
 
     private void Awake()
     {
-
         if (TryGetComponent(out MoveAction moveAction))
         {
             moveAction.OnStartMoving += MoveAction_OnStartMoving;
             moveAction.OnStopMoving += MoveAction_OnStopMoving;
         }
+
         if (TryGetComponent(out ShootAction shootAction))
         {
             shootAction.OnShoot += ShootAction_OnShoot;
-
+            shootAction.OnSuccessFullParry += () => { SetShieldParticle(true);};
         }
+
         if (TryGetComponent(out SwordAction swordAction))
         {
             swordAction.OnSwordActionStarted += SwordAction_OnSwordActionStarted;
             swordAction.OnSwordActionCompleted += SwordAction_OnSwordActionCompleted;
-
         }
+
         if (TryGetComponent(out SpellAction SpellAction))
         {
             SpellAction.OnSpellActionStarted += SpellAction_OnSpellActionStarted;
             SpellAction.OnSpellActionCompleted += SpellAction_OnSpellActionCompleted;
-
         }
+
         if (TryGetComponent(out Unit Unit))
         {
             Unit.OnUnitAttacked += Unit_OnUnitAttacked;
-
         }
+
         if (TryGetComponent(out ParryController parryController))
         {
-            parryController.OnParryExcuted += ParryController_OnParryExcuted;  
+            parryController.OnParryExcuted += ParryController_OnParryExcuted;
         }
+
         animationEventController.OnShildParryEndEvent += ParryController_OnParryCompleted;
     }
 
@@ -58,6 +60,7 @@ public class UnitAnimator : MonoBehaviour
     {
         UnequipAll();
         EquipRifle();
+        SetShieldParticle(false);
         // animator.applyRootMotion = false;
     }
 
@@ -72,9 +75,9 @@ public class UnitAnimator : MonoBehaviour
     private void Unit_OnUnitAttacked(object sender, EventArgs e)
     {
         animator.SetTrigger("Hit");
-        if (TryGetComponent(out Unit Unit))
+        if (TryGetComponent(out Unit unit))
         {
-            if (Unit.GetIsUnitDead())
+            if (unit.GetIsUnitDead())
             {
                 if (!UnitAttackManager.Instance.CanSpawnRagdoll())
                 {
@@ -83,6 +86,11 @@ public class UnitAnimator : MonoBehaviour
                 }
             }
         }
+    }
+
+    private void SetShieldParticle(bool state)
+    {
+        shieldParticleTransform.gameObject.SetActive(state);
     }
 
     private void SpellAction_OnSpellActionCompleted()
@@ -105,7 +113,6 @@ public class UnitAnimator : MonoBehaviour
     }
 
 
-
     private void Start()
     {
         EquipRifle();
@@ -116,6 +123,7 @@ public class UnitAnimator : MonoBehaviour
         EquipSword();
         animator.SetTrigger("Slash");
     }
+
     private void SwordAction_OnSwordActionCompleted(object sender, EventArgs e)
     {
         EquipRifle();
@@ -131,13 +139,15 @@ public class UnitAnimator : MonoBehaviour
     {
         animator.SetBool("IsWalking", true);
     }
+
     private void ShootAction_OnShoot(object sender, ShootAction.OnShootEventArgs e)
     {
         animator.SetTrigger("Shoot");
-        Transform bulletProjectileTransform = Instantiate(bulletProjectilePrefab, ShootPointTranform.position, Quaternion.identity);
+        Transform bulletProjectileTransform =
+            Instantiate(bulletProjectilePrefab, shootPointTranform.position, Quaternion.identity);
         BulletProjectile bulletProjectile = bulletProjectileTransform.GetComponent<BulletProjectile>();
         Vector3 targetPostionShootAtPosition = e.targetedUnit.GetWorldPosition();
-        targetPostionShootAtPosition.y = ShootPointTranform.position.y;
+        targetPostionShootAtPosition.y = shootPointTranform.position.y;
         bulletProjectile.Setup(targetPostionShootAtPosition);
     }
 
@@ -146,6 +156,7 @@ public class UnitAnimator : MonoBehaviour
         SetTransformActive(rifleTransform, false);
         SetTransformActive(swordTransform, true);
     }
+
     public void EquipRifle()
     {
         SetTransformActive(rifleTransform, true);
@@ -156,6 +167,7 @@ public class UnitAnimator : MonoBehaviour
     {
         SetTransformActive(shieldTransform, true);
     }
+
     public void UnequipAll()
     {
         SetTransformActive(rifleTransform, false);

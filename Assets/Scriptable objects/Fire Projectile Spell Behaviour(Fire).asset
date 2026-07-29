@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4db1d598e55a6af49a3a2c8e06f902e3, type: 3}
   m_Name: Fire Projectile Spell Behaviour(Fire)
   m_EditorClassIdentifier: 
-  SpellDamage: 10
+  SpellDamage: 100
   SpellID: 0
   spellType: 1
   Spellprefab: {fileID: 0}
   projectileSpellPrefab: {fileID: 3800864110370926549, guid: f9070d9e2b4137640ab43b0b4791d685, type: 3}
   CastingSpellPrefab: {fileID: 8469585828306071227, guid: 585eda1b9901ebb46baf1b117ebf6846, type: 3}
   ExplosionSpellPrefab: {fileID: 6746551768193739954, guid: edbcd3b3c18ccf44db5b7031741faf88, type: 3}
-  projectileSpeed: 5
+  projectileSpeed: 10

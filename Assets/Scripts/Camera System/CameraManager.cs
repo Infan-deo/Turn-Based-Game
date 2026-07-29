@@ -67,6 +67,11 @@ public class CameraManager : Singleton<CameraManager>
 
     }
 
+    public void SetActionCameraAtUnitCameraPoint(Unit targetunit, int cameraPointIndex)
+    {
+         SetCameraAtUnitCameraPoint(targetunit, cameraPointIndex, actionCameraGameObject.transform);
+    }
+
     private void BaseAction_OnAnyActionCompleted(object sender, EventArgs e)
     {
         switch (sender)

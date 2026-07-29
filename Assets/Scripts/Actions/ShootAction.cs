@@ -20,6 +20,7 @@ public class ShootAction : BaseAction, IParryable
     public event EventHandler<OnShootEventArgs> OnShoot;
     public static event EventHandler<OnShootEventArgs> OnAnyShoot;
     public event Action OnParryObjectHit;
+    public event Action OnSuccessFullParry;
     public static event EventHandler OnAnyParryTimingStarted;
 
     [SerializeField] private LayerMask obstaclesLayerMask;
@@ -285,6 +286,7 @@ public class ShootAction : BaseAction, IParryable
     public void OnParrySuccess()
     {
         //Success
+        OnSuccessFullParry?.Invoke();
     }
 
 

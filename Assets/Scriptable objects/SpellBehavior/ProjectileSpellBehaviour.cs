@@ -15,10 +15,12 @@ public class ProjectileSpellBehaviour : SpellBehaviour
     Transform spellPrefabTransform;
     public float projectileSpeed = 5f;
     Transform spellProjectilePrefabTransform;
+
     public override string GetSpellTypeName()
     {
         return "Projectile";
     }
+
     public void SetSequenceCameras(Unit caster, Unit targetUnit)
     {
         Transform cameraPoint = caster.GetUnitCameraTransform()[0];
@@ -27,7 +29,8 @@ public class ProjectileSpellBehaviour : SpellBehaviour
         CameraManager.Instance.SetSequenceChildCameraPoint(1, cameraPoint2);
     }
 
-    public override IEnumerator Execute(Unit caster, Unit targetUnit, SpellInfo spellInfo, SpellAction spellAction,Action OnSpellActionComplted)
+    public override IEnumerator Execute(Unit caster, Unit targetUnit, SpellInfo spellInfo, SpellAction spellAction,
+        Action OnSpellActionComplted)
     {
         this.caster = caster;
         this.targetUnit = targetUnit;
@@ -36,24 +39,24 @@ public class ProjectileSpellBehaviour : SpellBehaviour
 
         spellAction.Aim();
         yield return new WaitForSeconds(0.25f);
-        SetSequenceCameras(caster, targetUnit);
-        // CameraManager.Instance.SetSequenceCameraState(true); 
+        CameraManager.Instance.SetActionCameraAtUnitCameraPoint(caster, 2);
+        CameraManager.Instance.ShowActionCamera();
         yield return new WaitForSeconds(0.75f);
         spellAction.OnSpellActionStarted?.Invoke(spellAction.selectedspellType);
         yield return new WaitForSeconds(0.75f);
         Transform SpellCastPoint = caster.SpellPoints[0];
         spellPrefabTransform = Instantiate(CastingSpellPrefab, SpellCastPoint);
-        spellPrefabTransform.localPosition = SpellCastPoint.localPosition;
+        spellPrefabTransform.position = SpellCastPoint.position;
         caster.GetComponent<UnitAnimator>().animationEventController.OnSpellReleasedEvent += CreateProjectile;
 
         yield return new WaitForSeconds(3.5f);
-        CameraManager.Instance.SetSequenceCameraState(false);
+       
+        CameraManager.Instance.HideActionCamera();
         yield return new WaitForSeconds(1.5f);
         spellAction.OnSpellActionCompleted?.Invoke();
         OnSpellActionComplted?.Invoke();
 
         yield break;
-
     }
 
     public void OnProjectileDestroyed(Unit targetUnit)
@@ -66,6 +69,7 @@ public class ProjectileSpellBehaviour : SpellBehaviour
         this.spellInfo = null;
         this.spellAction = null;
     }
+
     public void CreateProjectile()
     {
         Transform SpellCastPoint = caster.SpellPoints[1];
@@ -83,17 +87,13 @@ public class ProjectileSpellBehaviour : SpellBehaviour
         Vector3 direction = (targetPosition - SpellCastPoint.position).normalized;
 
         float distance = Vector3.Distance(SpellCastPoint.position, targetPosition);
+        projectile.SetVelocity(direction * projectileSpeed,projectileSpeed/2);
+        //        projectile.transform.DOMove(
+        //     projectile.transform.position + direction * projectileSpeed,
+        //     1f
+        // ).SetEase(Ease.Linear)
 
-        projectile.transform.DOMove(
-     projectile.transform.position + direction * projectileSpeed,
-     1f
- ).SetEase(Ease.Linear);
-      
         projectile.OnProjectileDestroyed += OnProjectileDestroyed;
         caster.GetComponent<UnitAnimator>().animationEventController.OnSpellReleasedEvent -= CreateProjectile;
     }
-
-
-
-
 }
