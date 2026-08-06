@@ -1,0 +1,13 @@
+using UnityEngine;
+
+    #ROOTNAMESPACEBEGIN#
+[CreateAssetMenu(menuName = "Scriptable Objects/Spells/Behaviours/#SCRIPTNAME#")]
+public class #SCRIPTNAME# : SpellBehaviour
+{
+    public int SpellDamage;
+    public int SpellID;
+    public SpellType spellType;
+    public abstract string GetSpellTypeName();
+    #NOTRIM#
+}
+#ROOTNAMESPACEEND#

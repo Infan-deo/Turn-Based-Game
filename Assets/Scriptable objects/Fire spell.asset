@@ -31,8 +31,7 @@ MonoBehaviour:
     m_WaitForCompletion: 0
     m_LocalVariables: []
   Spellimage: {fileID: 21300000, guid: 07763151444bd1a478c196d984a2931c, type: 3}
-  ConsumablePoints: 1
-  spellDuration: 3
+  ConsumablePoints: 3
   spellBehaviour: {fileID: 11400000, guid: f6cd05e06092b5b4fbe239c7f72c2f54, type: 2}
   references:
     version: 2

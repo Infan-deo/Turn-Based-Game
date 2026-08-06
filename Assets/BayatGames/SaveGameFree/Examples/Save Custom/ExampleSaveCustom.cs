@@ -23,7 +23,7 @@ namespace BayatGames.SaveGameFree.Examples
         }
 
         [System.Serializable]
-        public class CustomData
+        public  class CustomData
         {
 
             public int score;

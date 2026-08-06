@@ -7,6 +7,8 @@ using UnityEditor.SceneManagement;
 using UnityEngine;
 using Debug = UnityEngine.Debug;
 using System.IO;
+using BayatGames.SaveGameFree;
+
 // using MansionEscape3D.SaveSystem;
 
 namespace MansionEscape3D.Editor
@@ -19,6 +21,7 @@ namespace MansionEscape3D.Editor
         public static void ClearSaveDataButton()
         {
             // SaveManager.DeleteSaveDataFiles();
+            SaveGame.DeleteAll();
         }
 
         [EditorToolbarButton("Folder Icon", "Open Project Folder", 1)]

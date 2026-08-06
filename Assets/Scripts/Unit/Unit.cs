@@ -7,12 +7,13 @@ using UnityEngine;
 
 public class Unit : MonoBehaviour
 {
-    private const int ACTION_POINTS_MAX = 6;
+    private const int ACTION_POINTS_MAX = 2;
     public static event EventHandler OnAnyActionPointsChanged;
     public static event EventHandler OnAnyUnitSpawned;
     public static event EventHandler OnAnyUnitDead;
     public event EventHandler OnUnitAttacked;
     [SerializeField] private bool isEnemy;   
+    [SerializeField] private bool isRecruitable ;   
     [SerializeField] private Transform[] unitCameraTransformPoint;
     public List<Transform> SpellPoints;
     GridPosition gridPosition;
@@ -163,5 +164,10 @@ public class Unit : MonoBehaviour
     public void SetIsUnitDead(bool _isUnitDead)
     {
         this._isUnitDead = _isUnitDead;
+    }
+
+    public void CreateShield()
+    {
+        healthSystem.CreateShield();
     }
 }

@@ -39,21 +39,23 @@ public class ProjectileSpellBehaviour : SpellBehaviour
 
         spellAction.Aim();
         yield return new WaitForSeconds(0.25f);
-        CameraManager.Instance.SetActionCameraAtUnitCameraPoint(caster, 2);
+        CameraManager.Instance.SetActionCameraAtUnitCameraPoint(caster, 1);
         CameraManager.Instance.ShowActionCamera();
         yield return new WaitForSeconds(0.75f);
         spellAction.OnSpellActionStarted?.Invoke(spellAction.selectedspellType);
-        yield return new WaitForSeconds(0.75f);
+        yield return new WaitForSeconds(1f);
+        CameraManager.Instance.SetActionCameraAtUnitCameraPoint(caster, 2);
         Transform SpellCastPoint = caster.SpellPoints[0];
         spellPrefabTransform = Instantiate(CastingSpellPrefab, SpellCastPoint);
         spellPrefabTransform.position = SpellCastPoint.position;
         caster.GetComponent<UnitAnimator>().animationEventController.OnSpellReleasedEvent += CreateProjectile;
 
-        yield return new WaitForSeconds(3.5f);
+        yield return new WaitForSeconds(1.5f);
+        spellAction.OnSpellActionCompleted?.Invoke();
+        yield return new WaitForSeconds(2.0f);
        
         CameraManager.Instance.HideActionCamera();
         yield return new WaitForSeconds(1.5f);
-        spellAction.OnSpellActionCompleted?.Invoke();
         OnSpellActionComplted?.Invoke();
 
         yield break;

@@ -5,6 +5,7 @@ public class HealthSystem : MonoBehaviour
 {
     [SerializeField] private int health = 100;
     private int healthMax;
+    public bool hasShield;
     private void Awake()
     {
         healthMax = health;
@@ -15,6 +16,7 @@ public class HealthSystem : MonoBehaviour
 
     public void Damage(int damageAmount)
     {
+        if (hasShield) return;
         health -= damageAmount;
         if (health < 0)
         {
@@ -37,4 +39,15 @@ public class HealthSystem : MonoBehaviour
     {
         return (float)health / healthMax;
     }
+
+    public void DestroyShield()
+    {
+        hasShield = false;
+    }
+    public void CreateShield()
+    {
+        hasShield = true;
+    }
+    
+    
 }

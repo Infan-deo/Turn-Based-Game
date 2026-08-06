@@ -1,7 +1,9 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -17,13 +19,12 @@ public class SpellSystemUI : MonoBehaviour
     public Button CloseButton;
 
     [SerializeField] private TextMeshProUGUI remainingPoints;
+    public Transform remainingPointsParent;
 
     EventBinding<SelectedSpellEvent> SpellSystemUI_selectedSpellEvent;
 
 
-
-    [Header("ShowSpellAndReplace")]
-    public Transform ShowSpellAndReplace;
+    [Header("ShowSpellAndReplace")] public Transform ShowSpellAndReplace;
     public Image SelectedSpellImg;
     public Button Replacebtn;
 
@@ -51,6 +52,19 @@ public class SpellSystemUI : MonoBehaviour
         EventBus<SpellUIEvent>.Register(sceneEventBinding);
         SpellSystemUI_selectedSpellEvent = new EventBinding<SelectedSpellEvent>(OnSpellSelected);
         EventBus<SelectedSpellEvent>.Register(SpellSystemUI_selectedSpellEvent);
+        UnitActionSystem.Instance.OnSelectedActionChanged += UnitActionSystem_OnSelectedActionChanged;
+    }
+
+    private void UnitActionSystem_OnSelectedActionChanged(object sender, EventArgs e)
+    {
+        if (UnitActionSystem.Instance.GetSelectedAction() is not SpellAction)
+        {
+            HideShowSpellAndReplace();
+        }
+        else
+        {
+            UpdateRemainingPoints();
+        }
     }
 
     void OnDisable()
@@ -68,14 +82,28 @@ public class SpellSystemUI : MonoBehaviour
             CreateSpellActionButtons();
             DisplayUI();
         }
-
     }
+
     public void OnSpellSelected(SelectedSpellEvent @event)
     {
-        CloseUI();
-        DisplayShowSpellAndReplace(@event);
+        if (@event.SelectedSpellInfo.ConsumablePoints <= int.Parse(remainingPoints.text))
+        {
+            CloseUI();
+            DisplayShowSpellAndReplace(@event);
+        }
+        else
+        {
+            // print("");
+            remainingPointsParent.DOShakePosition(
+                duration: 1f,
+                strength: new Vector3(4f, 0f, 0f),
+                randomness: 90,
+                vibrato: 10,
+                fadeOut: true,
+                randomnessMode: ShakeRandomnessMode.Harmonic
+            );
+        }
     }
-
 
 
     public void DisplayUI()
@@ -83,11 +111,11 @@ public class SpellSystemUI : MonoBehaviour
         HideShowSpellAndReplace();
         SpellUIPanel.gameObject.SetActive(true);
     }
+
     public void CloseUI()
     {
         SpellUIPanel.gameObject.SetActive(false);
     }
-
 
 
     public void CreateSpellActionButtons()
@@ -96,6 +124,7 @@ public class SpellSystemUI : MonoBehaviour
         {
             Destroy(item.gameObject);
         }
+
         SpellButtonUIs.Clear();
         foreach (var spellInfo in spellInfos)
         {
@@ -110,8 +139,8 @@ public class SpellSystemUI : MonoBehaviour
     {
         SelectedSpellImg.sprite = selectedSpellEvent.SelectedSpellInfo.Spellimage;
         ShowSpellAndReplace?.gameObject.SetActive(true);
-
     }
+
     public void HideShowSpellAndReplace()
     {
         ShowSpellAndReplace?.gameObject.SetActive(false);
@@ -122,6 +151,4 @@ public class SpellSystemUI : MonoBehaviour
         Unit selectedUnit = UnitActionSystem.Instance.GetSelectedUnit();
         remainingPoints.text = selectedUnit.GetActionPoints().ToString();
     }
-
-
 }
