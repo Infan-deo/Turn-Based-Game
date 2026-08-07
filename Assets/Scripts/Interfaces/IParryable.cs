@@ -6,6 +6,7 @@ public interface IParryable
    float GetParryOverallTiming();
    float GetParryCoolDownTiming();
    bool isThisActionParryableNow();
+    
    ParryInfo GetParryInfo();
    void OnParryFailed();   
    void OnParrySuccess();

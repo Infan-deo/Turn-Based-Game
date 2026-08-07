@@ -57,6 +57,7 @@ Material:
     m_Floats:
     - _FresnelPower: 3.12
     - _Progess: -1.6
+    - _Progress: -1.6
     - _QueueControl: 0
     - _QueueOffset: 0
     - _VertexFrequency: 1

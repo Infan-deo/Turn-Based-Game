@@ -24,11 +24,7 @@ public class SpellAction : BaseAction
     Unit targetUnit;
 
     [SerializeField] private LayerMask obstaclesLayerMask;
-    protected override void Awake()
-    {
-        base.Awake();
-        // Shader.WarmupAllShaders();
-    }
+    
     private void OnEnable()
     {
         selectedSpellEvent = new EventBinding<SelectedSpellEvent>(OnSpellSelected);
@@ -127,10 +123,7 @@ public class SpellAction : BaseAction
 
                 Unit targetUnit = LevelGrid.Instance.GetUnitAtGridPosition(testGridPosition);
 
-                if (targetUnit.IsEnemy() == Unit.IsEnemy())
-                {
-                    continue;
-                }
+               
 
                 if (selectedSpellInfo != null)
                 {
@@ -147,6 +140,24 @@ public class SpellAction : BaseAction
                         ))
                         {
 
+                            continue;
+                        }
+                    }
+                    if (selectedspellType != SpellType.SHIELD)
+                    {
+                        if (targetUnit.IsEnemy() == Unit.IsEnemy())
+                        {
+                            continue;
+                        }
+                    }
+                    else
+                    {
+                        if (targetUnit.hasShield)
+                        {
+                            continue;
+                        }
+                        if (targetUnit.IsEnemy() != Unit.IsEnemy())
+                        {
                             continue;
                         }
                     }

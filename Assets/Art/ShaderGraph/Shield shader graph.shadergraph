@@ -1510,10 +1510,10 @@
     "m_Guid": {
         "m_GuidSerialized": "3c0cc2a9-e09e-4021-977c-957199dd84d1"
     },
-    "m_Name": "_Progess",
+    "m_Name": "Progress",
     "m_DefaultRefNameVersion": 1,
-    "m_RefNameGeneratedByDisplayName": "_Progess",
-    "m_DefaultReferenceName": "_Progess",
+    "m_RefNameGeneratedByDisplayName": "Progress",
+    "m_DefaultReferenceName": "_Progress",
     "m_OverrideReferenceName": "",
     "m_GeneratePropertyBlock": true,
     "m_UseCustomSlotLabel": false,
@@ -2966,7 +2966,7 @@
     "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
     "m_ObjectId": "5e275da24b4c45ef8566a04fe281aec8",
     "m_Id": 0,
-    "m_DisplayName": "_Progess",
+    "m_DisplayName": "Progress",
     "m_SlotType": 1,
     "m_Hidden": false,
     "m_ShaderOutputName": "Out",

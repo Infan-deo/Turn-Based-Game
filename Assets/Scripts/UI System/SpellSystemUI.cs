@@ -135,9 +135,9 @@ public class SpellSystemUI : MonoBehaviour
         }
     }
 
-    public void DisplayShowSpellAndReplace(SelectedSpellEvent selectedSpellEvent)
+    public void DisplayShowSpellAndReplace(SelectedSpellEvent shieldEvent)
     {
-        SelectedSpellImg.sprite = selectedSpellEvent.SelectedSpellInfo.Spellimage;
+        SelectedSpellImg.sprite = shieldEvent.SelectedSpellInfo.Spellimage;
         ShowSpellAndReplace?.gameObject.SetActive(true);
     }
 

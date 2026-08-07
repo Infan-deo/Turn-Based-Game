@@ -8,6 +8,7 @@ public struct SetCameraPoint : IEvent
     public int Index;
     public Transform Target;
 }
+
 public class CameraManager : Singleton<CameraManager>
 {
     [SerializeField] private GameObject actionCameraGameObject;
@@ -16,6 +17,7 @@ public class CameraManager : Singleton<CameraManager>
     public Transform mainCamera;
 
     EventBinding<SetCameraPoint> setCameraPointEvent;
+
     protected override void Awake()
     {
         base.Awake();
@@ -24,6 +26,7 @@ public class CameraManager : Singleton<CameraManager>
             .Where(t => t != SequencerCameraParent)
             .ToArray();
     }
+
     private void OnEnable()
     {
         setCameraPointEvent = new EventBinding<SetCameraPoint>(OnSetCameraPoint);
@@ -32,10 +35,12 @@ public class CameraManager : Singleton<CameraManager>
         BaseAction.OnAnyActionStarted += BaseAction_OnAnyActionStarted;
         BaseAction.OnAnyActionCompleted += BaseAction_OnAnyActionCompleted;
     }
+
     private void Start()
     {
         HideActionCamera();
     }
+
     private void OnDisable()
     {
         EventBus<SetCameraPoint>.Deregister(setCameraPointEvent);
@@ -43,33 +48,37 @@ public class CameraManager : Singleton<CameraManager>
         BaseAction.OnAnyActionStarted -= BaseAction_OnAnyActionStarted;
         BaseAction.OnAnyActionCompleted -= BaseAction_OnAnyActionCompleted;
     }
+
     private void OnSetCameraPoint(SetCameraPoint point)
     {
         SetSequenceChildCameraPoint(point.Index, point.Target);
-    }    
+    }
+
     private void SetCameraForParry(object sender, EventArgs e)
     {
         switch (sender)
         {
             case ShootAction shootAction:
                 if (shootAction is IParryable parryable &&
-                parryable.isThisActionParryableNow())
+                    parryable.isThisActionParryableNow())
                 {
                     Unit targetUnit = shootAction.GetTargetUnit();
-                    SetCameraAtUnitCameraPoint(targetUnit, 2, actionCameraGameObject.transform);
-                    ShowActionCamera();
+                    if (!targetUnit.hasShield)
+                    {
+                        SetCameraAtUnitCameraPoint(targetUnit, 2, actionCameraGameObject.transform);
+                        ShowActionCamera();
+                    }
                 }
+
                 break;
             default:
                 break;
-
         }
-
     }
 
     public void SetActionCameraAtUnitCameraPoint(Unit targetunit, int cameraPointIndex)
     {
-         SetCameraAtUnitCameraPoint(targetunit, cameraPointIndex, actionCameraGameObject.transform);
+        SetCameraAtUnitCameraPoint(targetunit, cameraPointIndex, actionCameraGameObject.transform);
     }
 
     private void BaseAction_OnAnyActionCompleted(object sender, EventArgs e)
@@ -79,7 +88,6 @@ public class CameraManager : Singleton<CameraManager>
             case ShootAction shootAction:
                 HideActionCamera();
                 break;
-
         }
     }
 
@@ -89,9 +97,8 @@ public class CameraManager : Singleton<CameraManager>
         {
             case ShootAction shootAction:
                 if (shootAction is IParryable parryable &&
-                parryable.isThisActionParryableNow())
+                    parryable.isThisActionParryableNow())
                 {
-                   
                 }
                 else
                 {
@@ -101,13 +108,14 @@ public class CameraManager : Singleton<CameraManager>
                     Vector3 shootDir = (targetUnit.GetWorldPosition() - shooterUnit.GetWorldPosition()).normalized;
                     float shoulderOffsetAmount = 0.5f;
                     Vector3 shoulderOffset = Quaternion.Euler(0, 90, 0) * shootDir * shoulderOffsetAmount;
-                    Vector3 actionCameraPosition = shooterUnit.GetWorldPosition() + cameraCharacterHeight + shoulderOffset + (shootDir * -1);
+                    Vector3 actionCameraPosition = shooterUnit.GetWorldPosition() + cameraCharacterHeight +
+                                                   shoulderOffset + (shootDir * -1);
                     actionCameraGameObject.transform.position = actionCameraPosition;
                     actionCameraGameObject.transform.LookAt(targetUnit.GetWorldPosition() + cameraCharacterHeight);
                     ShowActionCamera();
                 }
-                break;
 
+                break;
         }
     }
 
@@ -115,6 +123,7 @@ public class CameraManager : Singleton<CameraManager>
     {
         actionCameraGameObject.SetActive(true);
     }
+
     public void HideActionCamera()
     {
         actionCameraGameObject.SetActive(false);
@@ -138,6 +147,4 @@ public class CameraManager : Singleton<CameraManager>
         CameraTransform.transform.position = cameraPoint.position;
         CameraTransform.transform.rotation = cameraPoint.rotation;
     }
-
-
 }

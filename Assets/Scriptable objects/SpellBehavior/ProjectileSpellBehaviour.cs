@@ -49,11 +49,9 @@ public class ProjectileSpellBehaviour : SpellBehaviour
         spellPrefabTransform = Instantiate(CastingSpellPrefab, SpellCastPoint);
         spellPrefabTransform.position = SpellCastPoint.position;
         caster.GetComponent<UnitAnimator>().animationEventController.OnSpellReleasedEvent += CreateProjectile;
-
         yield return new WaitForSeconds(1.5f);
         spellAction.OnSpellActionCompleted?.Invoke();
         yield return new WaitForSeconds(2.0f);
-       
         CameraManager.Instance.HideActionCamera();
         yield return new WaitForSeconds(1.5f);
         OnSpellActionComplted?.Invoke();

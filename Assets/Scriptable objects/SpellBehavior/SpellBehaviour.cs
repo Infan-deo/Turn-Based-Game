@@ -10,13 +10,18 @@ public abstract class SpellBehaviour : ScriptableObject
     public SpellType spellType;
     public abstract string GetSpellTypeName();
 
-    [ShowIf(nameof(spellType), SpellType.CASTING)]
-    public Transform Spellprefab;
+    private bool IsCastingOrShield =>
+        spellType == SpellType.CASTING ||
+        spellType == SpellType.SHIELD;
+
+    [ShowIf(nameof(IsCastingOrShield))] public Transform Spellprefab;
 
     [ShowIf(nameof(spellType), SpellType.PROJECTILE)]
     public Transform projectileSpellPrefab;
+
     [ShowIf(nameof(spellType), SpellType.PROJECTILE)]
     public Transform CastingSpellPrefab;
+
     [ShowIf(nameof(spellType), SpellType.PROJECTILE)]
     public Transform ExplosionSpellPrefab;
 

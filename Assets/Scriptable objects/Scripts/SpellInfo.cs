@@ -6,7 +6,8 @@ public enum SpellType
 {
    NONE,
    PROJECTILE,
-   CASTING
+   CASTING,
+   SHIELD
 }
 
 [CreateAssetMenu(fileName = "SpellInfo", menuName = "Scriptable Objects/Spells/SpellInfo")]

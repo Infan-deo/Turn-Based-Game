@@ -13,12 +13,9 @@ MonoBehaviour:
   m_Name: New Shield Behaviour
   m_EditorClassIdentifier: 
   SpellDamage: 0
-  SpellID: 0
-  spellType: 0
+  SpellID: 456
+  spellType: 3
   Spellprefab: {fileID: 0}
   projectileSpellPrefab: {fileID: 0}
   CastingSpellPrefab: {fileID: 0}
   ExplosionSpellPrefab: {fileID: 0}
-  SpellDamage: 0
-  SpellID: 223
-  spellType: 2

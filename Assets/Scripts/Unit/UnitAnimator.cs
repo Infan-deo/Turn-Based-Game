@@ -16,7 +16,8 @@ public class UnitAnimator : MonoBehaviour
 
     public AnimationEventController animationEventController;
 
-
+    
+    
     private void Awake()
     {
         if (TryGetComponent(out MoveAction moveAction))
@@ -55,6 +56,8 @@ public class UnitAnimator : MonoBehaviour
 
         animationEventController.OnShildParryEndEvent += ParryController_OnParryCompleted;
     }
+
+   
 
     private void ParryController_OnParryCompleted()
     {
@@ -109,6 +112,11 @@ public class UnitAnimator : MonoBehaviour
         else if (type == SpellType.PROJECTILE)
         {
             animator.SetTrigger("CastSpell2");
+        }
+        else if (type == SpellType.SHIELD)
+        {
+            animator.SetTrigger("CastSpell");
+            print("Jidsf");
         }
     }
 

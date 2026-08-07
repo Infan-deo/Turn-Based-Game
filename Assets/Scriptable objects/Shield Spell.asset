@@ -32,7 +32,7 @@ MonoBehaviour:
     m_LocalVariables: []
   Spellimage: {fileID: 21300000, guid: be20da6069e65774089881679eeccb77, type: 3}
   ConsumablePoints: 1
-  spellBehaviour: {fileID: 0}
+  spellBehaviour: {fileID: 11400000, guid: 4c9a3c31ccb66f84ea66f8469c747e2a, type: 2}
   references:
     version: 2
     RefIds: []

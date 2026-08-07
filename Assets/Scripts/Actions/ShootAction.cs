@@ -26,6 +26,8 @@ public class ShootAction : BaseAction, IParryable
     [SerializeField] private LayerMask obstaclesLayerMask;
     public ParryInfo ShootActionParryInfo;
 
+    
+
 
     public class OnShootEventArgs : EventArgs
     {
@@ -85,7 +87,7 @@ public class ShootAction : BaseAction, IParryable
             targetedUnit = targetUnit,
             shootingUnit = Unit
         });
-        if (!isThisActionParryableNow())
+        if (!targetUnit.canParry)
         {
             targetUnit.Damage(40, this);
         }
@@ -260,7 +262,7 @@ public class ShootAction : BaseAction, IParryable
 
     public bool isThisActionParryableNow()
     {
-        return !TurnSystem.Instance.IsPlayerTurn();
+        return !TurnSystem.Instance.IsPlayerTurn()  ;
     }
 
     public ParryController GetParryController()

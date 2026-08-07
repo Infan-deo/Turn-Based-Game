@@ -13,11 +13,6 @@ public class SpellButtonUI : MonoBehaviour
 
     private SpellInfo spellInfo;
 
-    private void Start()
-    {
-        
-    }
-
     public void SetSpellButtonInfo(SpellInfo spellInfo)
     {
         this.spellInfo = spellInfo;

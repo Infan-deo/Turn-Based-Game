@@ -31,7 +31,6 @@ public class EnemyAI : MonoBehaviour
             state = State.TakingTurn;
             timer = 3f;
         }
-
     }
 
     private void Update()
@@ -63,24 +62,21 @@ public class EnemyAI : MonoBehaviour
                         TurnSystem.Instance.NextTurn();
                     }
                 }
+
                 break;
             case State.Busy:
                 break;
-
         }
-
     }
 
     public void SetStateTakingTurn(bool s)
     {
         timer = 1f;
         state = State.TakingTurn;
-
     }
 
     public bool TryTakingEnemyAiAction(Action<bool> onEnemyAIActionComplete)
     {
-
         foreach (Unit enemyUnit in UnitManager.Instance.GetEnemyList())
         {
             if (TryTakingEnemyAiAction(enemyUnit, onEnemyAIActionComplete))
@@ -88,6 +84,7 @@ public class EnemyAI : MonoBehaviour
                 return true;
             }
         }
+
         return false;
     }
 
@@ -102,11 +99,13 @@ public class EnemyAI : MonoBehaviour
                 // Enemy cannot afford this action
                 continue;
             }
+
             if (bestEnemyAIAction == null)
             {
                 bestEnemyAIAction = baseAction.GetBestEnemyAIAction();
                 bestBaseAction = baseAction;
             }
+
             if (UnitManager.Instance.GetFriendlyList().Count < 0)
             {
                 continue;
@@ -119,34 +118,37 @@ public class EnemyAI : MonoBehaviour
                     bestEnemyAIAction = testEnemyAiAction;
                     bestBaseAction = baseAction;
                 }
-
             }
-
         }
 
         if (bestEnemyAIAction != null && enemyUnit.TrySpendActionPointsToTakeAction(bestBaseAction))
         {
             Unit targetUnit = LevelGrid.Instance.GetUnitAtGridPosition(bestEnemyAIAction.gridPosition);
             BaseAction targetAction = targetUnit.GetBaseActionArray()
-            .FirstOrDefault(a => a.GetType() == bestBaseAction.GetType());
+                .FirstOrDefault(a => a.GetType() == bestBaseAction.GetType());
             if (targetAction is IParryable parryable &&
-             parryable.isThisActionParryableNow())
+                parryable.isThisActionParryableNow())
             {
-
                 IParryable defender = targetAction as IParryable;
                 IParryable attacker = bestBaseAction as IParryable;
 
                 ParryController parryController = defender.GetParryController();
-                
-                if (parryController != null)
+
+                if (parryController != null && !targetUnit.hasShield)
                 {
                     parryController.SwitchToParryMode(defender, attacker);
+                    targetUnit.canParry = true;
+                }
+                else
+                {
+                    targetUnit.canParry = false;
                 }
             }
             else
             {
                 print("Parryable isThisActionParryableNow is false");
             }
+
             bestBaseAction.TakeAction(bestEnemyAIAction.gridPosition, onEnemyAIActionComplete);
             return true;
         }
@@ -154,6 +156,5 @@ public class EnemyAI : MonoBehaviour
         {
             return false;
         }
-
     }
 }
