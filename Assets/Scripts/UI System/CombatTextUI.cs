@@ -17,12 +17,12 @@ public class CombatTextUI : MonoBehaviour, IPoolable
 
         Sequence seq = DOTween.Sequence();
 
-        seq.Append(transform.DOScale(1f, 0.15f));
+        seq.Append(transform.DOScale(1f, 1f));
 
-        seq.Join(transform.DOMoveY(transform.position.y + 1.5f, 0.8f));
+        seq.Join(transform.DOMoveY(transform.position.y + 1.5f, 4f));
 
         seq.Join(
-            floatingTextUI.DOFade(0f, 0.8f)
+            floatingTextUI.DOFade(0f, 3f)
         );
 
         seq.OnComplete(() =>

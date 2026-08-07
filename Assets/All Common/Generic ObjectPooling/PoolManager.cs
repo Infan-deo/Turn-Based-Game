@@ -4,11 +4,8 @@ using UnityEngine;
 
 public class PoolManager : Singleton<PoolManager>
 {
-    
-
     private readonly Dictionary<Component, object> pools = new();
 
-   
 
     public void CreatePool<T>(T prefab, int size) where T : Component
     {

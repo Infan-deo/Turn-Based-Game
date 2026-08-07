@@ -27,10 +27,15 @@ public class CombatTextManager : MonoBehaviour
     {
         Transform combatTextUIprefabTransform = PoolManager.Instance.Get(combatTextUIPrefab);
         CombatTextUI combatTextUI = combatTextUIprefabTransform.GetComponent<CombatTextUI>();
-        combatTextUI.transform.SetPositionAndRotation(
+        combatTextUIprefabTransform.SetParent(combatTextUIParentTransform);
+        combatTextUIprefabTransform.transform.SetPositionAndRotation(
             combatTextUIParentTransform.position,
             combatTextUIParentTransform.rotation);
         combatTextUI.Show(num, isheal,
-            () => PoolManager.Instance.Return(combatTextUIPrefab, combatTextUIprefabTransform));
+            () =>
+            {
+                PoolManager.Instance.Return(combatTextUIPrefab, combatTextUIprefabTransform);
+                
+            });
     }
 }
