@@ -7,8 +7,8 @@ using UnityEngine;
 
 public class Unit : MonoBehaviour
 {
-    private const int ACTION_POINTS_MAX = 2;
-    int actionpoints = 2;
+    private const int ACTION_POINTS_MAX = 3;
+    int actionpoints = 3;
     public static event EventHandler OnAnyActionPointsChanged;
     public static event EventHandler OnAnyUnitSpawned;
     public static event EventHandler OnAnyUnitDead;
@@ -181,6 +181,16 @@ public class Unit : MonoBehaviour
         });
         OnUnitAttacked?.Invoke(this, EventArgs.Empty);
         UnitManager.Instance.SetUnitRagdollFallDir(UnitActionSystem.Instance.GetSelectedUnit().GetWorldPosition());
+    }
+
+    public void Heal(int amount)
+    {
+        healthSystem.Heal(amount);
+        OnCombatAction?.Invoke(this, new OnCombatActionEventArgs
+        {
+            Amount = amount,
+            isheal = true
+        });
     }
 
 

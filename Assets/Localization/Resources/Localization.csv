@@ -1,7 +1,7 @@
 ﻿Key,English(en),Tamil(ta),Chinese (Simplified)(zh-Hans),Spanish(es),Telugu(te)
 GameScene.Busy,Busy,À½¢Â¢ø ¯ûÇÉ,忙碌的,Ocupado,బిజీగా
 GameScene.Enemy_turn,Enemy turn,±¾¢¡¢ Ó¨È,敌方回合,Turno enemigo,శత్రువు వంతు
-GameScene.End_turn,End turn,Íü¨È ÓÊ,回合结束,Fin del giro,మలుపు ముగింపు
+GameScene.End_turn,End turn,Íü¨È ÓÊ,回合结束,Giro final,మలుపు ముగింపు
 GameScene.Turn,Turn,ÍüÚ,转动,Doblar,తిరగండి
 GameScene.Move,Move,¿¸÷,移动,Mover,కదలండి
 GameScene.Spin,Spin,ÍÆüÚ,旋转,Girar,స్పిన్
@@ -20,6 +20,8 @@ SpellUI.PointsYouHaveForSpell,Remaining Points,Á£¾ÓûÇ ÒûÇ¢¸û,剩余�
 SpellUI.Choosespelltoperform,Choose a spell to perform,ÀÂýÀÎò¾ §ÅñÊÂ Áó¾¢Ãò¨¾ò §¾÷ó¦¾Îì¸×õ,选择要施放的法术,Elige un hechizo para realizar,ప్రదర్శించడానికి ఒక మంత్రాన్ని ఎంచుకోండి
 SpellUI.NoSpellsAvail,No Spells Available,Áó¾¢Ãí¸û ¸¢¨¼ì¸Å¢ø¨Ä,暂无可用法术,No hay hechizos disponibles,మంత్రాలు అందుబాటులో లేవు
 SpellUI.redspell,Crimson Lance,¦ºí¸¾¢÷ ®ðÊ,深红长矛,Lanza carmesí,క్రిమ్సన్ లాన్స్
-SpellUI.redspelldesc,"Hurls a blazing spear of crimson energy that pierces through the air, exploding on impact and scorching its target with searing arcane fire","¸¡ü¨Èì ¸¢Æ¢òÐì¦¸¡ñÎ À¡Ôõ ¦ºó¿¢È ¬üÈø ®ðÊ ´ý¨È ±È¢¸¢È¡ý; «Ð §Á¡¾Ä¢ý§À¡Ð ¦ÅÊòÐ, Íð¦¼¡¢ìÌõ Á¡Â ¦¿ÕôÀ¡ø ¾ý þÄì¨¸î Íð¦¼¡¢ì¸¢ÈÐ.",掷出一道灼热的猩红能量长矛，长矛划破空气，撞击目标后爆炸，以灼热的奥术火焰灼烧目标。,"Lanza una lanza llameante de energía carmesí que atraviesa el aire, explotando al impactar y abrasando a su objetivo con un fuego arcano abrasador.","ఎర్రటి శక్తితో కూడిన మండుతున్న ఈటెను విసురుతుంది, అది గాలిని చీల్చుకుంటూ దూసుకెళ్తుంది, తాకిన వెంటనే పేలిపోయి, తీవ్రమైన మంత్ర అగ్నితో దాని లక్ష్యాన్ని దహించివేస్తుంది."
+SpellUI.redspelldesc,"Hurls a blazing spear of crimson energy that pierces through the air, exploding on impact and scorching its target with searing arcane fire","¸¡ü¨Èì ¸¢Æ¢òÐì¦¸¡ñÎ À¡Ôõ ¦ºó¿¢È ¬üÈø ®ðÊ ´ý¨È ±È¢¸¢È¡ý; «Ð §Á¡¾Ä¢ý§À¡Ð ¦ÅÊòÐ, Íð¦¼¡¢ìÌõ Á¡Â ¦¿ÕôÀ¡ø ¾ý þÄì¨¸î Íð¦¼¡¢ì¸¢ÈÐ.",掷出一道灼热的猩红能量长矛，长矛划破空气，撞击目标后爆炸，以灼热的奥术火焰灼烧目标。,"Lanza una lanza llameante de energía carmesí que atraviesa el aire, explotando al impactar y abrasando a su objetivo con un fuego arcano abrasador.","ఎర్రటి శక్తితో కూడిన మండుతున్న ఈటెను విసురుతుంది, అది గాలిని చీల్చుకుంటూ దూసుకెళ్తుంది, తాకిన వెంటనే పేలి, తీవ్రమైన మంత్ర అగ్నితో దాని లక్ష్యాన్ని దహించివేస్తుంది."
 SpellUI.Noteforredspell,Note: Crimson Lance cannot pass through solid obstacles and cannot target enemies positioned behind walls.,"ÌÈ¢ôÒ: ¸¢¡¢õºý Ä¡ý…¡ø ¾¢¼Á¡É ¾¨¼¸¨Ç °ÎÕÅ¢î ¦ºøÄ ÓÊÂ¡Ð, §ÁÖõ ÍÅ÷¸ÙìÌô À¢ýÉ¡ø ¯ûÇ ±¾¢¡¢¸¨Çò ¾¡ì¸ ÓÊÂ¡Ð.",注意：绯红长矛无法穿过实体障碍物，也无法攻击位于墙后的敌人。,Nota: La Lanza Carmesí no puede atravesar obstáculos sólidos ni atacar a enemigos situados detrás de muros.,గమనిక: క్రిమ్సన్ లాన్స్ గట్టి అడ్డంకుల గుండా వెళ్ళదు మరియు గోడల వెనుక ఉన్న శత్రువులను లక్ష్యంగా చేసుకోదు.
 GameScene.spell,Spell,Áó¾¢Ãõ,拼写,Deletrear,మంత్రం
+SpellUI.shield,Aegis Shield,À¡Ð¸¡ôÒì §¸¼Âõ,神盾,Escudo de Égida,ఏజిస్ షీల్డ్
+SpellUI.shieldDesc,"Summons a magical shield that completely blocks one incoming attack, protecting the caster from damage. The shield shatters after absorbing a single hit.","ÅÕõ ´Õ ¾¡ìÌ¾¨Ä ÓØ¨ÁÂ¡¸ò ¾ÎòÐ, ¾¡ìÌÀÅ¨Ã §º¾ò¾¢Ä¢ÕóÐ À¡Ð¸¡ìÌõ ´Õ Á¡Âì §¸¼Âò¨¾ ÅÃÅ¨Æì¸¢ÈÐ. ´§Ã ´Õ «Ê¨Âò ¾¡í¸¢Â×¼ý §¸¼Âõ ¯¨¼óÐ º¢¾È¢Å¢Îõ.",召唤一个魔法护盾，完全抵挡一次攻击，保护施法者免受伤害。护盾吸收一次攻击后即会破碎。,"Invoca un escudo mágico que bloquea por completo un ataque entrante, protegiendo al lanzador del daño. El escudo se rompe tras absorber un solo golpe.","వచ్చే ఒక దాడిని పూర్తిగా అడ్డుకుని, ప్రయోగించేవారిని నష్టం నుండి రక్షించే ఒక మాయా కవచాన్ని సృష్టిస్తుంది. ఒక్క దెబ్బ తగిలిన తర్వాత ఆ కవచం పగిలిపోతుంది."

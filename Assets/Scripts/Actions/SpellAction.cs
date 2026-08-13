@@ -7,7 +7,6 @@ using UnityEngine;
 
 public class SpellAction : BaseAction
 {
-
     [SerializeField] private int maxShootDistance = 12;
 
     public List<SpellInfo> spellInfos;
@@ -24,7 +23,7 @@ public class SpellAction : BaseAction
     Unit targetUnit;
 
     [SerializeField] private LayerMask obstaclesLayerMask;
-    
+
     private void OnEnable()
     {
         selectedSpellEvent = new EventBinding<SelectedSpellEvent>(OnSpellSelected);
@@ -33,7 +32,6 @@ public class SpellAction : BaseAction
         spellParent = UnitActionSystem.Instance.SpellParent;
         CreateProjectilePool();
     }
-
 
 
     private void OnDisable()
@@ -61,8 +59,6 @@ public class SpellAction : BaseAction
         {
             return;
         }
-
-
     }
 
     public void OnSpellActionTimeCompleted()
@@ -76,7 +72,6 @@ public class SpellAction : BaseAction
         {
             gridPosition = gridPosition,
             actionValue = 0,
-
         };
     }
 
@@ -85,11 +80,13 @@ public class SpellAction : BaseAction
         Vector3 aimDir = (targetUnit.GetWorldPosition() - Unit.GetWorldPosition()).normalized;
         transform.DOLookAt(transform.position + aimDir, 0.2f);
     }
+
     public override List<GridPosition> GetvalidGridPositionList()
     {
         GridPosition unitgridPosition = Unit.GetGridPosition();
         return GetvalidGridPositionList(unitgridPosition);
     }
+
     public List<GridPosition> GetvalidGridPositionList(GridPosition unitGridPosition)
     {
         List<GridPosition> validGridPositionList = new List<GridPosition>();
@@ -123,47 +120,41 @@ public class SpellAction : BaseAction
 
                 Unit targetUnit = LevelGrid.Instance.GetUnitAtGridPosition(testGridPosition);
 
-               
 
                 if (selectedSpellInfo != null)
                 {
                     if (selectedspellType == SpellType.PROJECTILE)
                     {
-
                         Vector3 unitWorldPosition = LevelGrid.Instance.GetWorldPosition(unitGridPosition);
                         Vector3 shootDir = (targetUnit.GetWorldPosition() - unitWorldPosition).normalized;
                         float unitShoulderHeight = 1.7f;
-                        if (Physics.Raycast(Unit.GetWorldPosition() + Vector3.up * unitShoulderHeight,
-                        shootDir,
-                        Vector3.Distance(Unit.GetWorldPosition(), targetUnit.GetWorldPosition()),
-                        obstaclesLayerMask
-                        ))
-                        {
 
-                            continue;
-                        }
-                    }
-                    if (selectedspellType != SpellType.SHIELD)
-                    {
-                        if (targetUnit.IsEnemy() == Unit.IsEnemy())
+                        if (Physics.Raycast(
+                                Unit.GetWorldPosition() + Vector3.up * unitShoulderHeight,
+                                shootDir,
+                                Vector3.Distance(Unit.GetWorldPosition(), targetUnit.GetWorldPosition()),
+                                obstaclesLayerMask))
                         {
                             continue;
                         }
                     }
-                    else
+
+                    if (selectedspellType == SpellType.SHIELD)
                     {
-                        if (targetUnit.hasShield)
+                        if (targetUnit == Unit && !targetUnit.hasShield)
                         {
-                            continue;
+                            validGridPositionList.Add(testGridPosition);
                         }
-                        if (targetUnit.IsEnemy() != Unit.IsEnemy())
-                        {
-                            continue;
-                        }
+
+                        continue; // Don't execute the code below for shield
+                    }
+
+                    // All other spell types
+                    if (targetUnit.IsEnemy() == Unit.IsEnemy())
+                    {
+                        continue;
                     }
                 }
-
-
 
                 validGridPositionList.Add(testGridPosition);
             }
@@ -171,6 +162,7 @@ public class SpellAction : BaseAction
 
         return validGridPositionList;
     }
+
     private void UnitActionSystem_OnSelectedActionChanged(object sender, EventArgs e)
     {
         if (UnitActionSystem.Instance.GetSelectedAction() is not SpellAction) return;
@@ -193,14 +185,13 @@ public class SpellAction : BaseAction
         if (selectedSpellInfo.spellBehaviour != null)
         {
             StartCoroutine(
-            selectedSpellInfo.spellBehaviour.Execute(
-            Unit,
-            targetUnit,
-            selectedSpellInfo, this, () => ActionComplete()));
+                selectedSpellInfo.spellBehaviour.Execute(
+                    Unit,
+                    targetUnit,
+                    selectedSpellInfo, this, () => ActionComplete()));
         }
 
         ActionStart(onActionComplete);
-
     }
 
 
@@ -218,18 +209,22 @@ public class SpellAction : BaseAction
     {
         spellInfos.Add(spellInfo);
     }
+
     public void RemoveSpell(SpellInfo spellInfo)
     {
         spellInfos.Remove(spellInfo);
     }
+
     public Unit GetTargetUnit()
     {
         return targetUnit;
     }
+
     public SpellInfo GetSelectedSpellInfo()
     {
         return selectedSpellInfo;
     }
+
     public Transform GetSpellParent()
     {
         return spellParent;
@@ -245,13 +240,13 @@ public class SpellAction : BaseAction
             }
         }
     }
-
 }
 
 public struct SpellUIEvent : IEvent
 {
     public List<SpellInfo> spellInfos1;
 }
+
 public struct SelectedSpellEvent : IEvent
 {
     public SpellInfo SelectedSpellInfo;

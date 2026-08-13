@@ -27,7 +27,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 740416776257537
-    m_Localized: Fin del giro
+    m_Localized: Giro final
     m_Metadata:
       m_Items: []
   - m_Id: 740416780451840
@@ -117,6 +117,16 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 9922391953063936
     m_Localized: Deletrear
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28230739410083840
+    m_Localized: "Escudo de \xC9gida"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28230739452026880
+    m_Localized: "Invoca un escudo m\xE1gico que bloquea por completo un ataque entrante,
+      protegiendo al lanzador del da\xF1o. El escudo se rompe tras absorber un solo
+      golpe."
     m_Metadata:
       m_Items: []
   references:

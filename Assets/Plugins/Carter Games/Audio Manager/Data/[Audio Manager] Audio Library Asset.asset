@@ -870,6 +870,120 @@ MonoBehaviour:
         metaData:
           category: 
           tags: []
+    - key: Energetic_sci-fi_shi_#3-1786122551204-e4ca05ae-136f-434d-afc2-93980dbacc1f
+      value:
+        key: Energetic_sci-fi_shi_#3-1786122551204
+        id: Energetic_sci-fi_shi_#3-1786122551204-e4ca05ae-136f-434d-afc2-93980dbacc1f
+        defaultKey: Energetic_sci-fi_shi_#3-1786122551204-e4ca05ae-136f-434d-afc2-93980dbacc1f
+        value: {fileID: 8300000, guid: a16b98ce53c70f74e973f12479074de3, type: 3}
+        path: Assets/Audio/Energetic_sci-fi_shi_#3-1786122551204.mp3
+        dynamicStartTime:
+          time: 0
+          threshold: 0
+          option: 1
+          tabPos: 1
+        defaultSettings:
+          volume: 1
+          pitch: 1
+        showDynamicTime: 0
+        metaData:
+          category: 
+          tags: []
+    - key: Energetic_sci-fi_shi_#3-1786122551204 1-0a7618c4-bbd1-46a2-8385-dcd1db49f451
+      value:
+        key: Energetic_sci-fi_shi_#3-1786122551204 1
+        id: Energetic_sci-fi_shi_#3-1786122551204 1-0a7618c4-bbd1-46a2-8385-dcd1db49f451
+        defaultKey: Energetic_sci-fi_shi_#3-1786122551204 1-0a7618c4-bbd1-46a2-8385-dcd1db49f451
+        value: {fileID: 8300000, guid: 520acf2b6853f7442a1212e8d9acff6b, type: 3}
+        path: Assets/Audio/Energetic_sci-fi_shi_#3-1786122551204 1.mp3
+        dynamicStartTime:
+          time: 0
+          threshold: 0
+          option: 1
+          tabPos: 1
+        defaultSettings:
+          volume: 1
+          pitch: 1
+        showDynamicTime: 0
+        metaData:
+          category: 
+          tags: []
+    - key: fireball_hit_on_an_e_#2-1786167982481-179d2bec-6118-4e3f-b6e9-5ef3da4dbc64
+      value:
+        key: fireball_hit_on_an_e_#2-1786167982481
+        id: fireball_hit_on_an_e_#2-1786167982481-179d2bec-6118-4e3f-b6e9-5ef3da4dbc64
+        defaultKey: fireball_hit_on_an_e_#2-1786167982481-179d2bec-6118-4e3f-b6e9-5ef3da4dbc64
+        value: {fileID: 8300000, guid: c257c314e85f57843966a3ece29b00b5, type: 3}
+        path: Assets/Audio/fireball_hit_on_an_e_#2-1786167982481.mp3
+        dynamicStartTime:
+          time: 0
+          threshold: 0
+          option: 1
+          tabPos: 1
+        defaultSettings:
+          volume: 1
+          pitch: 1
+        showDynamicTime: 0
+        metaData:
+          category: 
+          tags: []
+    - key: magical_energy_with__#4-1786168452426-93631836-0839-4eca-b6a0-bc231f4f2f8b
+      value:
+        key: magical_energy_with__#4-1786168452426
+        id: magical_energy_with__#4-1786168452426-93631836-0839-4eca-b6a0-bc231f4f2f8b
+        defaultKey: magical_energy_with__#4-1786168452426-93631836-0839-4eca-b6a0-bc231f4f2f8b
+        value: {fileID: 8300000, guid: 91fb4d0ad41d9664ca3551a4d7e135f4, type: 3}
+        path: Assets/Audio/magical_energy_with__#4-1786168452426.mp3
+        dynamicStartTime:
+          time: 0
+          threshold: 0
+          option: 1
+          tabPos: 1
+        defaultSettings:
+          volume: 1
+          pitch: 1
+        showDynamicTime: 0
+        metaData:
+          category: 
+          tags: []
+    - key: Molten_rock_streakin_#3-1786167778230-787eca20-029d-444a-93b2-f88df8d91ae9
+      value:
+        key: Molten_rock_streakin_#3-1786167778230
+        id: Molten_rock_streakin_#3-1786167778230-787eca20-029d-444a-93b2-f88df8d91ae9
+        defaultKey: Molten_rock_streakin_#3-1786167778230-787eca20-029d-444a-93b2-f88df8d91ae9
+        value: {fileID: 8300000, guid: 310abbc9d758b714097bdb16dbf517bf, type: 3}
+        path: Assets/Audio/Molten_rock_streakin_#3-1786167778230.mp3
+        dynamicStartTime:
+          time: 0
+          threshold: 0
+          option: 1
+          tabPos: 1
+        defaultSettings:
+          volume: 1
+          pitch: 1
+        showDynamicTime: 0
+        metaData:
+          category: 
+          tags: []
+    - key: bluefire-3a88f284-cfa5-4f3a-892a-ef9570860568
+      value:
+        key: bluefire
+        id: bluefire-3a88f284-cfa5-4f3a-892a-ef9570860568
+        defaultKey: bluefire-3a88f284-cfa5-4f3a-892a-ef9570860568
+        value: {fileID: 8300000, guid: a238987c63f2dbc429bab5c3f1230333, type: 3}
+        path: Assets/Audio/bluefire.mp3
+        dynamicStartTime:
+          time: 0
+          threshold: 0
+          option: 1
+          tabPos: 1
+        defaultSettings:
+          volume: 1
+          pitch: 1
+        showDynamicTime: 0
+        metaData:
+          category: 
+          tags: []
   groups:
     list:
     - key: c2f7f075-f36c-44cb-9118-055d33bf0a27

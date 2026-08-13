@@ -27,7 +27,10 @@ public class CastingSpellBehaviour : SpellBehaviour
         CameraManager.Instance.SetSequenceCameraState(true);
         yield return new WaitForSeconds(0.75f);
         spellAction.OnSpellActionStarted?.Invoke(spellAction.selectedspellType);
-        yield return new WaitForSeconds(3.0f);
+        SFXGameManager.Instance.PlaySpellCasting();
+        yield return new WaitForSeconds(2.0f);
+        SFXGameManager.Instance.PlayBlueFireSound();
+        yield return new WaitForSeconds(1.0f);
         Transform SpellPrefabTransform = Instantiate(Spellprefab, spellAction.GetSpellParent());
         SpellPrefabTransform.gameObject.SetActive(true);
         float yPosition = SpellPrefabTransform != null ? SpellPrefabTransform.position.y : (targetUnit != null ? targetUnit.transform.position.y : 0f);
@@ -37,6 +40,7 @@ public class CastingSpellBehaviour : SpellBehaviour
         }
         yield return new WaitForSeconds(0.5f);
         targetUnit.Damage(SpellDamage, spellAction);
+        
         yield return new WaitForSeconds(1.5f);
         Destroy(SpellPrefabTransform.gameObject);
         spellAction.OnSpellActionCompleted?.Invoke();

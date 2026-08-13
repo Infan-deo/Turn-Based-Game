@@ -289,6 +289,7 @@ public class ShootAction : BaseAction, IParryable
     {
         //Success
         OnSuccessFullParry?.Invoke();
+        Unit.Heal(5);
     }
 
 

@@ -18,8 +18,9 @@ public class ShieldBehaviour : SpellBehaviour
         CameraManager.Instance.ShowActionCamera();
         yield return new WaitForSeconds(0.75f);
         spellAction.OnSpellActionStarted?.Invoke(spellAction.selectedspellType);
+        SFXGameManager.Instance.PlaySpellCasting();
         yield return new WaitForSeconds(1f);
-
+        SFXGameManager.Instance.PlayShieldFormingSound();
         target.CreateShield(); //Shield shader is controlled by
         yield return new WaitForSeconds(1.5f);
         spellAction.OnSpellActionCompleted?.Invoke();

@@ -117,6 +117,16 @@ MonoBehaviour:
     m_Localized: Spell
     m_Metadata:
       m_Items: []
+  - m_Id: 28230739410083840
+    m_Localized: Aegis Shield
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28230739452026880
+    m_Localized: Summons a magical shield that completely blocks one incoming attack,
+      protecting the caster from damage. The shield shatters after absorbing a single
+      hit.
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

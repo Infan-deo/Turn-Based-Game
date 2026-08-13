@@ -46,7 +46,7 @@ MonoBehaviour:
     - language: Chinese (Simplified)(zh-Hans)
       text: "\u56DE\u5408\u7ED3\u675F"
     - language: Spanish(es)
-      text: Fin del giro
+      text: Giro final
     - language: Telugu(te)
       text: "\u0C2E\u0C32\u0C41\u0C2A\u0C41 \u0C2E\u0C41\u0C17\u0C3F\u0C02\u0C2A\u0C41"
   - key: GameScene.Turn
@@ -307,7 +307,7 @@ MonoBehaviour:
         \u0C08\u0C1F\u0C46\u0C28\u0C41 \u0C35\u0C3F\u0C38\u0C41\u0C30\u0C41\u0C24\u0C41\u0C02\u0C26\u0C3F,
         \u0C05\u0C26\u0C3F \u0C17\u0C3E\u0C32\u0C3F\u0C28\u0C3F \u0C1A\u0C40\u0C32\u0C4D\u0C1A\u0C41\u0C15\u0C41\u0C02\u0C1F\u0C42
         \u0C26\u0C42\u0C38\u0C41\u0C15\u0C46\u0C33\u0C4D\u0C24\u0C41\u0C02\u0C26\u0C3F,
-        \u0C24\u0C3E\u0C15\u0C3F\u0C28 \u0C35\u0C46\u0C02\u0C1F\u0C28\u0C47 \u0C2A\u0C47\u0C32\u0C3F\u0C2A\u0C4B\u0C2F\u0C3F,
+        \u0C24\u0C3E\u0C15\u0C3F\u0C28 \u0C35\u0C46\u0C02\u0C1F\u0C28\u0C47 \u0C2A\u0C47\u0C32\u0C3F,
         \u0C24\u0C40\u0C35\u0C4D\u0C30\u0C2E\u0C48\u0C28 \u0C2E\u0C02\u0C24\u0C4D\u0C30
         \u0C05\u0C17\u0C4D\u0C28\u0C3F\u0C24\u0C4B \u0C26\u0C3E\u0C28\u0C3F \u0C32\u0C15\u0C4D\u0C37\u0C4D\u0C2F\u0C3E\u0C28\u0C4D\u0C28\u0C3F
         \u0C26\u0C39\u0C3F\u0C02\u0C1A\u0C3F\u0C35\u0C47\u0C38\u0C4D\u0C24\u0C41\u0C02\u0C26\u0C3F."
@@ -346,6 +346,46 @@ MonoBehaviour:
       text: Deletrear
     - language: Telugu(te)
       text: "\u0C2E\u0C02\u0C24\u0C4D\u0C30\u0C02"
+  - key: SpellUI.shield
+    values:
+    - language: English(en)
+      text: Aegis Shield
+    - language: Tamil(ta)
+      text: "\xC0\xA1\xD0\xB8\xA1\xF4\xD2\xEC \xA7\xB8\xBC\xC2\xF5"
+    - language: Chinese (Simplified)(zh-Hans)
+      text: "\u795E\u76FE"
+    - language: Spanish(es)
+      text: "Escudo de \xC9gida"
+    - language: Telugu(te)
+      text: "\u0C0F\u0C1C\u0C3F\u0C38\u0C4D \u0C37\u0C40\u0C32\u0C4D\u0C21\u0C4D"
+  - key: SpellUI.shieldDesc
+    values:
+    - language: English(en)
+      text: Summons a magical shield that completely blocks one incoming attack,
+        protecting the caster from damage. The shield shatters after absorbing a
+        single hit.
+    - language: Tamil(ta)
+      text: "\xC5\xD5\xF5 \xB4\xD5 \xBE\xA1\xEC\xCC\xBE\xA8\xC4 \xD3\xD8\xA8\xC1\xC2\xA1\xB8\xF2
+        \xBE\xCE\xF2\xD0, \xBE\xA1\xEC\xCC\xC0\xC5\xA8\xC3 \xA7\xBA\xBE\xF2\xBE\xA2\xC4\xA2\xD5\xF3\xD0
+        \xC0\xA1\xD0\xB8\xA1\xEC\xCC\xF5 \xB4\xD5 \xC1\xA1\xC2\xEC \xA7\xB8\xBC\xC2\xF2\xA8\xBE
+        \xC5\xC3\xC5\xA8\xC6\xEC\xB8\xA2\xC8\xD0. \xB4\xA7\xC3 \xB4\xD5 \xAB\xCA\xA8\xC2\xF2
+        \xBE\xA1\xED\xB8\xA2\xC2\xD7\xBC\xFD \xA7\xB8\xBC\xC2\xF5 \xAF\xA8\xBC\xF3\xD0
+        \xBA\xA2\xBE\xC8\xA2\xC5\xA2\xCE\xF5."
+    - language: Chinese (Simplified)(zh-Hans)
+      text: "\u53EC\u5524\u4E00\u4E2A\u9B54\u6CD5\u62A4\u76FE\uFF0C\u5B8C\u5168\u62B5\u6321\u4E00\u6B21\u653B\u51FB\uFF0C\u4FDD\u62A4\u65BD\u6CD5\u8005\u514D\u53D7\u4F24\u5BB3\u3002\u62A4\u76FE\u5438\u6536\u4E00\u6B21\u653B\u51FB\u540E\u5373\u4F1A\u7834\u788E\u3002"
+    - language: Spanish(es)
+      text: "Invoca un escudo m\xE1gico que bloquea por completo un ataque entrante,
+        protegiendo al lanzador del da\xF1o. El escudo se rompe tras absorber un
+        solo golpe."
+    - language: Telugu(te)
+      text: "\u0C35\u0C1A\u0C4D\u0C1A\u0C47 \u0C12\u0C15 \u0C26\u0C3E\u0C21\u0C3F\u0C28\u0C3F
+        \u0C2A\u0C42\u0C30\u0C4D\u0C24\u0C3F\u0C17\u0C3E \u0C05\u0C21\u0C4D\u0C21\u0C41\u0C15\u0C41\u0C28\u0C3F,
+        \u0C2A\u0C4D\u0C30\u0C2F\u0C4B\u0C17\u0C3F\u0C02\u0C1A\u0C47\u0C35\u0C3E\u0C30\u0C3F\u0C28\u0C3F
+        \u0C28\u0C37\u0C4D\u0C1F\u0C02 \u0C28\u0C41\u0C02\u0C21\u0C3F \u0C30\u0C15\u0C4D\u0C37\u0C3F\u0C02\u0C1A\u0C47
+        \u0C12\u0C15 \u0C2E\u0C3E\u0C2F\u0C3E \u0C15\u0C35\u0C1A\u0C3E\u0C28\u0C4D\u0C28\u0C3F
+        \u0C38\u0C43\u0C37\u0C4D\u0C1F\u0C3F\u0C38\u0C4D\u0C24\u0C41\u0C02\u0C26\u0C3F.
+        \u0C12\u0C15\u0C4D\u0C15 \u0C26\u0C46\u0C2C\u0C4D\u0C2C \u0C24\u0C17\u0C3F\u0C32\u0C3F\u0C28
+        \u0C24\u0C30\u0C4D\u0C35\u0C3E\u0C24 \u0C06 \u0C15\u0C35\u0C1A\u0C02 \u0C2A\u0C17\u0C3F\u0C32\u0C3F\u0C2A\u0C4B\u0C24\u0C41\u0C02\u0C26\u0C3F."
   languages:
   - English(en)
   - Tamil(ta)

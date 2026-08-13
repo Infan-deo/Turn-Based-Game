@@ -36,6 +36,7 @@ namespace ZakhanSpellsPack
             {
                 return;
             }
+            SFXGameManager.Instance.PlayFireballImpact();
             print("Projectile collided with " + collider.gameObject.name);
             PoolManager.Instance.Return(spellProjectilePrefab, transform);
             var exp = Instantiate(ExplosionPrefab, transform.position
@@ -50,6 +51,7 @@ namespace ZakhanSpellsPack
             {
 print("Projectile collided with " + collider.gameObject.name);
                 OnProjectileDestroyed?.Invoke(targetUnit);
+                
 
             }
         }

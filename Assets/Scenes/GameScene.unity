@@ -5500,6 +5500,14 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0.015630512
       objectReference: {fileID: 0}
+    - target: {fileID: 4904668583588264108, guid: 55e1905ed2205ea448bff40899f1db1a, type: 3}
+      propertyPath: spellInfos.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4904668583588264108, guid: 55e1905ed2205ea448bff40899f1db1a, type: 3}
+      propertyPath: 'spellInfos.Array.data[2]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 70eb602be2745ae479ed0312ca2036f8, type: 2}
     - target: {fileID: 5598704253396884386, guid: 55e1905ed2205ea448bff40899f1db1a, type: 3}
       propertyPath: m_Name
       value: Enemy Unit Variant (2)
@@ -9692,6 +9700,26 @@ MonoBehaviour:
     _entity: {fileID: 11400000, guid: af85ca019cc0f8543859b35ddc0e7d09, type: 2}
     ID: 0
     <DebugObject>k__BackingField: {fileID: 1377438178}
+  ShieldFormingSound:
+    _entity: {fileID: 11400000, guid: 1f444186853eb9f44a286bd73a46ad63, type: 2}
+    ID: 0
+    <DebugObject>k__BackingField: {fileID: 1377438178}
+  BlueFireSound:
+    _entity: {fileID: 11400000, guid: 3038e5c891167c440bde7be4ac3282c0, type: 2}
+    ID: 0
+    <DebugObject>k__BackingField: {fileID: 1377438178}
+  firecasting:
+    _entity: {fileID: 11400000, guid: f527e5288d779f6498119f7bbae3321f, type: 2}
+    ID: 0
+    <DebugObject>k__BackingField: {fileID: 1377438178}
+  spellCasting:
+    _entity: {fileID: 11400000, guid: 9f92cb7b28de6ec4f817c69f8a0623c0, type: 2}
+    ID: 0
+    <DebugObject>k__BackingField: {fileID: 1377438178}
+  fireballImpact:
+    _entity: {fileID: 11400000, guid: 9d7cc695284c0704990c1cbf5361c673, type: 2}
+    ID: 0
+    <DebugObject>k__BackingField: {fileID: 1377438178}
 --- !u!1 &1391111792
 GameObject:
   m_ObjectHideFlags: 0
@@ -13065,6 +13093,14 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0.015630512
       objectReference: {fileID: 0}
+    - target: {fileID: 4904668583588264108, guid: 55e1905ed2205ea448bff40899f1db1a, type: 3}
+      propertyPath: spellInfos.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4904668583588264108, guid: 55e1905ed2205ea448bff40899f1db1a, type: 3}
+      propertyPath: 'spellInfos.Array.data[2]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 70eb602be2745ae479ed0312ca2036f8, type: 2}
     - target: {fileID: 5598704253396884386, guid: 55e1905ed2205ea448bff40899f1db1a, type: 3}
       propertyPath: m_Name
       value: Enemy Unit Variant (1)

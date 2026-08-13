@@ -20,7 +20,7 @@ public class CombatTextManager : MonoBehaviour
 
     private void Start()
     {
-        PoolManager.Instance.CreatePool(combatTextUIPrefab, 5);
+        PoolManager.Instance.CreatePool(combatTextUIPrefab, 10);
     }
 
     public void SpawnFloatingText(int num, bool isheal)

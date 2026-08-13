@@ -43,6 +43,7 @@ public class ProjectileSpellBehaviour : SpellBehaviour
         CameraManager.Instance.ShowActionCamera();
         yield return new WaitForSeconds(0.75f);
         spellAction.OnSpellActionStarted?.Invoke(spellAction.selectedspellType);
+        SFXGameManager.Instance.PlaySpellCasting();
         yield return new WaitForSeconds(1f);
         CameraManager.Instance.SetActionCameraAtUnitCameraPoint(caster, 2);
         Transform SpellCastPoint = caster.SpellPoints[0];
@@ -85,9 +86,10 @@ public class ProjectileSpellBehaviour : SpellBehaviour
 
         Vector3 targetPosition = targetUnit.GetWorldPosition() + Vector3.up * 1.5f;
         Vector3 direction = (targetPosition - SpellCastPoint.position).normalized;
-
+    
         float distance = Vector3.Distance(SpellCastPoint.position, targetPosition);
         projectile.SetVelocity(direction * projectileSpeed,projectileSpeed/2);
+        SFXGameManager.Instance.Playfirecasting();
         //        projectile.transform.DOMove(
         //     projectile.transform.position + direction * projectileSpeed,
         //     1f
